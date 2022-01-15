@@ -1,4 +1,4 @@
-import { Header } from '../Header/Header';
+// import { Header } from '../Header/Header';
 import * as styles from './Layout.module.scss';
 
 interface LayoutProps {
@@ -6,7 +6,7 @@ interface LayoutProps {
 }
 export const Layout = ({ children }: LayoutProps) => (
   <div className={styles.container}>
-    <Header />
+    {/* <Header /> */}
     <div className={styles.content}>{children}</div>
   </div>
 );

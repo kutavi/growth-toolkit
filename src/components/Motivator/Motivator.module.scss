@@ -6,7 +6,7 @@
   min-height: 50px;
   color: white;
   font-weight: bold;
-  font-family: monospace;
+  font-family: 'Nunito', sans-serif;
   margin: 6px;
   &:hover {
     box-shadow: $shadow-small-hover;
@@ -19,11 +19,14 @@
 }
 
 .name {
-  font-size: 24px;
+  font-size: 26px;
 }
 .header {
   width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .image {
@@ -32,26 +35,27 @@
   border-radius: 4px;
 }
 .description {
-  font-size: 16px;
+  font-size: 14px;
   margin-top: 12px;
 }
 
 .collapseButton {
   transition: transform 0.5s ease;
+  font-family: monospace;
   font-size: 26px;
-  transform: rotate(270deg);
+  transform: rotate(90deg);
   position: absolute;
   top: -4px;
   right: 0;
 }
 
 .open {
-  transform: rotate(90deg);
+  transform: rotate(270deg);
 }
 
 .content {
-  transition: max-height 0.5s ease;
-  max-height: 200px;
+  transition: max-height 0.2s ease;
+  max-height: 500px;
   overflow: hidden;
   padding: 12px 0;
   color: $text-default;

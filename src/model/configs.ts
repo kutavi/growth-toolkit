@@ -10,8 +10,14 @@ import Relatedness from '../assets/relatedness.jpeg';
 import Status from '../assets/status.jpeg';
 
 export const routes = [
-  { route: '/', label: 'DIY' },
-  { route: '/mentor/', label: 'Mentor' },
+  {
+    route: '/moving-motivator',
+    label: 'Moving Motivators',
+    routes: [
+      { route: '/manual', label: 'DIY' },
+      { route: '/mentor', label: 'Mentor' },
+    ],
+  },
 ];
 
 export const motivators = [
@@ -43,7 +49,7 @@ export const motivators = [
   {
     name: 'Acceptance',
     description: 'The people around me approve of what I do and who I am.',
-    color: '#ffb800',
+    color: '#968f00',
     icon: Acceptance,
   },
   {
@@ -98,7 +104,7 @@ export const motivators = [
     name: 'Order',
     description:
       'There are enough rules and policies for a stable environment.',
-    color: '#ff009d',
+    color: '#af00fc',
     icon: Order,
     examples: [
       'Having a robust process behind every piece of work is important to you',

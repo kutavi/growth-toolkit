@@ -1,5 +1,5 @@
-import { Layout } from '../components/Layout/Layout';
-import * as styles from './Page.module.scss';
+import { Layout } from '../../components/Layout/Layout';
+import * as styles from '../Page.module.scss';
 
 const Mentor = () => (
   <Layout>

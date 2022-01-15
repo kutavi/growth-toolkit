@@ -1,8 +1,8 @@
 module.exports = {
-  pathPrefix: '/moving-motivators',
+  pathPrefix: '/growth-toolkit',
   siteMetadata: {
-    title: `Moving Motivators`,
-    description: `Moving Motivators`,
+    title: `Growth toolkit`,
+    description: `Online tools used for personal development`,
     author: `@atseniklidou`,
   },
   jsxRuntime: 'automatic',
@@ -21,7 +21,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `moving-motivators`,
+        name: `growth-toolkit`,
         short_name: `starter`,
         start_url: `/`,
         display: `minimal-ui`,
