@@ -1,0 +1,46 @@
+@import 'src/styles/_base.scss';
+
+.gitLink {
+  margin-left: 8px;
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  height: 80px;
+  box-shadow: $shadow-small;
+  border-radius: 4px;
+  background-color: $grey-light;
+  max-width: 120px;
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  &:hover {
+    box-shadow: $shadow-small-hover;
+  }
+}
+
+.container {
+  padding: 48px 24px;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .wrapper {
+    justify-content: center;
+  }
+}

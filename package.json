@@ -1,0 +1,83 @@
+{
+  "name": "gatsby-starter-pack",
+  "private": true,
+  "description": "A starter to get up and developing quickly with Gatsby",
+  "version": "0.0.0",
+  "author": "Alexandra Tseniklidou <atseniklidou@gmail.com>",
+  "scripts": {
+    "build": "npm run lint && gatsby build --prefix-paths",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,scss}\"",
+    "tslint": "tslint \"src/**/*.{ts,tsx}\" --fix",
+    "lint": "npm run format && npm run tslint",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "jest --watch",
+    "test-once": "jest  --coverage",
+    "e2e": "node_modules/.bin/cypress open",
+    "e2e-headless": "node_modules/.bin/cypress run",
+    "deploy-s3": "gatsby-plugin-s3 deploy --yes"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.4.0",
+    "@types/react-helmet": "^6.1.0",
+    "@types/react-redux": "^7.1.5",
+    "@types/redux-mock-store": "^1.0.1",
+    "classnames": "^2.3.1",
+    "gatsby": "^4.5.2",
+    "gatsby-image": "^3.11.0",
+    "gatsby-plugin-manifest": "^4.5.1",
+    "gatsby-plugin-offline": "^5.5.1",
+    "gatsby-plugin-react-helmet": "^5.5.0",
+    "gatsby-plugin-react-redux": "^1.1.0-0",
+    "gatsby-plugin-sass": "^5.5.0",
+    "gatsby-plugin-sharp": "^4.5.1",
+    "gatsby-plugin-typescript": "^4.5.1",
+    "gatsby-source-filesystem": "^4.5.1",
+    "gatsby-transformer-sharp": "^4.5.0",
+    "jest": "^27.4.7",
+    "react": "^17.0.1",
+    "react-dnd": "^14.0.5",
+    "react-dnd-html5-backend": "^14.1.0",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.3.1",
+    "react-redux": "^7.1.3",
+    "redux": "^4.0.4",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-localstorage-simple": "^2.1.6",
+    "sass": "^1.42.1",
+    "ts-jest": "^27.1.2"
+  },
+  "devDependencies": {
+    "babel-jest": "^27.4.6",
+    "babel-preset-gatsby": "^2.5.1",
+    "cypress": "^9.2.1",
+    "cypress-cucumber-preprocessor": "^4.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "prettier": "^2.4.1",
+    "redux-mock-store": "^1.5.4",
+    "serverless-offline": "^8.3.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.2.0-dev.20210207",
+    "wait-on": "^6.0.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "env": {
+    "cypress/globals": true
+  }
+}
