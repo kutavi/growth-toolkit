@@ -19,7 +19,11 @@ const Home = () => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <Popover isShown title={'Moving Motivators'} description={texts.motivators.info} />
+      <Popover
+        isShown
+        title={'Moving Motivators'}
+        description={texts.motivators.info}
+      />
       <Layout>
         {cards.map((motivator, index) => (
           <Motivator

@@ -17,18 +17,19 @@ export const Popover = ({
   const [isOpen, setOpen] = useState(isShown);
 
   if (!isOpen) {
-    return <div className={styles.infoIcon} onClick={() => setOpen(true)}>{'i'}</div>;
+    return (
+      <div className={styles.infoIcon} onClick={() => setOpen(true)}>
+        {'i'}
+      </div>
+    );
   }
   return (
     <div className={styles.popover}>
-      <div
-        className={styles.cardInner}>
+      <div className={styles.cardInner}>
         <div className={styles.header}>
           <span className={styles.name}>{title}</span>
           {canClose && (
-            <span
-            onClick={() => setOpen(false)}
-              className={styles.closeButton}>
+            <span onClick={() => setOpen(false)} className={styles.closeButton}>
               {'x'}
             </span>
           )}
