@@ -1,5 +1,4 @@
-import { Link } from 'gatsby';
-import { routes } from '../model/configs';
+import ActivityCards from './activity-cards';
 import * as styles from './Page.module.scss';
 
 const Home = () => (
@@ -8,13 +7,7 @@ const Home = () => (
       A toolkit with exercises and activities to help you on your personal
       development and growth.
     </h3>
-    {routes.map(route => (
-      <Link className={styles.card} to={route.route}>
-        <img src={route.image} />
-        <div className={styles.title}>{route.label}</div>
-        <div className={styles.description}>{route.description}</div>
-      </Link>
-    ))}
+    <ActivityCards />
   </div>
 );
 

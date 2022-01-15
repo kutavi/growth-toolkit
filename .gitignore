@@ -69,5 +69,6 @@ yarn-error.log
 
 # === UNCOMMENT THIS ===
 public
+public_dev
 
 .vscode/
