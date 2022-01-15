@@ -114,3 +114,18 @@ export const motivators = [
     ],
   },
 ];
+
+export const texts = {
+  motivators: {
+    info: <div>This is an exercise to reflect on people's motivation and how it is affected by change.
+      The cards here help you unveil and discuss 10 intrinsic desires, which motivate people most.
+      <br/><br/>Try the following: 
+      <ol>
+        <li>Reorder the cards and define which motivators are important to you from top to bottom.</li>
+        <li>Think about your current job. How is each motivator doing?</li>
+        <li>Are you going through a change (new role, new project, team change, etc)?
+          Check which motivators get affected and the impact to your most important ones.</li>
+      </ol>
+      You can read more <a target='_blank' href='https://management30.com/practice/moving-motivators/'>here</a></div>,
+  },
+};

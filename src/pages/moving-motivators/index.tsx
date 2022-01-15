@@ -3,7 +3,8 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { Layout } from '../../components/Layout/Layout';
 import { Motivator } from '../../components/Motivator/Motivator';
-import { motivators } from '../../model/configs';
+import { Popover } from '../../components/Popover/Popover';
+import { motivators, texts } from '../../model/configs';
 import { reorderArray } from '../../model/helpers';
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
 
   return (
     <DndProvider backend={HTML5Backend}>
+      <Popover isShown title={'Moving Motivators'} description={texts.motivators.info} />
       <Layout>
         {cards.map((motivator, index) => (
           <Motivator

@@ -1,12 +1,12 @@
 @import 'src/styles/_base.scss';
 
 .container {
-  max-width: 900px;
+  max-width: 800px;
   margin: auto;
   box-shadow: $shadow-small;
 }
 
 .content {
-  padding: 16px 24px;
+  padding: 16px 36px;
   background-color: $grey-light;
 }

@@ -1,0 +1,60 @@
+@import 'src/styles/_base.scss';
+
+.popover {
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 50px;
+  width: 260px;
+  position: fixed;
+  z-index: $popover;
+  left: 1%;
+  top: 1%;
+  color: $text-default;
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  box-shadow: $shadow-small-hover;
+  border: 1px solid $grey-light;
+  margin: 6px;
+  background-color: $info;
+}
+
+.infoIcon {
+  position: fixed;
+  left: 1%;
+  top: 1%;
+  border: 1px solid $grey-light;
+  box-shadow: $shadow-small-hover;
+  font-weight: bold;
+  color: $text-default;
+  background-color: $info;
+  border-radius: 100%;
+  padding: 2px 10px;
+  cursor: pointer;
+}
+
+.name {
+  font-size: 22px;
+}
+.header {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.description {
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+.closeButton {
+  transition: transform 0.5s ease;
+  color: $cancel;
+  font-size: 28px;
+  transform: rotate(90deg);
+  position: absolute;
+  cursor: pointer;
+  top: -4px;
+  right: 0;
+}
