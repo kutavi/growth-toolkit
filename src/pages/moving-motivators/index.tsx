@@ -21,7 +21,7 @@ const Home = () => {
     <DndProvider backend={HTML5Backend}>
       <Popover
         isShown
-        title={'Moving Motivators'}
+        title={texts.motivators.title}
         description={texts.motivators.info}
       />
       <Layout>

@@ -1,8 +1,10 @@
 @import 'src/styles/_base.scss';
 
+$card-padding: 12px;
+
 .card {
   border-radius: 6px;
-  padding: 12px 12px 0;
+  padding: $card-padding $card-padding 0;
   min-height: 50px;
   color: white;
   font-weight: bold;
@@ -57,7 +59,7 @@
   transition: max-height 0.2s ease;
   max-height: 500px;
   overflow: hidden;
-  padding: 12px 0;
+  padding: $card-padding 0;
   color: $text-default;
 }
 

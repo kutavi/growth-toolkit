@@ -1,5 +1,8 @@
 @import 'src/styles/_base.scss';
 
+$card-width: 200px;
+$card-radius: 16px;
+
 .gitLink {
   margin-left: 8px;
   img {
@@ -16,27 +19,48 @@
 }
 
 .card {
-  height: 80px;
   box-shadow: $shadow-small;
-  border-radius: 4px;
-  background-color: $grey-light;
-  max-width: 120px;
+  border-radius: $card-radius;
+  background-color: white;
+  max-width: $card-width;
   display: block;
   text-decoration: none;
   color: black;
-  padding: 24px;
-  display: flex;
-  align-items: center;
+  padding-bottom: 8px;
   margin: auto;
-  justify-content: center;
+  > div {
+    padding: 12px 24px;
+  }
+  > img {
+    max-width: $card-width;
+    border-top-left-radius: $card-radius;
+    border-top-right-radius: $card-radius;
+  }
   &:hover {
     box-shadow: $shadow-small-hover;
   }
 }
 
+.title {
+  font-size: 18px;
+}
+
+.description {
+  font-size: 14px;
+  border-top: 1px solid $grey-dark;
+  text-align: justify;
+}
+
 .container {
   padding: 48px 24px;
   text-align: center;
+  font-family: 'Nunito', sans-serif;
+  background-color: $grey-light;
+  color: $text-default;
+  h3 {
+    max-width: 660px;
+    margin: 0 auto 24px;
+  }
 }
 
 @media (max-width: 720px) {

@@ -4,6 +4,7 @@ import Freedom from '../assets/freedom.jpeg';
 import Goal from '../assets/goal.jpeg';
 import Honor from '../assets/honor.jpeg';
 import Mastery from '../assets/mastery.jpeg';
+import Motivators from '../assets/moving-motivators.jpg';
 import Order from '../assets/order.jpeg';
 import Power from '../assets/power.jpeg';
 import Relatedness from '../assets/relatedness.jpeg';
@@ -11,8 +12,11 @@ import Status from '../assets/status.jpeg';
 
 export const routes = [
   {
-    route: '/moving-motivator',
+    route: '/moving-motivators',
     label: 'Moving Motivators',
+    image: Motivators,
+    description:
+      'An exercise to help you understand what it is that motivates you and how a change may affect you.',
     routes: [
       { route: '/manual', label: 'DIY' },
       { route: '/mentor', label: 'Mentor' },
@@ -117,11 +121,12 @@ export const motivators = [
 
 export const texts = {
   motivators: {
+    title: 'Moving Motivators',
     info: (
       <div>
-        This is an exercise to reflect on people's motivation and how it is
-        affected by change. The cards here help you unveil and discuss 10
-        intrinsic desires, which motivate people most.
+        This is an exercise to reflect on your motivation and how it is affected
+        by change. The cards here help you unveil and discuss 10 intrinsic
+        desires, which motivate people most.
         <br />
         <br />
         Try the following:

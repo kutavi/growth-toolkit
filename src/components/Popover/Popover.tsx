@@ -3,7 +3,7 @@ import * as styles from './Popover.module.scss';
 
 interface PopoverProps {
   title: string;
-  description: string;
+  description: string | JSX.Element;
   isShown: boolean;
   canClose?: boolean;
 }
@@ -25,16 +25,14 @@ export const Popover = ({
   }
   return (
     <div className={styles.popover}>
-      <div className={styles.cardInner}>
-        <div className={styles.header}>
-          <span className={styles.name}>{title}</span>
-          {canClose && (
-            <span onClick={() => setOpen(false)} className={styles.closeButton}>
-              {'x'}
-            </span>
-          )}
-          <div className={styles.description}>{description}</div>
-        </div>
+      <div className={styles.header}>
+        <span className={styles.name}>{title}</span>
+        {canClose && (
+          <span onClick={() => setOpen(false)} className={styles.closeButton}>
+            {'x'}
+          </span>
+        )}
+        <div className={styles.description}>{description}</div>
       </div>
     </div>
   );

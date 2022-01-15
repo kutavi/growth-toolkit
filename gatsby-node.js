@@ -18,7 +18,7 @@ exports.onPreInit = () => {
 };
 
 exports.onPostBuild = () => {
-  fs.rmdirSync(path.join(__dirname, 'docs'), { recursive: true });
+  fs.rmSync(path.join(__dirname, 'docs'), { recursive: true });
   fs.renameSync(path.join(__dirname, 'public'), path.join(__dirname, 'docs'));
   fs.renameSync(
     path.join(__dirname, 'public_dev'),
