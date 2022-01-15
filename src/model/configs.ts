@@ -70,9 +70,9 @@ export const motivators = [
     description:
       'My work challenges my competence but it is still within my abilities.',
     examples: [
-      'Trending in unknown waters all the time can really stress you out',
+      'Treading in unknown waters all the time can really stress you out',
       'It is important for you to feel that you are good in what you do and are constantly evolving',
-      'You prefer a clear, managable progress and learning curve',
+      'You prefer a clear, visible progress and learning curve',
       'Being thrown in a new area does not work good for you',
     ],
     color: '#33b09d',
@@ -108,7 +108,7 @@ export const motivators = [
     icon: Order,
     examples: [
       'Having a robust process behind every piece of work is important to you',
-      'You cant imagine working on environments where there is no documentation or clear rules',
+      'You cant imagine working in environments where there is no documentation or rules',
       'You prefer not having to organise and figure out things outside your role or seak out clarifications',
       'Seeing others disrupting the process or being chaotic can really fire you up',
     ],

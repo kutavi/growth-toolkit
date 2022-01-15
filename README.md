@@ -10,7 +10,7 @@ Digital tools to help you in your personal development and decision making
 
 Tool | view_at  | info
 :--- | :--- | :--- |
-Moving motivators |  [**link**](https://atseniklidou.github.io/growth-toolkit/moving-motivators)  | [link](https://management30.com/practice/moving-motivators/)
+Moving motivators |  [**link**](https://kutavi.github.io/growth-toolkit/)  | [link](https://management30.com/practice/moving-motivators/)
 
 &nbsp;
 
