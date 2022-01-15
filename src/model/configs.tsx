@@ -168,9 +168,9 @@ export const texts = {
           </li>
           <li>Think about your current job. How is each motivator doing?</li>
           <li>
-            Are you going through a change (new role, new project, team change,
-            etc)? Check which motivators get affected and the impact to your
-            most important ones.
+            Are you going through a change like a new role, project or team?
+            Check the impact to your motivators. Are your important ones going
+            up or down?
           </li>
         </ol>
         You can read more{' '}
@@ -180,7 +180,8 @@ export const texts = {
           here
         </a>
         <br />
-        Or watch an example
+        <br />
+        Or watch an example{' '}
         <a target='_blank' href='https://www.youtube.com/watch?v=2oh7D_n4YK4'>
           here
         </a>
