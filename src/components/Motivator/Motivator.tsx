@@ -22,6 +22,7 @@ interface MotivatorProps {
   examples?: string[];
   selections?: { value: number; label: string }[];
 }
+const shiftBy = '48px';
 
 export const Motivator = ({
   name,
@@ -105,8 +106,16 @@ export const Motivator = ({
 
   const cardStyling = {
     0: {},
-    1: { marginRight: '-48px', backgroundColor: '#007e29' },
-    '-1': { marginLeft: '-48px', backgroundColor: '#d40000' },
+    1: {
+      marginRight: `-${shiftBy}`,
+      backgroundColor: '#007e29',
+      marginLeft: shiftBy,
+    },
+    '-1': {
+      marginLeft: `-${shiftBy}`,
+      backgroundColor: '#d40000',
+      marginRight: shiftBy,
+    },
   }[selection];
 
   const selectionsStyling = selections ? { paddingRight: '80px' } : {};
