@@ -5,9 +5,14 @@ export interface SettingsState {
   isMotivatorsInfoOpen: boolean;
 }
 
+const availableSpaceBreakpoint = 1450;
 export const initialState = {
-  isNavigationOpen: true,
-  isMotivatorsInfoOpen: true,
+  isNavigationOpen:
+    typeof window !== 'undefined' &&
+    window.innerWidth >= availableSpaceBreakpoint,
+  isMotivatorsInfoOpen:
+    typeof window !== 'undefined' &&
+    window.innerWidth >= availableSpaceBreakpoint,
 };
 
 interface Action {

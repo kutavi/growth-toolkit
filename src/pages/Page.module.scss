@@ -11,13 +11,6 @@ $card-radius: 16px;
   }
 }
 
-.wrapper {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-
 .card {
   box-shadow: $shadow-small;
   border-radius: $card-radius;
@@ -60,11 +53,5 @@ $card-radius: 16px;
   h3 {
     max-width: 660px;
     margin: 0 auto 24px;
-  }
-}
-
-@media (max-width: 720px) {
-  .wrapper {
-    justify-content: center;
   }
 }

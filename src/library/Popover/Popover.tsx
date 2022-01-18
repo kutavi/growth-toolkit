@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Icon, IconType } from '../Icon/Icon';
 import * as styles from './Popover.module.scss';
 
@@ -20,6 +21,17 @@ export const Popover = ({
   canClose = true,
   buttonIcon,
 }: PopoverProps) => {
+  // workaround to gatsby's rehydration issue
+  const [isClient, setClient] = useState(false);
+
+  useEffect(() => {
+    setClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
+
   const positionStyle = {
     'top-left': styles.topLeft,
     'top-right': styles.topRight,
