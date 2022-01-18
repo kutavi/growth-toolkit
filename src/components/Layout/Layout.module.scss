@@ -6,7 +6,32 @@
   box-shadow: $shadow-small;
 }
 
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
 .content {
   padding: 16px 36px;
   background-color: $grey-light;
+}
+
+.item {
+  padding: 8px 0;
+  text-decoration: none;
+  color: $text-inactive;
+  font-size: 18px;
+  &:hover {
+    color: $text-default;
+  }
+}
+
+.activeItem {
+  color: $text-default;
+}
+
+.submenu {
+  padding-left: 12px;
+  display: flex;
+  flex-direction: column;
 }

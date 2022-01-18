@@ -10,16 +10,29 @@ import Power from '../assets/power.jpeg';
 import Relatedness from '../assets/relatedness.jpeg';
 import Status from '../assets/status.jpeg';
 
+const movingMotivatorsLink = '/moving-motivators';
 export const routes = [
   {
-    route: '/moving-motivators',
+    route: movingMotivatorsLink,
     label: 'Moving Motivators',
     image: Motivators,
     description:
       'An exercise to help you understand what it is that motivates you and how a change may affect you.',
     routes: [
-      { route: '/manual', label: 'DIY' },
-      { route: '/mentor', label: 'Mentor' },
+      {
+        route: movingMotivatorsLink,
+        label: 'Set your order',
+        description:
+          'Reorder the motivators from most important to least for you',
+      },
+      {
+        route: `${movingMotivatorsLink}/health-check`,
+        label: 'Health check',
+        description:
+          'Think about your current job and answer yes/no whether you believe each motivator exists for you.',
+      },
+      // tslint:disable-next-line: max-line-length
+      //   { route: `${movingMotivatorsLink}/evaluation`, label: 'Evaluate a change', description: 'Think an upcoming change and answer up/down/no change for each motivator if you think they are going to improve or not.' },
     ],
   },
 ];
@@ -29,7 +42,7 @@ export const motivators = [
     name: 'Freedom',
     description:
       'I am independent of others with my work and my responsibilities.',
-    color: '#ff0000',
+    color: '#ef4e0f',
     icon: Freedom,
     examples: [
       'You prefer working alone and taking full ownership of your work',
@@ -78,7 +91,7 @@ export const motivators = [
     name: 'Honor',
     description:
       'I feel proud that my personal values are reflected in how I work.',
-    color: '#2aa7de',
+    color: '#00A3CE',
     icon: Honor,
     examples: [
       'Working with people and in an environment that shares the same values and mentality as you is important to you.',
@@ -112,7 +125,7 @@ export const motivators = [
   {
     name: 'Relatedness',
     description: 'I have good social contacts with the people in my work.',
-    color: '#00a045',
+    color: '#b63b9f',
     icon: Relatedness,
     examples: [
       "You can't imagine spending a day without having a word with your colleagues",
@@ -125,7 +138,7 @@ export const motivators = [
     name: 'Status',
     description:
       'My position is good, and recognized by the people who work with me.',
-    color: '#d400ff',
+    color: '#EB67A2',
     icon: Status,
     examples: [
       'You prefer working in prestigious workplaces that are recognized in the market.',

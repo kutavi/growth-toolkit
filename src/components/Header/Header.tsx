@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 
-import { routes } from '../../model/configs';
+import { routes } from '../../utils/configs';
 import * as styles from './Header.module.scss';
 
 export const Header = () => (

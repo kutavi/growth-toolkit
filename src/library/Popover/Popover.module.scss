@@ -5,10 +5,7 @@
   padding: 12px;
   min-height: 50px;
   width: 260px;
-  position: fixed;
   z-index: $popover;
-  left: 1%;
-  top: 1%;
   color: $text-default;
   font-weight: bold;
   font-family: 'Nunito', sans-serif;
@@ -18,21 +15,43 @@
   background-color: $info;
 }
 
-.infoIcon {
-  position: fixed;
-  left: 1%;
-  top: 1%;
+.iconButton {
   border: 1px solid $grey-light;
   box-shadow: $shadow-small-hover;
-  font-weight: bold;
   color: $text-default;
   background-color: $info;
   border-radius: 100%;
-  padding: 2px 10px;
+  padding: 6px 8px;
   cursor: pointer;
 }
 
-.name {
+.topLeft {
+  position: fixed;
+  background-color: $info;
+  left: 1%;
+  top: 1%;
+}
+
+.topRight {
+  position: fixed;
+  background-color: $grey-dark;
+  right: 1%;
+  top: 1%;
+}
+
+.bottomLeft {
+  position: fixed;
+  left: 1%;
+  bottom: 1%;
+}
+
+.bottomRight {
+  position: fixed;
+  right: 1%;
+  bottom: 1%;
+}
+
+.title {
   font-size: 22px;
 }
 .header {
@@ -43,7 +62,7 @@
   justify-content: space-between;
 }
 
-.description {
+.content {
   font-size: 16px;
   margin-top: 12px;
 }
@@ -51,7 +70,6 @@
 .closeButton {
   transition: transform 0.5s ease;
   color: $cancel;
-  font-size: 28px;
   transform: rotate(90deg);
   position: absolute;
   cursor: pointer;

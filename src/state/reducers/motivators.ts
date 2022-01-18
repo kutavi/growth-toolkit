@@ -1,3 +1,4 @@
+import { motivators } from '../../utils/configs';
 import { CARDS_STATE } from '../types/types';
 
 export interface MotivatorsState {
@@ -5,7 +6,7 @@ export interface MotivatorsState {
 }
 
 export const initialState = {
-  cards: [],
+  cards: motivators,
 };
 
 interface Action {

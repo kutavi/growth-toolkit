@@ -4,7 +4,7 @@ import { load, save } from 'redux-localstorage-simple';
 import combinedReducers from './reducers/root-reducer';
 
 import '../styles/core.scss';
-import { MotivatorsState } from './reducers/game';
+import { MotivatorsState } from './reducers/motivators';
 
 export interface State {
   motivators: MotivatorsState;
