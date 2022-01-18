@@ -4,12 +4,14 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import { Layout } from '../../components/Layout/Layout';
 import { Motivator } from '../../components/Motivator/Motivator';
 import { Popover } from '../../library/Popover/Popover';
-import { useMotivators } from '../../state/hooks/useOptions';
+import { useMotivators } from '../../state/hooks/useMotivators';
+import { useSettings } from '../../state/hooks/useSettings';
 import { texts } from '../../utils/configs';
 import { reorderArray } from '../../utils/helpers';
 
 const Home = () => {
   const { updateCards, cards: stateCards } = useMotivators();
+  const { isMotivatorsInfoOpen, updateSettings } = useSettings();
   const [cards, setCards] = useState(stateCards);
 
   const reorder = useCallback(
@@ -23,6 +25,8 @@ const Home = () => {
   return (
     <DndProvider backend={HTML5Backend}>
       <Popover
+        isShown={isMotivatorsInfoOpen}
+        toggle={value => updateSettings({ isMotivatorsInfoOpen: value })}
         position={'top-left'}
         buttonIcon={'help'}
         title={texts.motivators.title}>

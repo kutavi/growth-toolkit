@@ -1,1 +1,2 @@
 export const CARDS_STATE = 'CARDS_STATE';
+export const SETTINGS_STATE = 'SETTINGS_STATE';

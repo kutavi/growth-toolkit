@@ -1,29 +1,25 @@
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { load, save } from 'redux-localstorage-simple';
-import combinedReducers from './reducers/root-reducer';
+import combinedReducers, { Store } from './reducers/root';
 
 import '../styles/core.scss';
-import { MotivatorsState } from './reducers/motivators';
 
-export interface State {
-  motivators: MotivatorsState;
-}
-
-export default (preloadedState: State) => {
+const savedStates = ['motivators', 'settings'];
+export default (preloadedState: Store) => {
   const store = createStore(
     combinedReducers,
     getLoadedState(preloadedState),
-    composeWithDevTools(applyMiddleware(save({ states: ['motivators'] })))
+    composeWithDevTools(applyMiddleware(save({ states: savedStates })))
   );
   return store;
 };
 
-const getLoadedState = (preloadedState: State) => {
+const getLoadedState = (preloadedState: Store) => {
   if (typeof window !== 'undefined')
     return {
       ...preloadedState,
-      ...load({ states: ['motivators'], disableWarnings: true }),
+      ...load({ states: savedStates, disableWarnings: true }),
     };
 
   return {

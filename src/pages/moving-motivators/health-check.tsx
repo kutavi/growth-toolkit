@@ -1,14 +1,18 @@
 import { Layout } from '../../components/Layout/Layout';
 import { Motivator } from '../../components/Motivator/Motivator';
 import { Popover } from '../../library/Popover/Popover';
-import { useMotivators } from '../../state/hooks/useOptions';
+import { useMotivators } from '../../state/hooks/useMotivators';
+import { useSettings } from '../../state/hooks/useSettings';
 import { texts } from '../../utils/configs';
 
 const HealthCheck = () => {
   const { cards } = useMotivators();
+  const { isMotivatorsInfoOpen, updateSettings } = useSettings();
   return (
     <>
       <Popover
+        isShown={isMotivatorsInfoOpen}
+        toggle={value => updateSettings({ isMotivatorsInfoOpen: value })}
         position={'top-left'}
         buttonIcon={'help'}
         title={texts.motivators.title}>

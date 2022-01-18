@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 
-export const useIsMobile = () => {
+const defaultBreakpoint = 1450;
+export const useIsWindowLessThan = (breakpoint = defaultBreakpoint) => {
   const screenSize = useRef<number>(0);
 
   useEffect(() => {
@@ -14,6 +15,5 @@ export const useIsMobile = () => {
     };
   }, []);
 
-  const mobileBreakpoint = 768;
-  return screenSize.current <= mobileBreakpoint;
+  return screenSize.current <= breakpoint;
 };

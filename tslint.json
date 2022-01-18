@@ -6,6 +6,7 @@
     "exclude": ["**/*.d.ts", "src/migration/*"]
   },
   "include": ["./jest-setup.ts"],
+
   "nodePath": "./node_modules",
   "rules": {
     "radix": true,
@@ -14,6 +15,7 @@
     "eofline": true,
     "interface-name": false,
     "max-classes-per-file": false,
+    "jsx-key": true,
     "max-line-length": [
       true,
       { "limit": 120, "ignore-pattern": "^import |^export {(.*?)}" }

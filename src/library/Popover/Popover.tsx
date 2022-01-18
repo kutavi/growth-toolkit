@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Icon, IconType } from '../Icon/Icon';
 import * as styles from './Popover.module.scss';
 
@@ -8,12 +7,12 @@ interface PopoverProps {
   isShown?: boolean;
   canClose?: boolean;
   buttonIcon?: IconType;
+  toggle: (value: boolean) => void;
   position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 }
 
-const availableSpaceBreakpoint = 1450;
-
 export const Popover = ({
+  toggle,
   title,
   children,
   isShown,
@@ -21,12 +20,6 @@ export const Popover = ({
   canClose = true,
   buttonIcon,
 }: PopoverProps) => {
-  const [isOpen, setOpen] = useState(
-    isShown ||
-      (typeof window !== 'undefined' &&
-        window.innerWidth >= availableSpaceBreakpoint)
-  );
-
   const positionStyle = {
     'top-left': styles.topLeft,
     'top-right': styles.topRight,
@@ -34,17 +27,17 @@ export const Popover = ({
     'bottom-right': styles.bottomRight,
   }[position];
 
-  if (!isOpen && buttonIcon) {
+  if (!isShown && buttonIcon) {
     return (
       <div
         className={`${styles.iconButton} ${positionStyle}`}
-        onClick={() => setOpen(true)}>
+        onClick={() => toggle(true)}>
         <Icon icon={buttonIcon} />
       </div>
     );
   }
 
-  if (!isOpen) {
+  if (!isShown) {
     return null;
   }
 
@@ -53,7 +46,7 @@ export const Popover = ({
       <div className={styles.header}>
         <span className={styles.title}>{title}</span>
         {canClose && (
-          <span onClick={() => setOpen(false)} className={styles.closeButton}>
+          <span onClick={() => toggle(false)} className={styles.closeButton}>
             <Icon icon={'close'} />
           </span>
         )}

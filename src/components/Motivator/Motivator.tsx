@@ -116,7 +116,6 @@ export const Motivator = ({
     <div
       ref={ref}
       onClick={e => {
-        //  e.preventDefault();
         setOpen(!isOpen);
       }}
       className={styles.card}
@@ -148,6 +147,7 @@ export const Motivator = ({
             {selections.map(select => (
               <div
                 className={styles.selection}
+                key={select.value}
                 style={
                   select.value === selection
                     ? {
@@ -171,8 +171,10 @@ export const Motivator = ({
         <div
           className={classnames(styles.content, { [styles.hidden]: !isOpen })}>
           <ul className={styles.list}>
-            {examples.map(text => (
-              <li className={styles.example}>{text}</li>
+            {examples.map((text, idx) => (
+              <li key={idx} className={styles.example}>
+                {text}
+              </li>
             ))}
           </ul>
         </div>
