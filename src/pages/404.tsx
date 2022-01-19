@@ -1,4 +1,4 @@
-import ActivityCards from './activity-cards';
+import ActivityCards from '../components/ActivityCards/ActivityCards';
 import * as styles from './Page.module.scss';
 
 const NotFoundPage = () => (

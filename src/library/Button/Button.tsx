@@ -10,11 +10,6 @@ interface ButtonProps {
 }
 export const Button = ({ label, id, onClick, className = '' }: ButtonProps) => (
   <div className={classnames(styles.button, className)} onClick={onClick}>
-    <span />
-    <span />
-    <span />
-    <span />
-    <span />
     {label}
   </div>
 );

@@ -3,16 +3,18 @@ import { SETTINGS_STATE } from '../types/types';
 export interface SettingsState {
   isNavigationOpen: boolean;
   isMotivatorsInfoOpen: boolean;
+  isWheelInfoOpen: boolean;
 }
 
-const availableSpaceBreakpoint = 1450;
+const availableSpaceBreakpoint = 1620;
+
+const hasAvailableSpace =
+  typeof window !== 'undefined' &&
+  window.innerWidth >= availableSpaceBreakpoint;
 export const initialState = {
-  isNavigationOpen:
-    typeof window !== 'undefined' &&
-    window.innerWidth >= availableSpaceBreakpoint,
-  isMotivatorsInfoOpen:
-    typeof window !== 'undefined' &&
-    window.innerWidth >= availableSpaceBreakpoint,
+  isNavigationOpen: hasAvailableSpace,
+  isMotivatorsInfoOpen: hasAvailableSpace,
+  isWheelInfoOpen: hasAvailableSpace,
 };
 
 interface Action {

@@ -1,9 +1,9 @@
 import { Link } from 'gatsby';
-import { routes } from '../utils/configs';
-import * as styles from './Page.module.scss';
+import { routes } from '../../utils/configs';
+import * as styles from './ActivityCards.module.scss';
 
 const ActivityCards = () => (
-  <>
+  <div className={styles.activityCards}>
     {routes.map(route => (
       <Link key={route.route} className={styles.card} to={route.route}>
         <img src={route.image} />
@@ -11,7 +11,7 @@ const ActivityCards = () => (
         <div className={styles.description}>{route.description}</div>
       </Link>
     ))}
-  </>
+  </div>
 );
 
 export default ActivityCards;

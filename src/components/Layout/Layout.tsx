@@ -1,5 +1,3 @@
-// import { Header } from '../Header/Header';
-
 import { Link } from 'gatsby';
 import { Popover } from '../../library/Popover/Popover';
 import { useSettings } from '../../state/hooks/useSettings';
