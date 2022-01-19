@@ -23,8 +23,8 @@ const selectionSetting = {
 };
 export const WheelView = ({ selectedChart }: WheelViewProps) => {
   const { categories: wheelData, updateWheel } = useWheelOfLife();
-  const idealColor = selectedChart === 'ideal' ? '#00088980' : '#000ffb54'; 
-  const currentColor = selectedChart === 'current' ?'#6a6a6abf' : '#959595bd';
+  const idealColor = selectedChart === 'ideal' ? '#00088980' : '#000ffb54';
+  const currentColor = selectedChart === 'current' ? '#6a6a6abf' : '#959595bd';
   const categoriesLabels = wheelData.map(category => category.label);
   const interactionPoints = new Array(highestScore).fill(0).map((i, index) => ({
     label: '',
@@ -94,7 +94,7 @@ export const WheelView = ({ selectedChart }: WheelViewProps) => {
             grid: {
               color: 'black',
             },
-      
+
             ticks: {
               z: 1,
               font: {
@@ -122,4 +122,4 @@ export const WheelView = ({ selectedChart }: WheelViewProps) => {
       }}
     />
   );
-};;;;;
+};

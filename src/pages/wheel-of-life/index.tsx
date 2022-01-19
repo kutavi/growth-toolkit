@@ -11,7 +11,7 @@ import * as styles from '../Page.module.scss';
 const selections = Object.values(WheelValues);
 
 const Home = () => {
-  const { isWheelInfoOpen, updateSettings} = useSettings();
+  const { isWheelInfoOpen, updateSettings } = useSettings();
   const [selection, updateSelection] = useState(selections[0]);
   return (
     <>
@@ -30,12 +30,16 @@ const Home = () => {
             <div className={styles.title}>{'Pick one:'}</div>
             <Button
               label={'Current life'}
-              className={`${styles.currentButton} ${selection === selections[0] ? styles.currentActive : ''}`}
+              className={`${styles.currentButton} ${
+                selection === selections[0] ? styles.currentActive : ''
+              }`}
               onClick={() => updateSelection(selections[0])}
             />
             <Button
               label={'Ideal life'}
-              className={`${styles.idealButton} ${selection === selections[1] ? styles.idealActive : ''}`}
+              className={`${styles.idealButton} ${
+                selection === selections[1] ? styles.idealActive : ''
+              }`}
               onClick={() => updateSelection(selections[1])}
             />
           </div>

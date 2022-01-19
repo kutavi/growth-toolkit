@@ -42,7 +42,7 @@ export const routes = [
     image: WheelOfLife,
     description:
       'An exercise to help you improve your life focus by identifying the areas in your life that need attention.',
-  }
+  },
 ];
 
 export const motivators = [
@@ -171,7 +171,16 @@ export const motivators = [
   },
 ];
 
-export const wheelOfLife = ['Career','Finance', 'Relationships', 'Social', 'Health', 'Family', 'Growth', 'Attitude'];
+export const wheelOfLife = [
+  'Career',
+  'Finance',
+  'Relationships',
+  'Social',
+  'Health',
+  'Family',
+  'Growth',
+  'Attitude',
+];
 
 export const texts = {
   motivators: {
@@ -213,33 +222,36 @@ export const texts = {
   },
   wheelOfLife: {
     title: 'Wheel Of Life',
-    info: <div>
-    This is an exercise to help you quickly identify the areas in your life to 
-    which you want to devote more energy and attention, 
-    and helps you understand where you might want to cut back and put less effort.
-    <br />
-    <br />
-    Try the following:
-    <ol>
-      <li>
-        First, on a scale of 0 to 10, think about the amount of attention
-        you're devoting to each area of your life.
-      </li>
-      <li>
-        Next, consider your ideal level of attention in each area of your life. 
-        What would that look like?
-      </li>
-      <li>
-        Finally, use the visual representation of your current life and your ideal life balance.
-        Where are the gaps? These are the areas of your life that need more or less of attention.
-      </li>
-    </ol>
-    You can read more{' '}
-    <a
-      target='_blank'
-      href='https://www.mindtools.com/pages/article/newHTE_93.htm'>
-      here
-    </a>
-  </div>,
+    info: (
+      <div>
+        This is an exercise to help you quickly identify the areas in your life
+        to which you want to devote more energy and attention, and helps you
+        understand where you might want to cut back and put less effort.
+        <br />
+        <br />
+        Try the following:
+        <ol>
+          <li>
+            First, on a scale of 0 to 10, think about the amount of attention
+            you're devoting to each area of your life.
+          </li>
+          <li>
+            Next, consider your ideal level of attention in each area of your
+            life. What would that look like?
+          </li>
+          <li>
+            Finally, use the visual representation of your current life and your
+            ideal life balance. Where are the gaps? These are the areas of your
+            life that need more or less of attention.
+          </li>
+        </ol>
+        You can read more{' '}
+        <a
+          target='_blank'
+          href='https://www.mindtools.com/pages/article/newHTE_93.htm'>
+          here
+        </a>
+      </div>
+    ),
   },
 };
