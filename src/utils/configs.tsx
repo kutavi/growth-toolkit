@@ -11,7 +11,7 @@ import Relatedness from '../assets/relatedness.jpeg';
 import Status from '../assets/status.jpeg';
 import WheelOfLife from '../assets/wheel-of-life.png';
 
-const movingMotivatorsLink = '/moving-motivators';
+const movingMotivatorsLink = '/moving-motivators/';
 export const routes = [
   {
     route: movingMotivatorsLink,
@@ -27,7 +27,7 @@ export const routes = [
           'Reorder the motivators from most important to least for you',
       },
       {
-        route: `${movingMotivatorsLink}/health-check`,
+        route: `${movingMotivatorsLink}health-check/`,
         label: 'Health check',
         description:
           'Think about your current job and answer yes/no whether you believe each motivator exists for you.',
@@ -37,7 +37,7 @@ export const routes = [
     ],
   },
   {
-    route: '/wheel-of-life',
+    route: '/wheel-of-life/',
     label: 'Wheel of Life',
     image: WheelOfLife,
     description:

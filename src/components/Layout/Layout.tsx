@@ -31,7 +31,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 partiallyActive
                 key={route.route}
                 className={styles.item}
-                to={route.route + '/'}
+                to={route.route}
                 activeClassName={styles.activeItem}>
                 {route.label}
               </Link>
@@ -41,7 +41,7 @@ export const Layout = ({ children }: LayoutProps) => {
                     <Link
                       key={subroute.route}
                       className={styles.item}
-                      to={subroute.route + '/'}
+                      to={subroute.route}
                       activeClassName={styles.activeItem}>
                       {`${index + 1}. ${subroute.label}`}
                     </Link>
