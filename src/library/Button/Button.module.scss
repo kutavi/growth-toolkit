@@ -1,0 +1,18 @@
+@import 'src/styles/_base.scss';
+
+.button {
+  padding: 12px;
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  border: 2px solid $grey-dark;
+  color: white;
+  font-weight: bold;
+  background-color: #492ead;
+  width: 72px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #381d9d;
+  }
+}

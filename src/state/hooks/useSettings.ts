@@ -12,6 +12,9 @@ export const useSettings = () => {
   const isMotivatorsInfoOpen = useSelector(
     (state: Store) => state.settings.isMotivatorsInfoOpen
   );
+  const isWheelInfoOpen = useSelector(
+    (state: Store) => state.settings.isWheelInfoOpen
+  );
 
   const updateSettings = (newSettings: Partial<SettingsState>) => {
     dispatch(updateSettingsAction(newSettings));
@@ -20,6 +23,7 @@ export const useSettings = () => {
   return {
     isNavigationOpen,
     isMotivatorsInfoOpen,
+    isWheelInfoOpen,
     updateSettings,
   };
 };

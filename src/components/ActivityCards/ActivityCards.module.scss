@@ -1,0 +1,45 @@
+@import 'src/styles/_base.scss';
+
+$card-width: 200px;
+$card-radius: 16px;
+
+.activityCards {
+  display: flex;
+  justify-content: space-around;
+  max-width: 690px;
+  margin: auto;
+  margin-top: 64px;
+}
+.card {
+  box-shadow: $shadow-small;
+  border-radius: $card-radius;
+  background-color: white;
+  max-width: $card-width;
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding-bottom: 8px;
+  > div {
+    padding: 12px 24px;
+  }
+  > img {
+    max-width: $card-width;
+    max-height: 150px;
+    border-top-left-radius: $card-radius;
+    border-top-right-radius: $card-radius;
+    border-bottom: 1px solid $grey-dark;
+  }
+  &:hover {
+    box-shadow: $shadow-small-hover;
+  }
+}
+
+.title {
+  font-size: 18px;
+}
+
+.description {
+  font-size: 14px;
+  border-top: 1px solid $grey-dark;
+  text-align: justify;
+}

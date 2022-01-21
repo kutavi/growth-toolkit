@@ -9,8 +9,9 @@ import Order from '../assets/order.jpeg';
 import Power from '../assets/power.jpeg';
 import Relatedness from '../assets/relatedness.jpeg';
 import Status from '../assets/status.jpeg';
+import WheelOfLife from '../assets/wheel-of-life.png';
 
-const movingMotivatorsLink = '/moving-motivators';
+const movingMotivatorsLink = '/moving-motivators/';
 export const routes = [
   {
     route: movingMotivatorsLink,
@@ -26,7 +27,7 @@ export const routes = [
           'Reorder the motivators from most important to least for you',
       },
       {
-        route: `${movingMotivatorsLink}/health-check`,
+        route: `${movingMotivatorsLink}health-check/`,
         label: 'Health check',
         description:
           'Think about your current job and answer yes/no whether you believe each motivator exists for you.',
@@ -34,6 +35,13 @@ export const routes = [
       // tslint:disable-next-line: max-line-length
       //   { route: `${movingMotivatorsLink}/evaluation`, label: 'Evaluate a change', description: 'Think an upcoming change and answer up/down/no change for each motivator if you think they are going to improve or not.' },
     ],
+  },
+  {
+    route: '/wheel-of-life/',
+    label: 'Wheel of Life',
+    image: WheelOfLife,
+    description:
+      'An exercise to help you improve your life focus by identifying the areas in your life that need attention.',
   },
 ];
 
@@ -163,6 +171,17 @@ export const motivators = [
   },
 ];
 
+export const wheelOfLife = [
+  'Career',
+  'Finance',
+  'Relationships',
+  'Social',
+  'Health',
+  'Family',
+  'Growth',
+  'Attitude',
+];
+
 export const texts = {
   motivators: {
     title: 'Moving Motivators',
@@ -196,6 +215,40 @@ export const texts = {
         <br />
         Or watch an example{' '}
         <a target='_blank' href='https://www.youtube.com/watch?v=2oh7D_n4YK4'>
+          here
+        </a>
+      </div>
+    ),
+  },
+  wheelOfLife: {
+    title: 'Wheel Of Life',
+    info: (
+      <div>
+        This is an exercise to help you quickly identify the areas in your life
+        to which you want to devote more energy and attention, and helps you
+        understand where you might want to cut back and put less effort.
+        <br />
+        <br />
+        Try the following:
+        <ol>
+          <li>
+            First, on a scale of 0 to 10, think about the amount of attention
+            you're devoting to each area of your life.
+          </li>
+          <li>
+            Next, consider your ideal level of attention in each area of your
+            life. What would that look like?
+          </li>
+          <li>
+            Finally, use the visual representation of your current life and your
+            ideal life balance. Where are the gaps? These are the areas of your
+            life that need more or less of attention.
+          </li>
+        </ol>
+        You can read more{' '}
+        <a
+          target='_blank'
+          href='https://www.mindtools.com/pages/article/newHTE_93.htm'>
           here
         </a>
       </div>
