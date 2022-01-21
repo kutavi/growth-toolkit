@@ -7,29 +7,40 @@ import {
 } from 'chart.js';
 import React from 'react';
 import { PolarArea } from 'react-chartjs-2';
-import { useWheelOfLife } from '../../state/hooks/useWheelOfLife';
 import { WheelValues } from '../../state/reducers/wheelOfLife';
 
-interface WheelViewProps {
-  selectedChart: Partial<WheelValues>;
-}
-ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
+type Dataset = {
+    label: string;
+    id: any;
+    data: number[],
+    backgroundColor: string,
+    borderColor?: string,
+    borderWidth?: number,
+    animation?: {
+      duration: number,
+    }
+};
 
-const highestScore = 10;
+interface WheelViewProps {
+  chartToEdit: Partial<WheelValues>;
+  maxPoints: number;
+  datasetLabels: string[];
+  datasets: Dataset[];
+  updateWheel: (chartToEdit: Partial<WheelValues>, category: string, score: number) => void;
+}
+
+ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
 const selectionSetting = {
   intersect: true,
   mode: 'point' as any,
 };
-export const WheelView = ({ selectedChart }: WheelViewProps) => {
-  const { categories: wheelData, updateWheel } = useWheelOfLife();
-  const idealColor = selectedChart === 'ideal' ? '#00088980' : '#000ffb54';
-  const currentColor = selectedChart === 'current' ? '#6a6a6abf' : '#959595bd';
-  const categoriesLabels = wheelData.map(category => category.label);
-  const interactionPoints = new Array(highestScore).fill(0).map((i, index) => ({
+export const WheelView = ({ chartToEdit, maxPoints, datasetLabels, datasets, updateWheel }: WheelViewProps) => {
+  const interactionPoints: Dataset[] = new Array(maxPoints).fill(0).map((i, index) => ({
+    id: index,
     label: '',
-    data: new Array(wheelData.length).fill(index + 1),
-    backgroundColor: ['transparent'],
+    data: new Array(datasetLabels.length).fill(index + 1),
+    backgroundColor: 'transparent',
     borderColor: 'black',
     borderWidth: 1,
     animation: {
@@ -38,23 +49,8 @@ export const WheelView = ({ selectedChart }: WheelViewProps) => {
   }));
 
   const data = {
-    labels: categoriesLabels,
-    datasets: interactionPoints.concat([
-      {
-        label: 'Current state',
-        data: wheelData.map(category => category.current),
-        backgroundColor: [currentColor],
-        borderColor: 'white',
-        borderWidth: 1,
-      },
-      {
-        label: 'Where I want to be',
-        data: wheelData.map(category => category.ideal),
-        backgroundColor: [idealColor],
-        borderColor: 'white',
-        borderWidth: 1,
-      },
-    ] as any),
+    labels: datasetLabels,
+    datasets: interactionPoints.concat(datasets),
   };
 
   return (
@@ -80,13 +76,9 @@ export const WheelView = ({ selectedChart }: WheelViewProps) => {
         onClick: (evt, elements) => {
           if (elements.length > 0) {
             const selection = elements[0];
-            const category = categoriesLabels[selection.index];
-            const score = data.datasets[elements[0].datasetIndex]
-              .data[0] as number;
-            const categories = wheelData.map(c =>
-              c.label === category ? { ...c, [selectedChart]: score } : c
-            );
-            updateWheel({ categories });
+            const category = datasetLabels[selection.index];
+            const score = data.datasets[elements[0].datasetIndex].data[0];
+            updateWheel(chartToEdit, category, score);
           }
         },
         scales: {
@@ -103,15 +95,15 @@ export const WheelView = ({ selectedChart }: WheelViewProps) => {
               },
               backdropColor: '#9d9d9d',
               color: 'white',
-              maxTicksLimit: highestScore,
-              count: highestScore,
+              maxTicksLimit: maxPoints,
+              count: maxPoints,
               precision: 0,
               stepSize: 1,
             },
             pointLabels: {
               display: true,
               centerPointLabels: true,
-              color: selectedChart === 'ideal' ? '#00088980' : '#6a6a6abf',
+              color: datasets.find(dataset => dataset.id === chartToEdit)?.backgroundColor,
               font: {
                 weight: 'bold',
                 size: 22,
