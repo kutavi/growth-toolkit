@@ -8,6 +8,8 @@ import {
 import React from 'react';
 import { PolarArea } from 'react-chartjs-2';
 import { WheelValues } from '../../state/reducers/wheelOfLife';
+import * as colors from '../../styles/_colors.module.scss';
+import * as fonts from '../../styles/_fonts.module.scss';
 
 type Dataset = {
   label: string;
@@ -114,11 +116,10 @@ export const WheelView = ({
             ticks: {
               z: 1,
               font: {
-                // tslint:disable-next-line: no-magic-numbers
-                size: isMobile ? 8 : 14,
+                size: isMobile ? fonts.fontTiny : fonts.fontSmall,
                 weight: 'bold',
               },
-              backdropColor: '#9d9d9d',
+              backdropColor: colors.grey,
               color: 'white',
               maxTicksLimit: maxPoints,
               count: maxPoints,
@@ -132,8 +133,7 @@ export const WheelView = ({
                 ?.backgroundColor,
               font: {
                 weight: 'bold',
-                // tslint:disable-next-line: no-magic-numbers
-                size: isMobile ? 14 : 22,
+                size: isMobile ? fonts.fontSmall : fonts.fontLg,
               },
             },
           },

@@ -1,0 +1,49 @@
+// UI colors
+
+$white: #ffffff;
+$text-default: #414141;
+$text-inactive: #b8b8b8;
+$grey-light: #fbfbfb;
+$grey: #9d9d9d;
+$grey-dark: #eaeaea;
+$info: #c5e7ff;
+$cancel: #ffa4a4;
+$shadow-small: 0px 0px 4px -2px $text-default;
+$shadow-small-hover: 0px 0px 4px 2px $text-inactive;
+$yes: #007e29;
+$no: #d40000;
+
+// Content colors
+
+$red: #bea89f;
+$orange: #ff7d00;
+$brown: #8c6938;
+$gold: #968f00;
+$cyan: #00a3ce;
+$blue: #6600de;
+$green: #33b09d;
+$dark-pink: #b63b9f;
+$pink: #eb67a2;
+$purple: #af00fc;
+
+:export {
+  textDefault: $text-default;
+  textInactive: $text-inactive;
+  greyLight: $grey-light;
+  greyDark: $grey-dark;
+  grey: $grey;
+  info: $info;
+  cancel: $cancel;
+  yes: $yes;
+  no: $no;
+  purple: $purple;
+  pink: $pink;
+  red: $red;
+  orange: $orange;
+  gold: $gold;
+  blue: $blue;
+  darkPink: $dark-pink;
+  green: $green;
+  cyan: $cyan;
+  brown: $brown;
+}

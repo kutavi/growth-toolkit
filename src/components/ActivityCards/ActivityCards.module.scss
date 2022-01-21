@@ -35,11 +35,11 @@ $card-radius: 16px;
 }
 
 .title {
-  font-size: 18px;
+  font-size: $font-normal;
 }
 
 .description {
-  font-size: 14px;
+  font-size: $font-small;
   border-top: 1px solid $grey-dark;
   text-align: justify;
 }
