@@ -11,5 +11,6 @@ For example:
 @import './themes/default';
 */
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-@import './_colors';
+@import './_colors.module.scss';
 @import './_zIndex';
+@import './_fonts.module.scss';

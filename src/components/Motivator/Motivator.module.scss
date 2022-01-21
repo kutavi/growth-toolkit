@@ -22,7 +22,7 @@ $card-padding: 12px;
 }
 
 .name {
-  font-size: 26px;
+  font-size: $font-big;
 }
 .header {
   width: 100%;
@@ -38,7 +38,7 @@ $card-padding: 12px;
   border-radius: 4px;
 }
 .description {
-  font-size: 14px;
+  font-size: $font-small;
   margin-top: 12px;
 }
 
@@ -57,6 +57,7 @@ $card-padding: 12px;
   transition: max-height 0.2s ease;
   max-height: 500px;
   overflow: hidden;
+  font-size: $font-normal;
   padding: $card-padding 0;
   color: $text-default;
 }
@@ -97,4 +98,25 @@ $card-padding: 12px;
 
 .selection {
   padding: 6px;
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: $font-lg;
+  }
+
+  .description {
+    font-size: $font-xs;
+  }
+
+  .content {
+    font-size: $font-small;
+  }
+
+  .selections {
+    font-size: $font-small;
+  }
+  .image {
+    width: 82px;
+  }
 }

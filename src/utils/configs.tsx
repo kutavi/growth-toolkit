@@ -10,6 +10,7 @@ import Power from '../assets/power.jpeg';
 import Relatedness from '../assets/relatedness.jpeg';
 import Status from '../assets/status.jpeg';
 import WheelOfLife from '../assets/wheel-of-life.png';
+import * as colors from '../styles/_colors.module.scss';
 
 const movingMotivatorsLink = '/moving-motivators/';
 export const routes = [
@@ -50,19 +51,19 @@ export const motivators = [
     name: 'Freedom',
     description:
       'I am independent of others with my work and my responsibilities.',
-    color: '#ef4e0f',
+    color: colors.red,
     icon: Freedom,
     examples: [
-      'You prefer working alone and taking full ownership of your work',
+      'You prefer taking full ownership of your work',
       'Constant coordination, discussions, approvals and need to clarify things can drain you',
-      'Waiting for others, sharing parts of your work or not having the whole picture is not your way of working',
+      'Waiting for others or distributing parts of your work is not your prefered way of working',
       'You need to be autonomous and independent',
     ],
   },
   {
     name: 'Curiosity',
     description: 'I have plenty of things to investigate and to think about.',
-    color: '#ff7d00',
+    color: colors.orange,
     icon: Curiosity,
     examples: [
       'You love problem solving, puzzles and having lots to think about. A work without that is plain boring to you.',
@@ -74,7 +75,7 @@ export const motivators = [
     name: 'Power',
     description:
       'There is enough room for me to influence what happens around me.',
-    color: '#8c6938',
+    color: colors.brown,
     icon: Power,
     examples: [
       'For you, being able to participate and influence decisions and results is important.',
@@ -87,7 +88,7 @@ export const motivators = [
   {
     name: 'Acceptance',
     description: 'The people around me approve of what I do and who I am.',
-    color: '#968f00',
+    color: colors.gold,
     icon: Acceptance,
     examples: [
       'Being able to bring yourself to work is a must for you.',
@@ -99,7 +100,7 @@ export const motivators = [
     name: 'Honor',
     description:
       'I feel proud that my personal values are reflected in how I work.',
-    color: '#00A3CE',
+    color: colors.cyan,
     icon: Honor,
     examples: [
       'Working with people and in an environment that shares the same values and mentality as you is important to you.',
@@ -109,7 +110,7 @@ export const motivators = [
   {
     name: 'Goal',
     description: 'My purpose in life is reflected in the work that I do.',
-    color: '#6600de',
+    color: colors.blue,
     icon: Goal,
     examples: [
       'You love a job that matches your personal goals and where you see yourself in the future',
@@ -127,13 +128,13 @@ export const motivators = [
       'On the other hand, treading in completely unknown waters can really stress you out',
       'Being pulled into a new area can throw you off balance if it does not match your abilities',
     ],
-    color: '#33b09d',
+    color: colors.green,
     icon: Mastery,
   },
   {
     name: 'Relatedness',
     description: 'I have good social contacts with the people in my work.',
-    color: '#b63b9f',
+    color: colors.darkPink,
     icon: Relatedness,
     examples: [
       "You can't imagine spending a day without having a word with your colleagues",
@@ -146,7 +147,7 @@ export const motivators = [
     name: 'Status',
     description:
       'My position is good, and recognized by the people who work with me.',
-    color: '#EB67A2',
+    color: colors.pink,
     icon: Status,
     examples: [
       'You prefer working in prestigious workplaces that are recognized in the market.',
@@ -159,7 +160,7 @@ export const motivators = [
     name: 'Order',
     description:
       'There are enough rules and policies for a stable environment.',
-    color: '#af00fc',
+    color: colors.purple,
     icon: Order,
     examples: [
       'Having a robust process behind every piece of work is important to you',

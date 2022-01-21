@@ -17,6 +17,7 @@
 
 .iconButton {
   border: 1px solid $grey-light;
+  z-index: $popover;
   box-shadow: $shadow-small-hover;
   color: $text-default;
   background-color: $info;
@@ -63,7 +64,7 @@
 }
 
 .content {
-  font-size: 16px;
+  font-size: $font-med;
   margin-top: 12px;
 }
 

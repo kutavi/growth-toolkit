@@ -2,6 +2,7 @@ import classnames from 'classnames';
 import { useRef, useState } from 'react';
 import { DropTargetMonitor, useDrag, useDrop, XYCoord } from 'react-dnd';
 import { Icon } from '../../library/Icon/Icon';
+import * as colors from '../../styles/_colors.module.scss';
 import { DragTypes } from '../../utils/enum';
 import * as styles from './Motivator.module.scss';
 
@@ -108,12 +109,12 @@ export const Motivator = ({
     0: {},
     1: {
       marginRight: `-${shiftBy}`,
-      backgroundColor: '#007e29',
+      backgroundColor: colors.yes,
       marginLeft: shiftBy,
     },
     '-1': {
       marginLeft: `-${shiftBy}`,
-      backgroundColor: '#d40000',
+      backgroundColor: colors.no,
       marginRight: shiftBy,
     },
   }[selection];
