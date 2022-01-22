@@ -1,4 +1,5 @@
 import { Link } from 'gatsby';
+import { useEffect, useState } from 'react';
 import { Popover } from '../../library/Popover/Popover';
 import { useSettings } from '../../state/hooks/useSettings';
 import { routes } from '../../utils/configs';
@@ -9,6 +10,17 @@ interface LayoutProps {
 }
 export const Layout = ({ children }: LayoutProps) => {
   const { isNavigationOpen, updateSettings } = useSettings();
+
+  const [isClient, setClient] = useState(false);
+
+  useEffect(() => {
+    setClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
+
   return (
     <div className={styles.container}>
       <Popover

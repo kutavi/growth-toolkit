@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
@@ -23,27 +23,17 @@ const Home = () => {
     [cards]
   );
 
-  const [isClient, setClient] = useState(false);
-
-  useEffect(() => {
-    setClient(true);
-  }, []);
-
-  if (!isClient) {
-    return null;
-  }
-
   return (
-    <DndProvider backend={isTouchDevice() ? TouchBackend : HTML5Backend}>
-      <Popover
-        isShown={isMotivatorsInfoOpen}
-        toggle={value => updateSettings({ isMotivatorsInfoOpen: value })}
-        position={'top-left'}
-        buttonIcon={'help'}
-        title={texts.motivators.title}>
-        {texts.motivators.info}
-      </Popover>
-      <Layout>
+    <Layout>
+      <DndProvider backend={isTouchDevice() ? TouchBackend : HTML5Backend}>
+        <Popover
+          isShown={isMotivatorsInfoOpen}
+          toggle={value => updateSettings({ isMotivatorsInfoOpen: value })}
+          position={'top-left'}
+          buttonIcon={'help'}
+          title={texts.motivators.title}>
+          {texts.motivators.info}
+        </Popover>
         {cards.map((motivator, index) => (
           <Motivator
             key={motivator.id}
@@ -57,8 +47,8 @@ const Home = () => {
             description={motivator.description}
           />
         ))}
-      </Layout>
-    </DndProvider>
+      </DndProvider>
+    </Layout>
   );
 };
 

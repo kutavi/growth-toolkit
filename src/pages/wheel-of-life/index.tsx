@@ -28,7 +28,7 @@ const Home = () => {
   const highestScore = 10;
 
   return (
-    <>
+    <Layout>
       <Popover
         isShown={isWheelInfoOpen}
         toggle={value => updateSettings({ isWheelInfoOpen: value })}
@@ -37,53 +37,51 @@ const Home = () => {
         title={texts.wheelOfLife.title}>
         {texts.wheelOfLife.info}
       </Popover>
-      <Layout>
-        <div className={styles.buttons}>
-          <div className={styles.title}>{'Pick one:'}</div>
-          <Button
-            label={'Current life'}
-            style={{ backgroundColor: getCurrentColor('78%') }}
-            onClick={() => updateSelection(selections.current)}
-          />
-          <Button
-            label={'Ideal life'}
-            style={{ backgroundColor: getIdealColor('78%') }}
-            onClick={() => updateSelection(selections.ideal)}
-          />
-        </div>
-        <div className={styles.chartContainer}>
-          <WheelView
-            chartToEdit={selection}
-            maxPoints={highestScore}
-            datasetLabels={wheelData.map(category => category.name)}
-            datasets={[
-              {
-                label: 'Current life',
-                id: selections.current,
-                data: wheelData.map(category => category.current),
-                backgroundColor: getCurrentColor(),
-                borderColor: 'white',
-                borderWidth: 1,
-              },
-              {
-                label: 'Where I want to be',
-                id: selections.ideal,
-                data: wheelData.map(category => category.ideal),
-                backgroundColor: getIdealColor(),
-                borderColor: 'white',
-                borderWidth: 1,
-              },
-            ]}
-            updateDataset={(chartToEdit, category, score) => {
-              const categories = wheelData.map(c =>
-                c.name === category ? { ...c, [chartToEdit]: score } : c
-              );
-              updateCategories(categories);
-            }}
-          />
-        </div>
-      </Layout>
-    </>
+      <div className={styles.buttons}>
+        <div className={styles.title}>{'Pick one:'}</div>
+        <Button
+          label={'Current life'}
+          style={{ backgroundColor: getCurrentColor('78%') }}
+          onClick={() => updateSelection(selections.current)}
+        />
+        <Button
+          label={'Ideal life'}
+          style={{ backgroundColor: getIdealColor('78%') }}
+          onClick={() => updateSelection(selections.ideal)}
+        />
+      </div>
+      <div className={styles.chartContainer}>
+        <WheelView
+          chartToEdit={selection}
+          maxPoints={highestScore}
+          datasetLabels={wheelData.map(category => category.name)}
+          datasets={[
+            {
+              label: 'Current life',
+              id: selections.current,
+              data: wheelData.map(category => category.current),
+              backgroundColor: getCurrentColor(),
+              borderColor: 'white',
+              borderWidth: 1,
+            },
+            {
+              label: 'Where I want to be',
+              id: selections.ideal,
+              data: wheelData.map(category => category.ideal),
+              backgroundColor: getIdealColor(),
+              borderColor: 'white',
+              borderWidth: 1,
+            },
+          ]}
+          updateDataset={(chartToEdit, category, score) => {
+            const categories = wheelData.map(c =>
+              c.name === category ? { ...c, [chartToEdit]: score } : c
+            );
+            updateCategories(categories);
+          }}
+        />
+      </div>
+    </Layout>
   );
 };
 
