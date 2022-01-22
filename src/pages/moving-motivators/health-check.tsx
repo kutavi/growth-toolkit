@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Layout } from '../../components/Layout/Layout';
 import { Motivator } from '../../components/Motivator/Motivator';
 import { Popover } from '../../library/Popover/Popover';
@@ -9,6 +10,15 @@ const HealthCheck = () => {
   const { updateCards, cards } = useMotivators();
   const { isMotivatorsInfoOpen, updateSettings } = useSettings();
 
+  const [isClient, setClient] = useState(false);
+
+  useEffect(() => {
+    setClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
   const makeSelection = (id: number, selection: number) => {
     updateCards(
       cards.map(c =>

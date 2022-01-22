@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
@@ -22,6 +22,16 @@ const Home = () => {
     },
     [cards]
   );
+
+  const [isClient, setClient] = useState(false);
+
+  useEffect(() => {
+    setClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <DndProvider backend={isTouchDevice() ? TouchBackend : HTML5Backend}>
