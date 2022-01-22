@@ -1,3 +1,5 @@
+import { availableSpaceBreakpoint } from '../../utils/const';
+import { windowLoaded } from '../../utils/helpers';
 import { SETTINGS_STATE } from '../types/types';
 
 export interface SettingsState {
@@ -6,11 +8,8 @@ export interface SettingsState {
   isWheelInfoOpen: boolean;
 }
 
-const availableSpaceBreakpoint = 1620;
-
 const hasAvailableSpace =
-  typeof window !== 'undefined' &&
-  window.innerWidth >= availableSpaceBreakpoint;
+  windowLoaded() && window.innerWidth >= availableSpaceBreakpoint;
 export const initialState = {
   isNavigationOpen: hasAvailableSpace,
   isMotivatorsInfoOpen: hasAvailableSpace,

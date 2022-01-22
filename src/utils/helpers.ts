@@ -17,3 +17,8 @@ export const reorderArray = (arr: any[], from: number, to: number) =>
     }
     return prev;
   }, []);
+
+export const windowLoaded = () => typeof window !== 'undefined';
+export const isTouchDevice = () =>
+  (windowLoaded() && 'ontouchstart' in window) ||
+  (typeof navigator !== 'undefined' && navigator.maxTouchPoints > 0);

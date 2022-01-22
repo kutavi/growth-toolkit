@@ -4,6 +4,7 @@ import { load, save } from 'redux-localstorage-simple';
 import combinedReducers, { Store } from './reducers/root';
 
 import '../styles/core.scss';
+import { windowLoaded } from '../utils/helpers';
 
 const savedStates = ['motivators', 'settings', 'wheelOfLife'];
 export default (preloadedState: Store) => {
@@ -16,7 +17,7 @@ export default (preloadedState: Store) => {
 };
 
 const getLoadedState = (preloadedState: Store) => {
-  if (typeof window !== 'undefined')
+  if (windowLoaded())
     return {
       ...preloadedState,
       ...load({ states: savedStates, disableWarnings: true }),

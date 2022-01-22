@@ -10,6 +10,7 @@ import { PolarArea } from 'react-chartjs-2';
 import { WheelValues } from '../../state/reducers/wheelOfLife';
 import * as colors from '../../styles/_colors.module.scss';
 import * as fonts from '../../styles/_fonts.module.scss';
+import { windowLoaded } from '../../utils/helpers';
 
 type Dataset = {
   label: string;
@@ -39,10 +40,9 @@ ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
 const breakpoint = 900;
 const containerWidth = 690;
-const isMobile =
-  typeof window !== 'undefined' && window.innerWidth < breakpoint;
+const isMobile = windowLoaded() && window.innerWidth < breakpoint;
 const isPortrait =
-  typeof window !== 'undefined' &&
+  windowLoaded() &&
   Math.min(window.innerWidth, containerWidth) < window.innerHeight;
 
 const portraitRatio = 1;

@@ -10,10 +10,22 @@ const fs = require('fs');
 
 exports.onPreInit = () => {
   if (process.argv[2] === 'build') {
-    fs.renameSync(
-      path.join(__dirname, 'public'),
-      path.join(__dirname, 'public_dev')
-    );
+    try {
+      fs.renameSync(
+        path.join(__dirname, 'public'),
+        path.join(__dirname, 'public_dev')
+      );
+    } catch (err) {
+      // on error try deleting the existing folder and then renaming
+      fs.rmSync(path.join(__dirname, 'public_dev'), {
+        recursive: true,
+        force: true,
+      });
+      fs.renameSync(
+        path.join(__dirname, 'public'),
+        path.join(__dirname, 'public_dev')
+      );
+    }
   }
 };
 

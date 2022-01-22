@@ -1,13 +1,14 @@
 import { useCallback, useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { TouchBackend } from 'react-dnd-touch-backend';
 import { Layout } from '../../components/Layout/Layout';
 import { Motivator } from '../../components/Motivator/Motivator';
 import { Popover } from '../../library/Popover/Popover';
 import { useMotivators } from '../../state/hooks/useMotivators';
 import { useSettings } from '../../state/hooks/useSettings';
 import { texts } from '../../utils/configs';
-import { reorderArray } from '../../utils/helpers';
+import { isTouchDevice, reorderArray } from '../../utils/helpers';
 
 const Home = () => {
   const { updateCards, cards: stateCards } = useMotivators();
@@ -23,7 +24,7 @@ const Home = () => {
   );
 
   return (
-    <DndProvider backend={HTML5Backend}>
+    <DndProvider backend={isTouchDevice() ? TouchBackend : HTML5Backend}>
       <Popover
         isShown={isMotivatorsInfoOpen}
         toggle={value => updateSettings({ isMotivatorsInfoOpen: value })}

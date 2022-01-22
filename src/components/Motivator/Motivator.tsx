@@ -3,7 +3,8 @@ import { useRef, useState } from 'react';
 import { DropTargetMonitor, useDrag, useDrop, XYCoord } from 'react-dnd';
 import { Icon } from '../../library/Icon/Icon';
 import * as colors from '../../styles/_colors.module.scss';
-import { DragTypes } from '../../utils/enum';
+import { DragTypes } from '../../utils/const';
+import { isTouchDevice } from '../../utils/helpers';
 import * as styles from './Motivator.module.scss';
 
 interface DragItem {
@@ -99,9 +100,10 @@ export const Motivator = ({
         isDragging: monitor.isDragging(),
       }),
     });
-
+    // tslint:disable-next-line: no-magic-numbers
+    const dragOpacity = isTouchDevice() ? 0.4 : 0;
     dragHandlerId.current = handlerId;
-    opacity.current = isDragging ? 0 : 1;
+    opacity.current = isDragging ? dragOpacity : 1;
     drag(drop(ref));
   }
 
