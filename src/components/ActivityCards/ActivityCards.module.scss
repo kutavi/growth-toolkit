@@ -6,6 +6,7 @@ $card-radius: 16px;
 .activityCards {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   max-width: 690px;
   margin: auto;
   margin-top: 64px;
@@ -15,14 +16,11 @@ $card-radius: 16px;
   border-radius: $card-radius;
   background-color: white;
   max-width: $card-width;
+  margin: 24px;
   display: block;
   text-decoration: none;
   color: black;
-  padding-bottom: 8px;
-  > div {
-    padding: 12px 24px;
-  }
-  > img {
+  img {
     max-width: $card-width;
     max-height: 150px;
     border-top-left-radius: $card-radius;
@@ -36,10 +34,55 @@ $card-radius: 16px;
 
 .title {
   font-size: $font-normal;
+  padding: 16px;
 }
 
 .description {
   font-size: $font-small;
   border-top: 1px solid $grey-dark;
   text-align: justify;
+  padding: 16px;
+}
+
+@media (max-width: 600px) {
+  .activityCards {
+    margin-top: 0;
+  }
+  .card {
+    max-width: none;
+    margin: 24px;
+    text-decoration: none;
+    color: black;
+    padding-bottom: 0;
+    img {
+      max-width: $card-width;
+      max-height: none;
+      border-top-right-radius: 0;
+      border-top-left-radius: $card-radius;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+    }
+    .title {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  h3 {
+    font-size: $font-lg;
+  }
+  .card {
+    img {
+      max-width: 125px;
+    }
+  }
+  .title {
+    font-size: $font-small;
+  }
+  .description {
+    font-size: $font-xs;
+  }
 }

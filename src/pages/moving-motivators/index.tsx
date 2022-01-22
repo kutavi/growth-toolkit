@@ -36,10 +36,10 @@ const Home = () => {
       <Layout>
         {cards.map((motivator, index) => (
           <Motivator
-            key={motivator.name}
+            key={motivator.id}
+            id={motivator.id}
             reorder={reorder}
             examples={motivator.examples}
-            id={motivator.name}
             index={index}
             color={motivator.color}
             icon={motivator.icon}

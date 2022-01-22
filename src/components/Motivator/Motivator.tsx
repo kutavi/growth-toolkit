@@ -17,10 +17,12 @@ interface MotivatorProps {
   name: string;
   description: string;
   color: string;
+  id: number;
   icon: string;
   index: number;
-  id: string;
+  currentSelection?: number;
   reorder?: (from: number, to: number) => void;
+  makeSelection?: (selection: number) => void;
   examples?: string[];
   selections?: { value: number; label: string }[];
 }
@@ -30,17 +32,19 @@ export const Motivator = ({
   name,
   description,
   selections,
+  currentSelection = 0,
   color,
   icon,
   index,
   reorder,
+  makeSelection,
   examples,
 }: MotivatorProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const opacity = useRef<number>(1);
   const dragHandlerId = useRef<any>(null);
   const [isOpen, setOpen] = useState(false);
-  const [selection, setSelection] = useState(0);
+
   if (reorder) {
     const [{ handlerId }, drop] = useDrop({
       accept: DragTypes.card,
@@ -119,7 +123,7 @@ export const Motivator = ({
       backgroundColor: colors.no,
       marginRight: shiftBy,
     },
-  }[selection];
+  }[currentSelection];
 
   const selectionsStyling = selections ? { paddingRight: '80px' } : {};
 
@@ -161,7 +165,7 @@ export const Motivator = ({
                 className={styles.selection}
                 key={select.value}
                 style={
-                  select.value === selection
+                  select.value === currentSelection
                     ? {
                         backgroundColor: cardStyling?.backgroundColor,
                         color: 'white',
@@ -171,7 +175,9 @@ export const Motivator = ({
                 }
                 onClick={e => {
                   e.stopPropagation();
-                  setSelection(select.value);
+                  if (makeSelection) {
+                    makeSelection(select.value);
+                  }
                 }}>
                 {select.label}
               </div>
