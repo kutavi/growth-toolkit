@@ -10,8 +10,8 @@ type CategoryValues = {
   [key in WheelValues]: number;
 };
 
-interface Category extends CategoryValues {
-  label: string;
+export interface Category extends CategoryValues {
+  id: number;
 }
 
 export interface WheelOfLifeState {
@@ -19,8 +19,8 @@ export interface WheelOfLifeState {
 }
 
 export const initialState = {
-  categories: wheelOfLife.map(categoryLabel => ({
-    label: categoryLabel,
+  categories: wheelOfLife.map(category => ({
+    id: category.id,
     current: 0,
     ideal: 0,
   })),

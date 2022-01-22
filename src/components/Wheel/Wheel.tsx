@@ -29,7 +29,7 @@ interface WheelViewProps {
   maxPoints: number;
   datasetLabels: string[];
   datasets: Dataset[];
-  updateWheel: (
+  updateDataset: (
     chartToEdit: Partial<WheelValues>,
     category: string,
     score: number
@@ -57,7 +57,7 @@ export const WheelView = ({
   maxPoints,
   datasetLabels,
   datasets,
-  updateWheel,
+  updateDataset,
 }: WheelViewProps) => {
   const interactionPoints: Dataset[] = new Array(maxPoints)
     .fill(0)
@@ -104,7 +104,7 @@ export const WheelView = ({
             const selection = elements[0];
             const category = datasetLabels[selection.index];
             const score = data.datasets[elements[0].datasetIndex].data[0];
-            updateWheel(chartToEdit, category, score);
+            updateDataset(chartToEdit, category, score);
           }
         },
         scales: {
@@ -116,7 +116,8 @@ export const WheelView = ({
             ticks: {
               z: 1,
               font: {
-                size: isMobile ? fonts.fontTiny : fonts.fontSmall,
+                // tslint:disable-next-line: no-magic-numbers
+                size: isMobile ? 10 : 14,
                 weight: 'bold',
               },
               backdropColor: colors.grey,
@@ -133,7 +134,8 @@ export const WheelView = ({
                 ?.backgroundColor,
               font: {
                 weight: 'bold',
-                size: isMobile ? fonts.fontSmall : fonts.fontLg,
+                // tslint:disable-next-line: no-magic-numbers
+                size: isMobile ? 14 : 22,
               },
             },
           },

@@ -13,7 +13,7 @@ const selections = WheelValues;
 
 const Home = () => {
   const { isWheelInfoOpen, updateSettings } = useSettings();
-  const { categories: wheelData, updateWheel } = useWheelOfLife();
+  const { categories: wheelData, updateCategories } = useWheelOfLife();
   const [selection, updateSelection] = useState(selections.current);
 
   const getCurrentColor = (opacity: string = '50%') =>
@@ -55,7 +55,7 @@ const Home = () => {
           <WheelView
             chartToEdit={selection}
             maxPoints={highestScore}
-            datasetLabels={wheelData.map(category => category.label)}
+            datasetLabels={wheelData.map(category => category.name)}
             datasets={[
               {
                 label: 'Current life',
@@ -74,11 +74,11 @@ const Home = () => {
                 borderWidth: 1,
               },
             ]}
-            updateWheel={(chartToEdit, category, score) => {
+            updateDataset={(chartToEdit, category, score) => {
               const categories = wheelData.map(c =>
-                c.label === category ? { ...c, [chartToEdit]: score } : c
+                c.name === category ? { ...c, [chartToEdit]: score } : c
               );
-              updateWheel({ categories });
+              updateCategories(categories);
             }}
           />
         </div>

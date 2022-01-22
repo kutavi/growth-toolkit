@@ -1,27 +1,31 @@
 import { motivators } from '../../utils/configs';
-import { CARDS_STATE } from '../types/types';
+import { MOTIVATORS_STATE } from '../types/types';
 
+export type Card = {
+  id: number;
+  selection: number;
+};
 export interface MotivatorsState {
-  cards: any[];
+  cards: Card[];
 }
 
 export const initialState = {
-  cards: motivators,
+  cards: motivators.map(m => ({ id: m.id, selection: 0 })),
 };
 
 interface Action {
   type?: string;
-  payload?: any;
+  payload: Partial<MotivatorsState>;
 }
 
 const reducer = (
   state: MotivatorsState = initialState,
-  action: Action = {}
+  action: Action = { payload: {} }
 ): MotivatorsState => {
   const { type, payload } = action;
 
   switch (type) {
-    case CARDS_STATE:
+    case MOTIVATORS_STATE:
       return {
         ...state,
         ...payload,

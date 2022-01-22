@@ -1,4 +1,4 @@
-export const reorderArray = (arr: any[], from: number, to: number) =>
+export const reorderArray = (arr: any[], from: number, to: number): any[] =>
   arr.reduce((prev, current, idx, self) => {
     if (from === to) {
       prev.push(current);

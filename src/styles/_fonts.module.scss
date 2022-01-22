@@ -4,7 +4,6 @@ $font-normal: 18px;
 $font-med: 16px;
 $font-small: 14px;
 $font-xs: 12px;
-$font-tiny: 8px;
 
 :export {
   fontBig: $font-big;
@@ -12,5 +11,4 @@ $font-tiny: 8px;
   fontSmall: $font-small;
   fontXs: $font-xs;
   fontNormal: $font-normal;
-  fontTiny: $font-tiny;
 }

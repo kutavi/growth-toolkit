@@ -49,6 +49,7 @@ export const routes = [
 export const motivators = [
   {
     name: 'Freedom',
+    id: 1,
     description:
       'I am independent of others with my work and my responsibilities.',
     color: colors.red,
@@ -62,6 +63,7 @@ export const motivators = [
   },
   {
     name: 'Curiosity',
+    id: 2,
     description: 'I have plenty of things to investigate and to think about.',
     color: colors.orange,
     icon: Curiosity,
@@ -73,6 +75,7 @@ export const motivators = [
   },
   {
     name: 'Power',
+    id: 3,
     description:
       'There is enough room for me to influence what happens around me.',
     color: colors.brown,
@@ -87,6 +90,7 @@ export const motivators = [
   },
   {
     name: 'Acceptance',
+    id: 4,
     description: 'The people around me approve of what I do and who I am.',
     color: colors.gold,
     icon: Acceptance,
@@ -98,6 +102,7 @@ export const motivators = [
   },
   {
     name: 'Honor',
+    id: 5,
     description:
       'I feel proud that my personal values are reflected in how I work.',
     color: colors.cyan,
@@ -109,6 +114,7 @@ export const motivators = [
   },
   {
     name: 'Goal',
+    id: 6,
     description: 'My purpose in life is reflected in the work that I do.',
     color: colors.blue,
     icon: Goal,
@@ -120,6 +126,7 @@ export const motivators = [
   },
   {
     name: 'Mastery',
+    id: 7,
     description:
       'My work challenges my competence but it is still within my abilities.',
     examples: [
@@ -133,6 +140,7 @@ export const motivators = [
   },
   {
     name: 'Relatedness',
+    id: 8,
     description: 'I have good social contacts with the people in my work.',
     color: colors.darkPink,
     icon: Relatedness,
@@ -145,6 +153,7 @@ export const motivators = [
   },
   {
     name: 'Status',
+    id: 9,
     description:
       'My position is good, and recognized by the people who work with me.',
     color: colors.pink,
@@ -158,6 +167,7 @@ export const motivators = [
   },
   {
     name: 'Order',
+    id: 10,
     description:
       'There are enough rules and policies for a stable environment.',
     color: colors.purple,
@@ -173,14 +183,14 @@ export const motivators = [
 ];
 
 export const wheelOfLife = [
-  'Career',
-  'Finance',
-  'Relationships',
-  'Social',
-  'Health',
-  'Family',
-  'Growth',
-  'Attitude',
+  { id: 1, name: 'Career' },
+  { id: 2, name: 'Finance' },
+  { id: 3, name: 'Relationships' },
+  { id: 4, name: 'Social' },
+  { id: 5, name: 'Health' },
+  { id: 6, name: 'Family' },
+  { id: 7, name: 'Growth' },
+  { id: 8, name: 'Attitude' },
 ];
 
 export const texts = {

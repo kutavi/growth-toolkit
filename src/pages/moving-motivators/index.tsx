@@ -18,7 +18,7 @@ const Home = () => {
   const reorder = useCallback(
     (dragIndex: number, hoverIndex: number) => {
       setCards(reorderArray(cards, dragIndex, hoverIndex));
-      updateCards(reorderArray(cards, dragIndex, hoverIndex));
+      updateCards(cards);
     },
     [cards]
   );
