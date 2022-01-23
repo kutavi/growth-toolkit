@@ -1,5 +1,4 @@
 module.exports = {
-//  pathPrefix: '/growth-toolkit',
   siteMetadata: {
     title: `Growth toolkit`,
     description: `Online tools used for personal development`,

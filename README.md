@@ -10,8 +10,8 @@ Digital tools to help you in your personal development and decision making
 
 Tool | view_at  | info
 :--- | :--- | :--- |
-Moving motivators |  [**link**](https://kutavi.github.io/growth-toolkit/moving-motivators)  | [link](https://management30.com/practice/moving-motivators/)
-Wheel of Life |  [**link**](https://kutavi.github.io/growth-toolkit/wheel-of-life)  | [link](https://www.mindtools.com/pages/article/newHTE_93.htm)
+Moving motivators |  [**link**](https://growth-toolkit.netlify.app/moving-motivators)  | [link](https://management30.com/practice/moving-motivators/)
+Wheel of Life |  [**link**](https://growth-toolkit.netlify.app/wheel-of-life)  | [link](https://www.mindtools.com/pages/article/newHTE_93.htm)
 
 &nbsp;
 
