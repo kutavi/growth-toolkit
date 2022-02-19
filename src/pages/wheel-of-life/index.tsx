@@ -8,6 +8,7 @@ import { useSettings } from '../../state/hooks/useSettings';
 import { useWheelOfLife } from '../../state/hooks/useWheelOfLife';
 import { WheelValues } from '../../state/reducers/wheelOfLife';
 import { texts } from '../../utils/configs';
+import { track } from '../../utils/helpers';
 import * as styles from '../Page.module.scss';
 
 const selections = WheelValues;
@@ -48,12 +49,18 @@ const Home = () => {
           <Button
             label={'Current life'}
             style={{ backgroundColor: getCurrentColor('78%') }}
-            onClick={() => updateSelection(selections.current)}
+            onClick={() => {
+              track('Select current');
+              updateSelection(selections.current);
+            }}
           />
           <Button
             label={'Ideal life'}
             style={{ backgroundColor: getIdealColor('78%') }}
-            onClick={() => updateSelection(selections.ideal)}
+            onClick={() => {
+              track('Select ideal');
+              updateSelection(selections.ideal);
+            }}
           />
         </div>
         <div className={styles.chartContainer}>
@@ -80,6 +87,7 @@ const Home = () => {
               },
             ]}
             updateDataset={(chartToEdit, category, score) => {
+              track('Update wheel');
               const categories = wheelData.map(c =>
                 c.name === category ? { ...c, [chartToEdit]: score } : c
               );

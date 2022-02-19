@@ -57,7 +57,6 @@ export const SEO = ({ title, description, image }: SEOProps) => {
       )}
 
       {seo.image && <meta name='twitter:image' content={seo.image} />}
-      <script async src="https://cdn.splitbee.io/sb.js"></script>
     </Helmet>
   );
 };

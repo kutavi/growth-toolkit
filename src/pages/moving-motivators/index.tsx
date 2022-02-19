@@ -9,7 +9,7 @@ import { Popover } from '../../library/Popover/Popover';
 import { useMotivators } from '../../state/hooks/useMotivators';
 import { useSettings } from '../../state/hooks/useSettings';
 import { texts } from '../../utils/configs';
-import { isTouchDevice, reorderArray } from '../../utils/helpers';
+import { isTouchDevice, reorderArray, track } from '../../utils/helpers';
 
 const Home = () => {
   const { updateCards, cards: stateCards } = useMotivators();
@@ -18,6 +18,7 @@ const Home = () => {
 
   const reorder = useCallback(
     (dragIndex: number, hoverIndex: number) => {
+      track('Reorder motivator');
       setCards(reorderArray(cards, dragIndex, hoverIndex));
       updateCards(reorderArray(cards, dragIndex, hoverIndex));
     },
