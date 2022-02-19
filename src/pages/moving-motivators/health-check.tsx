@@ -1,5 +1,6 @@
 import { Layout } from '../../components/Layout/Layout';
 import { Motivator } from '../../components/Motivator/Motivator';
+import { SEO } from '../../components/Seo/Seo';
 import { Popover } from '../../library/Popover/Popover';
 import { useMotivators } from '../../state/hooks/useMotivators';
 import { useSettings } from '../../state/hooks/useSettings';
@@ -20,34 +21,40 @@ const HealthCheck = () => {
   };
 
   return (
-    <Layout>
-      <Popover
-        isShown={isMotivatorsInfoOpen}
-        toggle={value => updateSettings({ isMotivatorsInfoOpen: value })}
-        position={'top-left'}
-        buttonIcon={'help'}
-        title={texts.motivators.title}>
-        {texts.motivators.info}
-      </Popover>
-      {cards.map((motivator, index) => (
-        <Motivator
-          key={motivator.id}
-          id={motivator.id}
-          examples={motivator.examples}
-          selections={[
-            { label: 'Yes', value: 1 },
-            { label: 'No', value: -1 },
-          ]}
-          makeSelection={selection => makeSelection(motivator.id, selection)}
-          currentSelection={motivator.selection}
-          index={index}
-          color={motivator.color}
-          icon={motivator.icon}
-          name={motivator.name}
-          description={motivator.description}
-        />
-      ))}
-    </Layout>
+    <>
+      <SEO
+        title={texts.motivators.title}
+        description={texts.motivators.description}
+      />
+      <Layout>
+        <Popover
+          isShown={isMotivatorsInfoOpen}
+          toggle={value => updateSettings({ isMotivatorsInfoOpen: value })}
+          position={'top-left'}
+          buttonIcon={'help'}
+          title={texts.motivators.title}>
+          {texts.motivators.info}
+        </Popover>
+        {cards.map((motivator, index) => (
+          <Motivator
+            key={motivator.id}
+            id={motivator.id}
+            examples={motivator.examples}
+            selections={[
+              { label: 'Yes', value: 1 },
+              { label: 'No', value: -1 },
+            ]}
+            makeSelection={selection => makeSelection(motivator.id, selection)}
+            currentSelection={motivator.selection}
+            index={index}
+            color={motivator.color}
+            icon={motivator.icon}
+            name={motivator.name}
+            description={motivator.description}
+          />
+        ))}
+      </Layout>
+    </>
   );
 };
 

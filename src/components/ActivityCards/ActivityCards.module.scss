@@ -1,13 +1,13 @@
 @import 'src/styles/_base.scss';
 
-$card-width: 200px;
+$card-width: 230px;
 $card-radius: 16px;
 
 .activityCards {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  max-width: 690px;
+  max-width: 840px;
   margin: auto;
   margin-top: 64px;
 }
@@ -22,7 +22,7 @@ $card-radius: 16px;
   color: black;
   img {
     max-width: $card-width;
-    max-height: 150px;
+    max-height: 175px;
     border-top-left-radius: $card-radius;
     border-top-right-radius: $card-radius;
     border-bottom: 1px solid $grey-dark;

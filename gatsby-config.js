@@ -1,8 +1,13 @@
 module.exports = {
   siteMetadata: {
     title: `Growth toolkit`,
-    description: `Online tools used for personal development`,
+    titleTemplate: `%s · Online tools for personal development`,
+    description:
+      'A toolkit with exercises and activities to help you on your personal development and growth.',
     author: `@atseniklidou`,
+    twitterUsername: `@atseniklidou`,
+    url: 'https://growth-toolkit.netlify.app',
+    image: '/wheel-of-life.png',
   },
   jsxRuntime: 'automatic',
   plugins: [
