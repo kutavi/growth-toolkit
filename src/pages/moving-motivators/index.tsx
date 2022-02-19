@@ -35,7 +35,10 @@ const Home = () => {
         <DndProvider backend={isTouchDevice() ? TouchBackend : HTML5Backend}>
           <Popover
             isShown={isMotivatorsInfoOpen}
-            toggle={value => updateSettings({ isMotivatorsInfoOpen: value })}
+            toggle={value => {
+              track(`${value ? 'Opened' : 'Closed'} motivators info`)
+              updateSettings({ isMotivatorsInfoOpen: value })
+            }}
             position={'top-left'}
             buttonIcon={'help'}
             title={texts.motivators.title}>

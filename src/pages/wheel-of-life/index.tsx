@@ -38,7 +38,10 @@ const Home = () => {
       <Layout>
         <Popover
           isShown={isWheelInfoOpen}
-          toggle={value => updateSettings({ isWheelInfoOpen: value })}
+          toggle={value => {
+            track(`${value ? 'Opened' : 'Closed'} life wheel info`)
+            updateSettings({ isWheelInfoOpen: value })
+          }}
           position={'top-left'}
           buttonIcon={'help'}
           title={texts.wheelOfLife.title}>

@@ -5,6 +5,7 @@ import { Popover } from '../../library/Popover/Popover';
 import { useMotivators } from '../../state/hooks/useMotivators';
 import { useSettings } from '../../state/hooks/useSettings';
 import { texts } from '../../utils/configs';
+import { track } from '../../utils/helpers';
 
 const HealthCheck = () => {
   const { updateCards, cards } = useMotivators();
@@ -29,7 +30,10 @@ const HealthCheck = () => {
       <Layout>
         <Popover
           isShown={isMotivatorsInfoOpen}
-          toggle={value => updateSettings({ isMotivatorsInfoOpen: value })}
+          toggle={value => {
+            track(`${value ? 'Opened' : 'Closed'} motivators info`)
+            updateSettings({ isMotivatorsInfoOpen: value })
+          }}
           position={'top-left'}
           buttonIcon={'help'}
           title={texts.motivators.title}>
