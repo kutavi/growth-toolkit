@@ -45,14 +45,7 @@ module.exports = {
         cleanupOnClient: true,
         windowKey: '__PRELOADED_STATE__',
       },
-    },
-    {
-      resolve: `gatsby-plugin-splitbee`,
-      options: {
-        includeInDevelopment: false,
-        delayTimeout: 0,
-      },
-    },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
