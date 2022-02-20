@@ -22,7 +22,8 @@
   color: $text-default;
   background-color: $info;
   border-radius: 100%;
-  padding: 6px 8px;
+  padding: 8px;
+  display: flex;
   cursor: pointer;
 }
 
@@ -66,6 +67,9 @@
 .content {
   font-size: $font-med;
   margin-top: 12px;
+  li {
+    margin-bottom: 8px;
+  }
 }
 
 .closeButton {
