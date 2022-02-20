@@ -9,7 +9,6 @@ import React from 'react';
 import { PolarArea } from 'react-chartjs-2';
 import { WheelValues } from '../../state/reducers/wheelOfLife';
 import * as colors from '../../styles/_colors.module.scss';
-import * as fonts from '../../styles/_fonts.module.scss';
 import { windowLoaded } from '../../utils/helpers';
 
 type Dataset = {

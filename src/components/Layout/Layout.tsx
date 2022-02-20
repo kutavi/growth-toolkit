@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Popover } from '../../library/Popover/Popover';
 import { useSettings } from '../../state/hooks/useSettings';
 import { routes } from '../../utils/configs';
+import { track } from '../../utils/helpers';
 import * as styles from './Layout.module.scss';
 
 interface LayoutProps {
@@ -25,7 +26,10 @@ export const Layout = ({ children }: LayoutProps) => {
     <div className={styles.container}>
       <Popover
         isShown={isNavigationOpen}
-        toggle={value => updateSettings({ isNavigationOpen: value })}
+        toggle={value => {
+          track(`${value ? 'Opened' : 'Closed'} nav menu`)
+          updateSettings({ isNavigationOpen: value })
+        }}
         position={'top-right'}
         title={'Toolkit'}
         buttonIcon={'menu'}>

@@ -22,3 +22,9 @@ export const windowLoaded = () => typeof window !== 'undefined';
 export const isTouchDevice = () =>
   (windowLoaded() && 'ontouchstart' in window) ||
   (typeof navigator !== 'undefined' && navigator.maxTouchPoints > 0);
+
+type Properties = {
+  value: string | number;
+};
+export const track = (name: string, properties?: Properties) =>
+  windowLoaded() && (window as any).splitbee?.track(name, properties);

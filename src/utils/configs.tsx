@@ -33,8 +33,6 @@ export const routes = [
         description:
           'Think about your current job and answer yes/no whether you believe each motivator exists for you.',
       },
-      // tslint:disable-next-line: max-line-length
-      //   { route: `${movingMotivatorsLink}/evaluation`, label: 'Evaluate a change', description: 'Think an upcoming change and answer up/down/no change for each motivator if you think they are going to improve or not.' },
     ],
   },
   {
@@ -196,6 +194,8 @@ export const wheelOfLife = [
 export const texts = {
   motivators: {
     title: 'Moving Motivators',
+    description:
+      'An exercise to help you understand what it is that motivates you and how a change may affect you.',
     info: (
       <div>
         This is an exercise to reflect on your motivation and how it is affected
@@ -233,6 +233,8 @@ export const texts = {
   },
   wheelOfLife: {
     title: 'Wheel Of Life',
+    description:
+      'An exercise to help you improve your life focus by identifying the areas in your life that need attention.',
     info: (
       <div>
         This is an exercise to help you quickly identify the areas in your life

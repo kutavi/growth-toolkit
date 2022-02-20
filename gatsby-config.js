@@ -1,8 +1,13 @@
 module.exports = {
   siteMetadata: {
     title: `Growth toolkit`,
-    description: `Online tools used for personal development`,
+    titleTemplate: `%s · Online tools for personal development`,
+    description:
+      'A toolkit with exercises and activities to help you on your personal development and growth.',
     author: `@atseniklidou`,
+    twitterUsername: `@atseniklidou`,
+    url: 'https://growth-toolkit.netlify.app',
+    image: '/wheel-of-life.png',
   },
   jsxRuntime: 'automatic',
   plugins: [
@@ -40,7 +45,7 @@ module.exports = {
         cleanupOnClient: true,
         windowKey: '__PRELOADED_STATE__',
       },
-    },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

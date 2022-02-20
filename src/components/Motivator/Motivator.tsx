@@ -4,7 +4,7 @@ import { DropTargetMonitor, useDrag, useDrop, XYCoord } from 'react-dnd';
 import { Icon } from '../../library/Icon/Icon';
 import * as colors from '../../styles/_colors.module.scss';
 import { DragTypes } from '../../utils/const';
-import { isTouchDevice } from '../../utils/helpers';
+import { isTouchDevice, track } from '../../utils/helpers';
 import * as styles from './Motivator.module.scss';
 
 interface DragItem {
@@ -133,6 +133,7 @@ export const Motivator = ({
       ref={ref}
       onClick={e => {
         setOpen(!isOpen);
+        track(isOpen ? 'Collapsed motivator' : 'Expanded motivator');
       }}
       className={styles.card}
       style={{
@@ -175,6 +176,7 @@ export const Motivator = ({
                 }
                 onClick={e => {
                   e.stopPropagation();
+                  track('Clicked yes/no');
                   if (makeSelection) {
                     makeSelection(select.value);
                   }
