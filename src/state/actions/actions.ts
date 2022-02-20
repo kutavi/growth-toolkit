@@ -1,7 +1,13 @@
 import { MotivatorsState } from '../reducers/motivators';
+import { ResilienceState } from '../reducers/resilience';
 import { SettingsState } from '../reducers/settings';
 import { WheelOfLifeState } from '../reducers/wheelOfLife';
-import { MOTIVATORS_STATE, SETTINGS_STATE, WHEEL_STATE } from '../types/types';
+import {
+  MOTIVATORS_STATE,
+  RESILIENCE_STATE,
+  SETTINGS_STATE,
+  WHEEL_STATE,
+} from '../types/types';
 export const updateMotivators = (cards: Partial<MotivatorsState>) => ({
   type: MOTIVATORS_STATE,
   payload: cards,
@@ -17,6 +23,7 @@ export const updateWheel = (wheelOfLife: Partial<WheelOfLifeState>) => ({
   payload: wheelOfLife,
 });
 
-export const actions = {
-  updateMotivators,
-};
+export const updateResilience = (resilience: Partial<ResilienceState>) => ({
+  type: RESILIENCE_STATE,
+  payload: resilience,
+});

@@ -6,20 +6,33 @@ interface ButtonProps {
   label: string;
   id?: string;
   onClick: () => void;
+  disabled?: boolean;
   className?: string;
+  type?: 'primary' | 'secondary' | 'alert';
+  size?: 'default' | 'sm' | 'lg';
   style?: any;
+  fullWidth?: boolean;
 }
 export const Button = ({
   label,
   id,
   onClick,
-  className = '',
+  disabled,
   style,
+  type = 'primary',
+  size = 'default',
+  fullWidth,
 }: ButtonProps) => (
-  <div
+  <button
     style={style}
-    className={classnames(styles.button, className)}
-    onClick={onClick}>
+    className={classnames(
+      styles.button,
+      styles[type],
+      styles[size],
+      { [styles.disabled]: disabled },
+      { [styles.fullWidth]: fullWidth }
+    )}
+    onClick={!disabled ? onClick : () => null}>
     {label}
-  </div>
+  </button>
 );

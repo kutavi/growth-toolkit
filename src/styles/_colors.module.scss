@@ -12,6 +12,12 @@ $shadow-small: 0px 0px 4px -2px $text-default;
 $shadow-small-hover: 0px 0px 4px 2px $text-inactive;
 $yes: #007e29;
 $no: #d40000;
+$no-darker: #c30000;
+$primary: #492ead;
+$primary-darker: #381d9d;
+$primary-lighter: #6940ff;
+$secondary: #dd8500;
+$secondary-darker: #b76f02;
 
 // Content colors
 
@@ -29,6 +35,8 @@ $purple: #af00fc;
 :export {
   textDefault: $text-default;
   textInactive: $text-inactive;
+  primary: $primary;
+  primaryDarker: $primary-darker;
   greyLight: $grey-light;
   greyDark: $grey-dark;
   grey: $grey;
@@ -36,6 +44,7 @@ $purple: #af00fc;
   cancel: $cancel;
   yes: $yes;
   no: $no;
+  noDarker: $no-darker;
   purple: $purple;
   pink: $pink;
   red: $red;

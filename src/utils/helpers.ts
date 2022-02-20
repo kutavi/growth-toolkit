@@ -23,8 +23,13 @@ export const isTouchDevice = () =>
   (windowLoaded() && 'ontouchstart' in window) ||
   (typeof navigator !== 'undefined' && navigator.maxTouchPoints > 0);
 
-type Properties = {
+export const isDev = (): boolean =>
+  windowLoaded() && window.location.hostname === 'localhost';
+
+type TrackProperties = {
   value: string | number;
 };
-export const track = (name: string, properties?: Properties) =>
-  windowLoaded() && (window as any).splitbee?.track(name, properties);
+export const track = (name: string, properties?: TrackProperties) =>
+  windowLoaded() &&
+  !isDev() &&
+  (window as any).splitbee?.track(name, properties);
