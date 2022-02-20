@@ -31,8 +31,8 @@ const HealthCheck = () => {
         <Popover
           isShown={isMotivatorsInfoOpen}
           toggle={value => {
-            track(`${value ? 'Opened' : 'Closed'} motivators info`)
-            updateSettings({ isMotivatorsInfoOpen: value })
+            track(`${value ? 'Opened' : 'Closed'} motivators info`);
+            updateSettings({ isMotivatorsInfoOpen: value });
           }}
           position={'top-left'}
           buttonIcon={'help'}
@@ -48,7 +48,10 @@ const HealthCheck = () => {
               { label: 'Yes', value: 1 },
               { label: 'No', value: -1 },
             ]}
-            makeSelection={selection => makeSelection(motivator.id, selection)}
+            makeSelection={selection => {
+              track('Clicked yes/no');
+              makeSelection(motivator.id, selection);
+            }}
             currentSelection={motivator.selection}
             index={index}
             color={motivator.color}

@@ -176,7 +176,6 @@ export const Motivator = ({
                 }
                 onClick={e => {
                   e.stopPropagation();
-                  track('Clicked yes/no');
                   if (makeSelection) {
                     makeSelection(select.value);
                   }

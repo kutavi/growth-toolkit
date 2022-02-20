@@ -36,8 +36,8 @@ const Home = () => {
           <Popover
             isShown={isMotivatorsInfoOpen}
             toggle={value => {
-              track(`${value ? 'Opened' : 'Closed'} motivators info`)
-              updateSettings({ isMotivatorsInfoOpen: value })
+              track(`${value ? 'Opened' : 'Closed'} motivators info`);
+              updateSettings({ isMotivatorsInfoOpen: value });
             }}
             position={'top-left'}
             buttonIcon={'help'}

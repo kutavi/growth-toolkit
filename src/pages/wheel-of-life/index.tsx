@@ -39,8 +39,8 @@ const Home = () => {
         <Popover
           isShown={isWheelInfoOpen}
           toggle={value => {
-            track(`${value ? 'Opened' : 'Closed'} life wheel info`)
-            updateSettings({ isWheelInfoOpen: value })
+            track(`${value ? 'Opened' : 'Closed'} life wheel info`);
+            updateSettings({ isWheelInfoOpen: value });
           }}
           position={'top-left'}
           buttonIcon={'help'}

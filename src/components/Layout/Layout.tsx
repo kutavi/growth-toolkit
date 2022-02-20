@@ -27,8 +27,8 @@ export const Layout = ({ children }: LayoutProps) => {
       <Popover
         isShown={isNavigationOpen}
         toggle={value => {
-          track(`${value ? 'Opened' : 'Closed'} nav menu`)
-          updateSettings({ isNavigationOpen: value })
+          track(`${value ? 'Opened' : 'Closed'} nav menu`);
+          updateSettings({ isNavigationOpen: value });
         }}
         position={'top-right'}
         title={'Toolkit'}
