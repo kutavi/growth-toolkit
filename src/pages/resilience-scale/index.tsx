@@ -68,7 +68,7 @@ const Home = () => {
         <Button
           label={'Reset'}
           size={'sm'}
-          disabled={Boolean(questions.find(q => q.answer === 0))}
+          disabled={!Boolean(questions.find(q => q.answer !== 0))}
           type='alert'
           style={{ float: 'right' }}
           onClick={() => {
