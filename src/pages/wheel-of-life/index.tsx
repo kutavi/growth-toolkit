@@ -51,6 +51,7 @@ const Home = () => {
           <div className={styles.title}>{'Pick one:'}</div>
           <Button
             label={'Current life'}
+            size={'sm'}
             style={{ backgroundColor: getCurrentColor('78%') }}
             onClick={() => {
               track('Select current');
@@ -59,6 +60,7 @@ const Home = () => {
           />
           <Button
             label={'Ideal life'}
+            size={'sm'}
             style={{ backgroundColor: getIdealColor('78%') }}
             onClick={() => {
               track('Select ideal');

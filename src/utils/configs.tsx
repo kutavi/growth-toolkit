@@ -1,3 +1,5 @@
+// tslint:disable: no-magic-numbers
+
 import Acceptance from '../assets/acceptance.jpeg';
 import Curiosity from '../assets/curiosity.jpeg';
 import Freedom from '../assets/freedom.jpeg';
@@ -8,6 +10,7 @@ import Motivators from '../assets/moving-motivators.jpg';
 import Order from '../assets/order.jpeg';
 import Power from '../assets/power.jpeg';
 import Relatedness from '../assets/relatedness.jpeg';
+import Resilience from '../assets/resilience.jpeg';
 import Status from '../assets/status.jpeg';
 import WheelOfLife from '../assets/wheel-of-life.png';
 import * as colors from '../styles/_colors.module.scss';
@@ -41,6 +44,13 @@ export const routes = [
     image: WheelOfLife,
     description:
       'An exercise to help you improve your life focus by identifying the areas in your life that need attention.',
+  },
+  {
+    route: '/resilience-scale',
+    label: 'Brief Resilience Scale',
+    image: Resilience,
+    description:
+      'A questionaire to assess your ability to bounce back or recover from stress',
   },
 ];
 
@@ -191,6 +201,39 @@ export const wheelOfLife = [
   { id: 8, name: 'Attitude' },
 ];
 
+export const resilience = [
+  {
+    id: 1,
+    question: 'I tend to bounce back quickly after hard times.',
+    points: [1, 2, 3, 4, 5],
+  },
+  {
+    id: 2,
+    question: 'I have a hard time making it through stressful events.',
+    points: [5, 4, 3, 2, 1],
+  },
+  {
+    id: 3,
+    question: 'It does not take me long to recover from a stressful event.',
+    points: [1, 2, 3, 4, 5],
+  },
+  {
+    id: 4,
+    question: 'It is hard for me to snap back when something bad happens.',
+    points: [5, 4, 3, 2, 1],
+  },
+  {
+    id: 5,
+    question: 'I usually come through difficult times with little trouble.',
+    points: [1, 2, 3, 4, 5],
+  },
+  {
+    id: 6,
+    question: 'I tend to take a long time to get over setbacks in my life.',
+    points: [5, 4, 3, 2, 1],
+  },
+];
+
 export const texts = {
   motivators: {
     title: 'Moving Motivators',
@@ -262,6 +305,40 @@ export const texts = {
         <a
           target='_blank'
           href='https://www.mindtools.com/pages/article/newHTE_93.htm'>
+          here
+        </a>
+      </div>
+    ),
+  },
+  resilience: {
+    title: 'Brief Resilience Scale',
+    description:
+      'A questionaire to assess your ability to bounce back or recover from stress',
+    info: (
+      <div>
+        This is a questionaire to help you assess your ability to bounce back or
+        recover from stress.
+        <br />
+        <br />
+        Try the following:
+        <ol>
+          <li>
+            First, answer the statements based on how strongly you agree or
+            disagree with them.
+          </li>
+          <li>
+            Then, check your resilience based on the answers. The score ranges
+            from 1 (low resilience) to 5 (high resilience).
+          </li>
+          <li>
+            Come back and repeat this exercise as you work on your resilience to
+            see your score improve.
+          </li>
+        </ol>
+        You can read more{' '}
+        <a
+          target='_blank'
+          href='https://www.researchgate.net/publication/23164897_The_Brief_Resilience_Scale_Assessing_the_Ability_to_Bounce_Back'>
           here
         </a>
       </div>

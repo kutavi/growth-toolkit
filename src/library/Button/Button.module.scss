@@ -3,16 +3,52 @@
 .button {
   padding: 12px;
   border-radius: 12px;
-  font-family: 'Nunito', sans-serif;
-  font-size: $font-small;
   border: 2px solid $grey-dark;
-  color: white;
   font-weight: bold;
-  background-color: #492ead;
-  width: 72px;
+  width: 110px;
   cursor: pointer;
+}
 
+.fullWidth {
+  width: 100%;
+}
+
+.lg {
+  font-size: $font-lg;
+}
+
+.sm {
+  font-size: $font-small;
+}
+
+.primary {
+  color: white;
+  background-color: $primary;
   &:hover {
-    background-color: #381d9d;
+    background-color: $primary-darker;
+  }
+}
+
+.secondary {
+  color: $white;
+  background-color: $secondary;
+  &:hover {
+    background-color: $secondary-darker;
+  }
+}
+
+.alert {
+  color: white;
+  background-color: $no;
+  &:hover {
+    background-color: $no-darker;
+  }
+}
+
+.disabled {
+  background-color: $grey;
+  cursor: not-allowed;
+  &:hover {
+    background-color: $grey;
   }
 }

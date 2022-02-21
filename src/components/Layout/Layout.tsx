@@ -42,8 +42,9 @@ export const Layout = ({ children }: LayoutProps) => {
             {'Home'}
           </Link>
           {routes.map(route => (
-            <div key={route.route}>
+            <>
               <Link
+                key={route.route}
                 partiallyActive
                 className={styles.item}
                 to={route.route}
@@ -63,7 +64,7 @@ export const Layout = ({ children }: LayoutProps) => {
                   ))}
                 </div>
               )}
-            </div>
+            </>
           ))}
         </div>
       </Popover>
