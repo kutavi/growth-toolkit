@@ -6,6 +6,7 @@ export interface SettingsState {
   isNavigationOpen: boolean;
   isMotivatorsInfoOpen: boolean;
   isWheelInfoOpen: boolean;
+  isResilienceInfoOpen: boolean;
 }
 
 const hasAvailableSpace =
@@ -14,6 +15,7 @@ export const initialState = {
   isNavigationOpen: hasAvailableSpace,
   isMotivatorsInfoOpen: hasAvailableSpace,
   isWheelInfoOpen: hasAvailableSpace,
+  isResilienceInfoOpen: hasAvailableSpace,
 };
 
 interface Action {

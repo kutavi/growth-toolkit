@@ -1,0 +1,67 @@
+@import 'src/styles/_base.scss';
+
+$border-radius: 12px;
+
+.group {
+  display: flex;
+  font-size: $font-small;
+  .selection:first-child {
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+    border-left: 2px solid $grey;
+  }
+  .selection:last-child {
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+}
+
+.selection {
+  padding: 12px;
+  border: 2px solid $grey;
+  border-left: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  > input {
+    display: none;
+  }
+  > label {
+    text-align: center;
+    cursor: pointer;
+  }
+  &:hover {
+    background-color: $primary-lighter;
+    color: $white;
+  }
+}
+.selected {
+  background-color: $primary;
+  font-weight: bold;
+  cursor: pointer;
+  > label {
+    color: $white;
+  }
+}
+
+@media (max-width: 450px) {
+  .group {
+    flex-direction: column;
+    .selection {
+      border-left: 2px solid $grey;
+      border-bottom: none;
+    }
+    .selection:first-child {
+      border-radius: 0;
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+    .selection:last-child {
+      border-radius: 0;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+      border-bottom: 2px solid $grey;
+    }
+  }
+}

@@ -14,12 +14,53 @@ $card-radius: 16px;
 .container {
   padding: 48px 24px;
   text-align: center;
-  font-family: 'Nunito', sans-serif;
   background-color: $grey-light;
   color: $text-default;
   h3 {
     max-width: 660px;
     margin: 0 auto 24px;
+  }
+}
+
+.questionaire {
+  margin-top: 68px;
+}
+
+.question {
+  margin-bottom: 80px;
+  > div {
+    padding-left: 16px;
+  }
+}
+
+.result {
+  padding: 12px 42px;
+  background-color: #f0f0ff;
+  text-align: center;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  .text {
+    line-height: 22px;
+    padding: 8px;
+    border-bottom: 1px solid $grey;
+  }
+  .level {
+    padding: 8px;
+    font-size: $font-big;
+    font-weight: bold;
+  }
+  .score {
+    font-weight: bold;
+  }
+  .high {
+    color: $yes;
+  }
+  .low {
+    color: $no;
+  }
+  .normal {
+    color: $text-default;
   }
 }
 
@@ -34,8 +75,15 @@ $card-radius: 16px;
 }
 
 .title {
-  font-family: 'Nunito';
   font-style: italic;
   width: 94px;
-  font-size: 16px;
+  font-size: $font-med;
+}
+
+@media (max-width: 600px) {
+  .question {
+    > div {
+      padding-left: 0;
+    }
+  }
 }
