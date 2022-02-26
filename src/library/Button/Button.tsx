@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import * as styles from './Button.module.scss';
 
 interface ButtonProps {
-  label: string;
+  children: string;
   id?: string;
   onClick: () => void;
   disabled?: boolean;
@@ -14,7 +14,7 @@ interface ButtonProps {
   fullWidth?: boolean;
 }
 export const Button = ({
-  label,
+  children,
   id,
   onClick,
   disabled,
@@ -33,6 +33,6 @@ export const Button = ({
       { [styles.fullWidth]: fullWidth }
     )}
     onClick={!disabled ? onClick : () => null}>
-    {label}
+    {children}
   </button>
 );

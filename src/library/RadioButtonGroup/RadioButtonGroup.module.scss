@@ -24,13 +24,6 @@ $border-radius: 12px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  > input {
-    display: none;
-  }
-  > label {
-    text-align: center;
-    cursor: pointer;
-  }
   &:hover {
     background-color: $primary-lighter;
     color: $white;
@@ -40,9 +33,7 @@ $border-radius: 12px;
   background-color: $primary;
   font-weight: bold;
   cursor: pointer;
-  > label {
-    color: $white;
-  }
+  color: $white;
 }
 
 @media (max-width: 450px) {

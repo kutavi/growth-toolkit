@@ -16,19 +16,14 @@ export const RadioButtonGroup = ({
 }: ButtonProps) => (
   <div className={styles.group}>
     {options.map(option => (
-      <div
+      <button
         onClick={() => onSelect(option.value)}
+        key={option.value}
         className={classnames(styles.selection, {
           [styles.selected]: selectedValue === option.value,
         })}>
-        <input
-          type='radio'
-          id={option.value.toString()}
-          name={groupName.toString()}
-          value={option.label}
-        />
-        <label htmlFor={option.label}>{option.label}</label>
-      </div>
+        {option.label}
+      </button>
     ))}
   </div>
 );

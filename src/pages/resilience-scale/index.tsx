@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Layout } from '../../components/Layout/Layout';
 import { SEO } from '../../components/Seo/Seo';
 import { Button } from '../../library/Button/Button';
@@ -47,6 +47,11 @@ const Home = () => {
   const { questions, updateResilience } = useResilience();
   const [showResults, setShowResults] = useState(false);
 
+  useEffect(() => {
+    if (showResults) {
+      window.scrollTo(0, document?.body?.clientHeight || 0);
+    }
+  }, [showResults]);
   return (
     <>
       <SEO
@@ -66,7 +71,6 @@ const Home = () => {
           {texts.resilience.info}
         </Popover>
         <Button
-          label={'Reset'}
           size={'sm'}
           disabled={!Boolean(questions.find(q => q.answer !== 0))}
           type='alert'
@@ -76,13 +80,14 @@ const Home = () => {
             setShowResults(false);
             const resetQuestions = questions.map(q => ({ ...q, answer: 0 }));
             updateResilience(resetQuestions);
-          }}
-        />
+          }}>
+          {'Reset'}
+        </Button>
         <div className={styles.questionaire}>
           {questions.map((question, index) => {
             const points = question.points;
             return (
-              <div className={styles.question}>
+              <div className={styles.question} key={question.id}>
                 <p>
                   {index + 1}. {question.question}
                 </p>
@@ -114,14 +119,14 @@ const Home = () => {
         </div>
         {!showResults ? (
           <Button
-            label={'Check my resilience'}
             disabled={Boolean(questions.find(q => q.answer === 0))}
             fullWidth
             onClick={() => {
               track('Check resilience');
               setShowResults(true);
-            }}
-          />
+            }}>
+            {'Check my resilience'}
+          </Button>
         ) : (
           calculateResilience(questions)
         )}
