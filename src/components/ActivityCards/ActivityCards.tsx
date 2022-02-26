@@ -7,7 +7,7 @@ const ActivityCards = () => (
     {routes.map(route => (
       <Link key={route.route} className={styles.card} to={route.route}>
         <div className={styles.header}>
-          <img src={route.image} />
+          <img src={route.image} alt={`Image for ${route.label}`} />
           <div className={styles.title}>{route.label}</div>
         </div>
         <div className={styles.description}>{route.description}</div>

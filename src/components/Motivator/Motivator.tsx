@@ -146,7 +146,7 @@ export const Motivator = ({
       <div
         className={styles.cardInner}
         style={examples?.length ? {} : { paddingBottom: '12px' }}>
-        <img className={styles.image} src={icon} />
+        <img className={styles.image} src={icon} alt={`Image for ${name}`} />
         <div className={styles.header}>
           <span className={styles.name}>{name}</span>
           {examples?.length && (
