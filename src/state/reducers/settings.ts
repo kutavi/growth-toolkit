@@ -1,6 +1,6 @@
 import { availableSpaceBreakpoint } from '../../utils/const';
 import { windowLoaded } from '../../utils/helpers';
-import { SETTINGS_STATE } from '../types/types';
+import { SETTINGS_STATE } from '../actions/types';
 
 export interface SettingsState {
   isNavigationOpen: boolean;

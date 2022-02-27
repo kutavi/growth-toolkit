@@ -1,5 +1,5 @@
 import { resilience } from '../../utils/configs';
-import { RESILIENCE_STATE } from '../types/types';
+import { RESILIENCE_STATE } from '../actions/types';
 
 export type Question = {
   id: number;

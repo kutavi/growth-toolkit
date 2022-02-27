@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { wheelOfLife } from '../../utils/configs';
 import { updateWheel as updateWheelAction } from '../actions/actions';
 import { Store } from '../reducers/root';
-import { Category } from '../reducers/wheelOfLife';
+import { Category } from '../types/wheel';
 
 export const useWheelOfLife = () => {
   const dispatch = useDispatch();
@@ -19,9 +19,7 @@ export const useWheelOfLife = () => {
     })
   );
 
-  const updateCategories = (
-    newWheelOfLife: ({ [key: string]: any } & Category)[]
-  ) => {
+  const updateCategories = (newWheelOfLife: Category[]) => {
     const wheelForState = newWheelOfLife.map(w => ({
       id: w.id,
       ideal: w.ideal,

@@ -7,7 +7,7 @@ import {
 } from 'chart.js';
 import React from 'react';
 import { PolarArea } from 'react-chartjs-2';
-import { WheelValues } from '../../state/reducers/wheelOfLife';
+import { WheelValues } from '../../state/types/wheel';
 import * as colors from '../../styles/_colors.module.scss';
 import { windowLoaded } from '../../utils/helpers';
 
@@ -58,6 +58,7 @@ export const WheelView = ({
   datasets,
   updateDataset,
 }: WheelViewProps) => {
+  const chartIsEmpty = !datasetLabels.length;
   const interactionPoints: Dataset[] = new Array(maxPoints)
     .fill(0)
     .map((i, index) => ({
@@ -113,9 +114,9 @@ export const WheelView = ({
             },
 
             ticks: {
+              display: !chartIsEmpty,
               z: 1,
               font: {
-                // tslint:disable-next-line: no-magic-numbers
                 size: isMobile ? 10 : 14,
                 weight: 'bold',
               },
@@ -133,8 +134,14 @@ export const WheelView = ({
                 ?.backgroundColor,
               font: {
                 weight: 'bold',
-                // tslint:disable-next-line: no-magic-numbers
-                size: isMobile ? 14 : 22,
+                size:
+                  datasetLabels.length > 10
+                    ? isMobile
+                      ? 12
+                      : 18
+                    : isMobile
+                    ? 14
+                    : 22,
               },
             },
           },

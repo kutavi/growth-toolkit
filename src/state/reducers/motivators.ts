@@ -1,5 +1,5 @@
 import { motivators } from '../../utils/configs';
-import { MOTIVATORS_STATE } from '../types/types';
+import { MOTIVATORS_STATE } from '../actions/types';
 
 export type Card = {
   id: number;

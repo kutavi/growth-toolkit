@@ -74,6 +74,19 @@ $card-radius: 16px;
   align-items: flex-end;
 }
 
+.toolArea {
+  display: flex;
+  width: 100%;
+  margin-bottom: 28px;
+  justify-content: space-between;
+}
+
+.select {
+  margin-top: 24px;
+  margin-right: 28px;
+  width: 100%;
+}
+
 .title {
   font-style: italic;
   width: 94px;

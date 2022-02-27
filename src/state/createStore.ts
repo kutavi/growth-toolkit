@@ -6,7 +6,13 @@ import combinedReducers, { Store } from './reducers/root';
 import '../styles/core.scss';
 import { windowLoaded } from '../utils/helpers';
 
-const savedStates = ['motivators', 'settings', 'wheelOfLife', 'resilience'];
+const savedStates = [
+  'motivators',
+  'settings',
+  'wheelOfLife',
+  'resilience',
+  'wheelCustom',
+];
 export default (preloadedState: Store) => {
   const store = createStore(
     combinedReducers,

@@ -40,7 +40,6 @@
       }
     ],
     "semicolon": [true, "always"],
-    "no-magic-numbers": true,
     "only-arrow-functions": true,
     "no-console": [true, "log"],
     "arrow-return-shorthand": [true, "multiline"],

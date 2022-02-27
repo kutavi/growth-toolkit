@@ -1,5 +1,3 @@
-// tslint:disable: no-magic-numbers
-
 import Acceptance from '../assets/acceptance.jpeg';
 import Curiosity from '../assets/curiosity.jpeg';
 import Freedom from '../assets/freedom.jpeg';
@@ -12,6 +10,7 @@ import Power from '../assets/power.jpeg';
 import Relatedness from '../assets/relatedness.jpeg';
 import Resilience from '../assets/resilience.jpeg';
 import Status from '../assets/status.jpeg';
+import WheelCustom from '../assets/wheel-custom.png';
 import WheelOfLife from '../assets/wheel-of-life.png';
 import * as colors from '../styles/_colors.module.scss';
 
@@ -44,6 +43,13 @@ export const routes = [
     image: WheelOfLife,
     description:
       'An exercise to help you improve your life focus by identifying the areas in your life that need attention.',
+  },
+  {
+    route: '/wheel-custom/',
+    label: 'Your Custom Wheel',
+    image: WheelCustom,
+    description:
+      'An exercise to help you improve your life focus. Similar to the Wheel of Life but totally customizable!',
   },
   {
     route: '/resilience-scale',
@@ -234,6 +240,44 @@ export const resilience = [
   },
 ];
 
+export const wheelAreas = [
+  { value: 1, label: 'Performance' },
+  { value: 2, label: 'Hobbies' },
+  { value: 3, label: 'Art' },
+  { value: 4, label: 'Career' },
+  { value: 5, label: 'Community' },
+  { value: 6, label: 'Relationships' },
+  { value: 7, label: 'Family' },
+  { value: 8, label: 'Friends' },
+  { value: 9, label: 'Finances' },
+  { value: 10, label: 'Social' },
+  { value: 11, label: 'Growth' },
+  { value: 12, label: 'Self-improvement' },
+  { value: 13, label: 'Nature' },
+  { value: 14, label: 'Attitude' },
+  { value: 15, label: 'Spirituality' },
+  { value: 16, label: 'Gratitude' },
+  { value: 17, label: 'Health' },
+  { value: 18, label: 'Love' },
+  { value: 19, label: 'Fun' },
+  { value: 20, label: 'Personal development' },
+  { value: 21, label: 'Active listening' },
+  { value: 22, label: 'Education' },
+  { value: 23, label: 'Sports' },
+  { value: 24, label: 'Contribution' },
+  { value: 25, label: 'Goals' },
+  { value: 26, label: 'Mission' },
+  { value: 27, label: 'Free time' },
+  { value: 28, label: 'Sleep' },
+  { value: 29, label: 'Purpose' },
+  { value: 30, label: 'Exercise' },
+  { value: 31, label: 'Mental health' },
+  { value: 32, label: 'Nutrition' },
+  { value: 33, label: 'Travel' },
+  { value: 34, label: 'Creativity' },
+  { value: 35, label: 'Learning' },
+].sort((a, b) => (a.label > b.label ? 1 : b.label > a.label ? -1 : 0));
+
 export const texts = {
   motivators: {
     title: 'Moving Motivators',
@@ -302,6 +346,46 @@ export const texts = {
           </li>
         </ol>
         You can read more{' '}
+        <a
+          target='_blank'
+          href='https://www.mindtools.com/pages/article/newHTE_93.htm'>
+          here
+        </a>
+      </div>
+    ),
+  },
+  wheelCustom: {
+    title: 'Custom Wheel',
+    description:
+      'An exercise to help you identify the areas in your life that need attention. Similar to the wheel of life but you get to choose the areas you want to focus on.',
+    info: (
+      <div>
+        This is an exercise to help you quickly identify the areas in your life
+        to which you want to devote more energy and attention. Similar to the
+        wheel of life but you get to choose the areas you want to focus on.
+        <br />
+        <br />
+        Try the following:
+        <ol>
+          <li>
+            First, add the areas in your life you want to focus on. Choose from
+            the examples or add your own.
+          </li>
+          <li>
+            Then, on a scale of 0 to 10, think about the amount of attention
+            you're devoting to each area of your life.
+          </li>
+          <li>
+            Next, consider your ideal level of attention in each area of your
+            life. What would that look like?
+          </li>
+          <li>
+            Finally, use the visual representation of your current life and your
+            ideal life balance. Where are the gaps? These are the areas of your
+            life that need more or less of attention.
+          </li>
+        </ol>
+        You can see the tranditional wheel of life and read more{' '}
         <a
           target='_blank'
           href='https://www.mindtools.com/pages/article/newHTE_93.htm'>

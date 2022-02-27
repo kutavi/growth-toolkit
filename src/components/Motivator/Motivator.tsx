@@ -104,7 +104,6 @@ export const Motivator = ({
         isDragging: monitor.isDragging(),
       }),
     });
-    // tslint:disable-next-line: no-magic-numbers
     const dragOpacity = isTouchDevice() ? 0.4 : 0;
     dragHandlerId.current = handlerId;
     opacity.current = isDragging ? dragOpacity : 1;

@@ -105,11 +105,8 @@ const Home = () => {
                   options={[
                     { value: points[0], label: 'Strongly Disagree' },
                     { value: points[1], label: 'Disagree' },
-                    // tslint:disable-next-line: no-magic-numbers
                     { value: points[2], label: 'Neutral' },
-                    // tslint:disable-next-line: no-magic-numbers
                     { value: points[3], label: 'Agree' },
-                    // tslint:disable-next-line: no-magic-numbers
                     { value: points[4], label: 'Strongly Agree' },
                   ]}
                 />

@@ -1,17 +1,16 @@
-import { wheelOfLife } from '../../utils/configs';
-import { WHEEL_STATE } from '../actions/types';
+import { WHEEL_CUSTOM_STATE } from '../actions/types';
 import { Category } from '../types/wheel';
 
-export interface WheelOfLifeState {
-  categories: Category[];
+interface CustomCategory extends Category {
+  name: string;
+}
+
+export interface WheelCustomState {
+  categories: CustomCategory[];
 }
 
 export const initialState = {
-  categories: wheelOfLife.map(category => ({
-    id: category.id,
-    current: 0,
-    ideal: 0,
-  })),
+  categories: [] as CustomCategory[],
 };
 
 interface Action {
@@ -20,13 +19,13 @@ interface Action {
 }
 
 const reducer = (
-  state: WheelOfLifeState = initialState,
+  state: WheelCustomState = initialState,
   action: Action = {}
-): WheelOfLifeState => {
+): WheelCustomState => {
   const { type, payload } = action;
 
   switch (type) {
-    case WHEEL_STATE:
+    case WHEEL_CUSTOM_STATE:
       return {
         ...state,
         ...payload,
