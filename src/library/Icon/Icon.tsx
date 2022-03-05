@@ -1,5 +1,7 @@
 import {
   FaBars,
+  FaBug,
+  FaCheckCircle,
   FaChevronDown,
   FaExclamation,
   FaLightbulb,
@@ -14,6 +16,8 @@ const Icons = {
   arrowDown: FaChevronDown,
   exclamation: FaExclamation,
   question: FaQuestion,
+  bug: FaBug,
+  check: FaCheckCircle,
 };
 
 export type IconType = keyof typeof Icons;

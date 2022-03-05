@@ -1,0 +1,10 @@
+@import 'src/styles/_base.scss';
+
+.input {
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: 1px solid $grey;
+  padding: 8px;
+  box-sizing: border-box;
+  width: 100%;
+}

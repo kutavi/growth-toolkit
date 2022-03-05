@@ -13,7 +13,7 @@ import * as styles from '../Page.module.scss';
 
 const selections = WheelValues;
 
-const Home = () => {
+const WheelOfLife = () => {
   const { isWheelInfoOpen, updateSettings } = useSettings();
   const { categories: wheelData, updateCategories } = useWheelOfLife();
   const [selection, updateSelection] = useState(selections.current);
@@ -105,4 +105,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default WheelOfLife;

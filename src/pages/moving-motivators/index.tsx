@@ -11,7 +11,7 @@ import { useSettings } from '../../state/hooks/useSettings';
 import { texts } from '../../utils/configs';
 import { isTouchDevice, reorderArray, track } from '../../utils/helpers';
 
-const Home = () => {
+const MovingMotivatorsPage = () => {
   const { updateCards, cards: stateCards } = useMotivators();
   const { isMotivatorsInfoOpen, updateSettings } = useSettings();
   const [cards, setCards] = useState(stateCards);
@@ -63,4 +63,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default MovingMotivatorsPage;

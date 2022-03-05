@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
+import { ErrorBoundary } from './components/ErrorBoundary/ErrorBoundary';
 
 interface AppProps {
-    children: any
+  children: any;
 }
 export const App = ({ children }: AppProps) => {
   const [hasLoaded, setLoaded] = useState(false);
@@ -12,5 +13,5 @@ export const App = ({ children }: AppProps) => {
   if (!hasLoaded) {
     return null;
   }
-  return children;
+  return <ErrorBoundary>{children}</ErrorBoundary>;
 };

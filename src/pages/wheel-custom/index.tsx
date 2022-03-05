@@ -14,7 +14,7 @@ import * as styles from '../Page.module.scss';
 
 const selections = WheelValues;
 
-const Home = () => {
+const WheelCustomPage = () => {
   const { isWheelInfoOpen, updateSettings } = useSettings();
   const { categories: wheelData, updateCategories } = useWheelCustom();
   const [selection, updateSelection] = useState(selections.current);
@@ -133,4 +133,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default WheelCustomPage;

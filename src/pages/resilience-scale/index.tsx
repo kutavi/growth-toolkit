@@ -42,7 +42,7 @@ const calculateResilience = (questions: Question[]) => {
   );
 };
 
-const Home = () => {
+const ResilienceScale = () => {
   const { isResilienceInfoOpen, updateSettings } = useSettings();
   const { questions, updateResilience } = useResilience();
   const [showResults, setShowResults] = useState(false);
@@ -132,4 +132,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ResilienceScale;

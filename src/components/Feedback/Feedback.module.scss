@@ -1,18 +1,20 @@
 @import 'src/styles/_base.scss';
 
-$card-width: 200px;
-$card-radius: 16px;
-
 .content {
   display: flex;
   flex-direction: column;
 }
 
-.input {
-  margin-bottom: 8px;
-  padding: 8px;
-}
-
 .send {
   align-self: end;
+  margin-top: 8px;
+}
+
+.success {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  > svg {
+    margin-bottom: 8px;
+  }
 }
