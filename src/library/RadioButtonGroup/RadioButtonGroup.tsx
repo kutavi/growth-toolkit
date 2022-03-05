@@ -2,7 +2,7 @@ import classnames from 'classnames';
 
 import * as styles from './RadioButtonGroup.module.scss';
 
-interface ButtonProps {
+interface RadioButtonGroupProps {
   options: { value: number; label: string }[];
   groupName: string | number;
   selectedValue: number;
@@ -13,7 +13,7 @@ export const RadioButtonGroup = ({
   groupName,
   selectedValue,
   onSelect,
-}: ButtonProps) => (
+}: RadioButtonGroupProps) => (
   <div className={styles.group}>
     {options.map(option => (
       <button
