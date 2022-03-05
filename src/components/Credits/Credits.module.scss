@@ -1,0 +1,34 @@
+@import 'src/styles/_base.scss';
+
+.wrapper {
+  padding-bottom: 48px;
+}
+
+.support {
+ font-size: $font-normal;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin: 12px 12px 0;
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ background-color: white;
+ border-top: 1px solid $grey-dark;
+ right: 0;
+ padding: 8px;
+ a {
+   margin-left: 8px;
+ }
+ img {
+ width: 220px;
+}
+}
+
+
+@media (max-width: 768px) {
+  .support {
+    font-size: $font-med;
+    flex-direction: column-reverse;
+   }
+}
