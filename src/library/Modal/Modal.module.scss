@@ -1,0 +1,14 @@
+@import 'src/styles/_base.scss';
+
+.divider {
+border-bottom: 1px solid $grey;
+}
+
+.modal {
+  color: $text-default;
+  border-radius: 6px;
+  padding: 2rem;
+  h2 {
+    margin-top: 0;
+  }
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Icon, IconType } from '../Icon/Icon';
+import { IconButton } from '../IconButton/IconButton';
 import * as styles from './Popover.module.scss';
 
 interface PopoverProps {
@@ -29,13 +30,10 @@ export const Popover = ({
   }[position];
 
   if (!isShown && buttonIcon) {
-    return (
-      <div
-        className={`${styles.iconButton} ${positionStyle}`}
-        onClick={() => toggle(true)}>
-        <Icon icon={buttonIcon} />
-      </div>
-    );
+    return <IconButton
+        className={`${positionStyle}`}
+        onClick={() => toggle(true)}
+        icon={buttonIcon} />;
   }
 
   if (!isShown) {
