@@ -2,4 +2,4 @@ export const DragTypes = {
   card: 'CARD',
 };
 
-export const availableSpaceBreakpoint = 1620;
+export const availableSpaceBreakpoint = 1460;

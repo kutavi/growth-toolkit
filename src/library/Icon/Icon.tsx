@@ -1,4 +1,11 @@
-import { FaBars, FaChevronDown, FaLightbulb, FaTimes, FaExclamation, FaQuestion } from 'react-icons/fa';
+import {
+  FaBars,
+  FaChevronDown,
+  FaExclamation,
+  FaLightbulb,
+  FaQuestion,
+  FaTimes,
+} from 'react-icons/fa';
 
 const Icons = {
   menu: FaBars,

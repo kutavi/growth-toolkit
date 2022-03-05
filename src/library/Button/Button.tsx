@@ -21,6 +21,7 @@ export const Button = ({
   style,
   type = 'primary',
   size = 'default',
+  className,
   fullWidth,
 }: ButtonProps) => (
   <button
@@ -30,7 +31,8 @@ export const Button = ({
       styles[type],
       styles[size],
       { [styles.disabled]: disabled },
-      { [styles.fullWidth]: fullWidth }
+      { [styles.fullWidth]: fullWidth },
+      className
     )}
     onClick={!disabled ? onClick : () => null}>
     {children}

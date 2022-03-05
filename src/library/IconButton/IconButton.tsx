@@ -13,11 +13,10 @@ export const IconButton = ({
   icon,
   className,
   type = 'square',
-}: IconButtonProps) => {
-
-  return (
-    <div className={`${styles.iconButton} ${styles[type]} ${className}`} onClick={onClick}>
+}: IconButtonProps) => (
+  <div
+    className={`${styles.iconButton} ${styles[type]} ${className}`}
+    onClick={onClick}>
     <Icon icon={icon} />
   </div>
-  );
-};
+);

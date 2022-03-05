@@ -42,7 +42,7 @@ const Home = () => {
             track(`${value ? 'Opened' : 'Closed'} life wheel info`);
             updateSettings({ isWheelInfoOpen: value });
           }}
-          position={'top-left'}
+          position={'topLeft'}
           buttonIcon={'help'}
           title={texts.wheelOfLife.title}>
           {texts.wheelOfLife.info}

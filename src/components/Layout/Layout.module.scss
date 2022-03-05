@@ -17,10 +17,10 @@
 }
 
 .item {
-  padding: 8px 0;
+  padding: 10px 0;
   text-decoration: none;
   color: $text-inactive;
-  font-size: $font-normal;
+  font-size: $font-lg;
   &:hover {
     color: $text-default;
   }

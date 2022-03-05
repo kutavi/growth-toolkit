@@ -1,9 +1,12 @@
+import { globalHistory } from '@reach/router';
 import { Link } from 'gatsby';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Popover } from '../../library/Popover/Popover';
+import useIsMobile from '../../state/hooks/useIsMobile';
 import { useSettings } from '../../state/hooks/useSettings';
 import { routes } from '../../utils/configs';
 import { track } from '../../utils/helpers';
+import Feedback from '../Feedback/Feedback';
 import * as styles from './Layout.module.scss';
 
 interface LayoutProps {
@@ -11,16 +14,16 @@ interface LayoutProps {
 }
 export const Layout = ({ children }: LayoutProps) => {
   const { isNavigationOpen, updateSettings } = useSettings();
-
-  const [isClient, setClient] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
-    setClient(true);
+    if (isMobile) {
+      return globalHistory.listen(({ action }) => {
+        if (action === 'PUSH') updateSettings({ isNavigationOpen: false });
+      });
+    }
+    return;
   }, []);
-
-  if (!isClient) {
-    return null;
-  }
 
   return (
     <div className={styles.container}>
@@ -30,7 +33,7 @@ export const Layout = ({ children }: LayoutProps) => {
           track(`${value ? 'Opened' : 'Closed'} nav menu`);
           updateSettings({ isNavigationOpen: value });
         }}
-        position={'top-right'}
+        position={'topRight'}
         title={'Toolkit'}
         buttonIcon={'menu'}>
         <div className={styles.menu}>
@@ -68,6 +71,8 @@ export const Layout = ({ children }: LayoutProps) => {
           ))}
         </div>
       </Popover>
+
+      {!isMobile && <Feedback />}
       <div className={styles.content}>{children}</div>
     </div>
   );

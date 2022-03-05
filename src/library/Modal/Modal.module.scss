@@ -1,7 +1,7 @@
 @import 'src/styles/_base.scss';
 
 .divider {
-border-bottom: 1px solid $grey;
+  border-bottom: 1px solid $grey;
 }
 
 .modal {
@@ -11,4 +11,15 @@ border-bottom: 1px solid $grey;
   h2 {
     margin-top: 0;
   }
+}
+
+.fullScreen {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+.body {
+  margin-top: 16px;
 }

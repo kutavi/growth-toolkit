@@ -1,17 +1,8 @@
 # Growth and personal development toolkit
 
-Digital tools to help you in your personal development and decision making
+Digital coaching tools to help you in your personal development and decision making
 
 > <b>Built with</b>: Gatsby, Typescript, React, Redux, Sass, Jest, RTL
-
-&nbsp;
-
-## Tools implemented
-
-Tool | view_at  | info
-:--- | :--- | :--- |
-Moving motivators |  [**link**](https://growth-toolkit.netlify.app/moving-motivators)  | [link](https://management30.com/practice/moving-motivators/)
-Wheel of Life |  [**link**](https://growth-toolkit.netlify.app/wheel-of-life)  | [link](https://www.mindtools.com/pages/article/newHTE_93.htm)
 
 &nbsp;
 
