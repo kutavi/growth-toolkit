@@ -1,15 +1,18 @@
-import { useEffect, useState } from 'react';
+import classnames from 'classnames';
+import useIsMobile from '../../state/hooks/useIsMobile';
 import { Icon, IconType } from '../Icon/Icon';
+import { IconButton } from '../IconButton/IconButton';
+import Modal from '../Modal/Modal';
 import * as styles from './Popover.module.scss';
 
 interface PopoverProps {
   title: string;
   children: string | JSX.Element;
-  isShown?: boolean;
+  isShown: boolean;
   canClose?: boolean;
   buttonIcon?: IconType;
   toggle: (value: boolean) => void;
-  position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+  position: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
 }
 
 export const Popover = ({
@@ -21,20 +24,30 @@ export const Popover = ({
   canClose = true,
   buttonIcon,
 }: PopoverProps) => {
-  const positionStyle = {
-    'top-left': styles.topLeft,
-    'top-right': styles.topRight,
-    'bottom-left': styles.bottomLeft,
-    'bottom-right': styles.bottomRight,
-  }[position];
+  const isMobile = useIsMobile();
+
+  const positionStyle = `${styles[position]} ${styles[position + 'Color']}`;
 
   if (!isShown && buttonIcon) {
     return (
-      <div
-        className={`${styles.iconButton} ${positionStyle}`}
-        onClick={() => toggle(true)}>
-        <Icon icon={buttonIcon} />
-      </div>
+      <IconButton
+        className={`${positionStyle}`}
+        onClick={() => toggle(true)}
+        icon={buttonIcon}
+      />
+    );
+  }
+
+  if (isMobile) {
+    return (
+      <Modal
+        fullScreen
+        className={styles[`${position}Color`]}
+        isShown={isShown}
+        title={title}
+        onClose={() => toggle(false)}>
+        {children}
+      </Modal>
     );
   }
 
@@ -43,7 +56,7 @@ export const Popover = ({
   }
 
   return (
-    <div className={`${styles.popover} ${positionStyle}`}>
+    <div className={classnames(styles.popover, positionStyle)}>
       <div className={styles.header}>
         <span className={styles.title}>{title}</span>
         {canClose && (

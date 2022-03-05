@@ -33,3 +33,13 @@ export const track = (name: string, properties?: TrackProperties) =>
   windowLoaded() &&
   !isDev() &&
   (window as any).splitbee?.track(name, properties);
+
+export const debounce = (func: () => void, timeout = 300) => {
+  let timer: NodeJS.Timeout;
+  return (...args: any) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, timeout);
+  };
+};

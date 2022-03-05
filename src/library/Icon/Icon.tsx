@@ -1,10 +1,19 @@
-import { FaBars, FaChevronDown, FaLightbulb, FaTimes } from 'react-icons/fa';
+import {
+  FaBars,
+  FaChevronDown,
+  FaExclamation,
+  FaLightbulb,
+  FaQuestion,
+  FaTimes,
+} from 'react-icons/fa';
 
 const Icons = {
   menu: FaBars,
   help: FaLightbulb,
   close: FaTimes,
   arrowDown: FaChevronDown,
+  exclamation: FaExclamation,
+  question: FaQuestion,
 };
 
 export type IconType = keyof typeof Icons;

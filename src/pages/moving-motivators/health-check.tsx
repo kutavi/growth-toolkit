@@ -34,7 +34,7 @@ const HealthCheck = () => {
             track(`${value ? 'Opened' : 'Closed'} motivators info`);
             updateSettings({ isMotivatorsInfoOpen: value });
           }}
-          position={'top-left'}
+          position={'topLeft'}
           buttonIcon={'help'}
           title={texts.motivators.title}>
           {texts.motivators.info}

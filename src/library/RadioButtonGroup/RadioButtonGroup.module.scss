@@ -19,6 +19,7 @@ $border-radius: 12px;
 .selection {
   padding: 12px;
   border: 2px solid $grey;
+  background-color: $white;
   border-left: none;
   display: flex;
   align-items: center;
@@ -36,19 +37,19 @@ $border-radius: 12px;
   color: $white;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 520px) {
   .group {
-    flex-direction: column;
+    flex-direction: column-reverse;
     .selection {
       border-left: 2px solid $grey;
       border-bottom: none;
     }
-    .selection:first-child {
+    .selection:last-child {
       border-radius: 0;
       border-top-left-radius: $border-radius;
       border-top-right-radius: $border-radius;
     }
-    .selection:last-child {
+    .selection:first-child {
       border-radius: 0;
       border-bottom-left-radius: $border-radius;
       border-bottom-right-radius: $border-radius;

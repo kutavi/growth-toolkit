@@ -43,7 +43,7 @@ const Home = () => {
             track(`${value ? 'Opened' : 'Closed'} custom wheel info`);
             updateSettings({ isWheelInfoOpen: value });
           }}
-          position={'top-left'}
+          position={'topLeft'}
           buttonIcon={'help'}
           title={texts.wheelCustom.title}>
           {texts.wheelCustom.info}

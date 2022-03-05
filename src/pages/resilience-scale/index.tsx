@@ -65,7 +65,7 @@ const Home = () => {
             track(`${value ? 'Opened' : 'Closed'} resilience info`);
             updateSettings({ isResilienceInfoOpen: value });
           }}
-          position={'top-left'}
+          position={'topLeft'}
           buttonIcon={'help'}
           title={texts.resilience.title}>
           {texts.resilience.info}

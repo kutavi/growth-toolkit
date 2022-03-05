@@ -3,16 +3,8 @@
 $card-width: 200px;
 $card-radius: 16px;
 
-.gitLink {
-  margin-left: 8px;
-  img {
-    width: 32px;
-    height: 32px;
-  }
-}
-
 .container {
-  padding: 48px 24px;
+  padding: 48px 30px;
   text-align: center;
   background-color: $grey-light;
   color: $text-default;
@@ -91,6 +83,38 @@ $card-radius: 16px;
   font-style: italic;
   width: 94px;
   font-size: $font-med;
+}
+
+.creditsBtn {
+  position: fixed;
+  right: 1%;
+  top: 1%;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  color: $white;
+  background-color: $dark-pink;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
 @media (max-width: 600px) {

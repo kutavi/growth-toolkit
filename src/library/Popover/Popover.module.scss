@@ -20,22 +20,32 @@
   box-shadow: $shadow-small-hover;
   color: $text-default;
   background-color: $info;
-  border-radius: 100%;
+  border-radius: 8px;
   padding: 8px;
   display: flex;
   cursor: pointer;
 }
 
+.topLeftColor {
+  background-color: $info;
+}
+
+.topRightColor {
+  background-color: $grey-dark;
+}
+
+.bottomRightColor {
+  background-color: #fff0cf;
+}
+
 .topLeft {
   position: fixed;
-  background-color: $info;
   left: 1%;
   top: 1%;
 }
 
 .topRight {
   position: fixed;
-  background-color: $grey-dark;
   right: 1%;
   top: 1%;
 }
@@ -79,4 +89,8 @@
   cursor: pointer;
   top: -4px;
   right: 0;
+}
+
+.fullScreen {
+  width: 100%;
 }
