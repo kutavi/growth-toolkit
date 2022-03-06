@@ -1,10 +1,8 @@
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { load, save } from 'redux-localstorage-simple';
-import combinedReducers, { Store } from './reducers/root';
-
-import '../styles/core.scss';
 import { windowLoaded } from '../utils/helpers';
+import combinedReducers, { Store } from './reducers/root';
 
 const savedStates = ['motivators', 'wheelOfLife', 'resilience', 'wheelCustom'];
 export default (preloadedState: Store) => {

@@ -2,6 +2,7 @@ import { useLocation } from '@reach/router';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { isDev } from '../../utils/helpers';
 
 interface SEOProps {
   title?: string;
@@ -62,7 +63,7 @@ export const SEO = ({ title, description, image }: SEOProps) => {
       )}
 
       {seo.image && <meta name='twitter:image' content={seo.image} />}
-      <script async src='https://cdn.splitbee.io/sb.js'></script>
+      {!isDev() && <script async src='https://cdn.splitbee.io/sb.js'></script>}
     </Helmet>
   );
 };

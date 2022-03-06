@@ -20,6 +20,10 @@ export const useSettings = () => {
     (state: Store) => state.settings.isResilienceInfoOpen
   );
 
+  const newsletterPromptTriggered = useSelector(
+    (state: Store) => state.settings.newsletterPromptTriggered
+  );
+
   const updateSettings = (newSettings: Partial<SettingsState>) => {
     dispatch(updateSettingsAction(newSettings));
   };
@@ -29,6 +33,7 @@ export const useSettings = () => {
     isMotivatorsInfoOpen,
     isResilienceInfoOpen,
     isWheelInfoOpen,
+    newsletterPromptTriggered,
     updateSettings,
   };
 };

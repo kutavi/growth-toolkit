@@ -1,0 +1,29 @@
+@import 'src/styles/_base.scss';
+
+.modal {
+  padding: 2rem 0.2rem 0.2rem;
+}
+
+.prompt {
+  margin-left: 12px;
+  font-size: $font-normal;
+}
+
+.subscribe {
+  margin: 8px 62px 8px 12px;
+}
+
+.hiddenBtn {
+  background-color: red;
+  width: 127px;
+  height: 34px;
+  position: absolute;
+  bottom: 184px;
+  right: 93px;
+}
+
+@media (max-width: 640px) {
+  .prompt {
+    display: none;
+  }
+}
