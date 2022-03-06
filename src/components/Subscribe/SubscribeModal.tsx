@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
 import Modal from '../../library/Modal/Modal';
-import { CookieService } from '../../utils/cookie';
 import { track } from '../../utils/helpers';
 import * as styles from './Subscribe.module.scss';
 

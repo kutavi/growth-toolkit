@@ -11,7 +11,7 @@ interface AppProps {
   children: any;
 }
 
-const timeToWaitBeforeShowing = 3000; // 300000 // ~5min
+const timeToWaitBeforeShowing = 300000; // ~5min
 export const App = ({ children }: AppProps) => {
   const [hasLoaded, setLoaded] = useState(false);
   const [isSubscribeOpen, setSubscribeOpen] = useState(false);
