@@ -1,9 +1,10 @@
+import { track } from '../../utils/helpers';
 import * as styles from './Credits.module.scss';
 
 const Credits = () => (
   <div className={styles.wrapper}>
     <h3>{'Credits'}</h3>
-    <ul>
+    <ul onClick={() => track('Clicked credit links')}>
       <li>
         Site's favicon - Leaf icon -{' '}
         <a
@@ -27,14 +28,14 @@ const Credits = () => (
     <ul>
       <li>
         This project is open source! Check it out on{' '}
-        <a target='_blank' href='https://github.com/kutavi/growth-toolkit'>
+        <a onClick={() => track('Clicked Github link')} target='_blank' href='https://github.com/kutavi/growth-toolkit'>
           {'Github'}
         </a>
       </li>
     </ul>
     <div className={styles.support}>
       <span>If you find this site useful, consider buying me a coffee ❤️</span>
-      <a href='https://www.buymeacoffee.com/atseniklidou' target={'_blank'}>
+      <a onClick={() => track('Buy Coffee')} href='https://www.buymeacoffee.com/atseniklidou' target={'_blank'}>
         <img
           alt='buy me a coffee'
           src='https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=atseniklidou&button_colour=eab308&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff'
