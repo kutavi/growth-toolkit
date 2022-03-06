@@ -17,6 +17,7 @@ export const Layout = ({ children }: LayoutProps) => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
+    track('Loaded a tool page')
     if (isMobile) {
       return globalHistory.listen(({ action }) => {
         if (action === 'PUSH') updateSettings({ isNavigationOpen: false });
