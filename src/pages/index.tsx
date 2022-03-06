@@ -30,7 +30,10 @@ const Home = () => {
         <Modal
           isShown={isModalOpen}
           title={'About'}
-          onClose={() => setModalOpen(false)}>
+          onClose={() => {
+            setModalOpen(false)
+            track('Closed credits')
+          }}>
           <Credits />
         </Modal>
       </div>
