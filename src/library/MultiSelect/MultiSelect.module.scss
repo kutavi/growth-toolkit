@@ -2,4 +2,9 @@
 
 .select {
   width: 100%;
+  input {
+    &:focus {
+      box-shadow: none;
+    }
+  }
 }

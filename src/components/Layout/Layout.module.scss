@@ -12,7 +12,7 @@
 }
 
 .content {
-  padding: 16px 46px;
+  padding: 16px 32px;
   background-color: $grey-light;
 }
 
@@ -35,4 +35,10 @@
   padding-left: 12px;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 945px) {
+  .content {
+    padding: 22px 54px;
+  }
 }

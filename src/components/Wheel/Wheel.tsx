@@ -7,6 +7,7 @@ import {
 } from 'chart.js';
 import React from 'react';
 import { PolarArea } from 'react-chartjs-2';
+import useIsMobile from '../../state/hooks/useIsMobile';
 import { WheelValues } from '../../state/types/wheel';
 import * as colors from '../../styles/_colors.module.scss';
 import { windowLoaded } from '../../utils/helpers';
@@ -37,12 +38,7 @@ interface WheelViewProps {
 
 ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
-const breakpoint = 900;
 const containerWidth = 690;
-const isMobile = windowLoaded() && window.innerWidth < breakpoint;
-const isPortrait =
-  windowLoaded() &&
-  Math.min(window.innerWidth, containerWidth) < window.innerHeight;
 
 const portraitRatio = 1;
 const squareRatio = 2;
@@ -58,6 +54,11 @@ export const WheelView = ({
   datasets,
   updateDataset,
 }: WheelViewProps) => {
+  const isMobile = useIsMobile(900);
+
+  const isPortrait =
+    windowLoaded() &&
+    Math.min(window.innerWidth, containerWidth) < window.innerHeight;
   const chartIsEmpty = !datasetLabels.length;
   const interactionPoints: Dataset[] = new Array(maxPoints)
     .fill(0)

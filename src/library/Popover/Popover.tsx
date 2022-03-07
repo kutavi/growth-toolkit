@@ -26,7 +26,8 @@ export const Popover = ({
   buttonIcon,
   buttonLabel,
 }: PopoverProps) => {
-  const isMobile = useIsMobile();
+  const smallSpaceAvailable = useIsMobile();
+  const isMobile = useIsMobile(1200);
 
   const positionStyle = `${styles[position]} ${styles[position + 'Color']}`;
 
@@ -41,7 +42,7 @@ export const Popover = ({
     );
   }
 
-  if (isMobile) {
+  if (smallSpaceAvailable) {
     return (
       <Modal
         fullScreen

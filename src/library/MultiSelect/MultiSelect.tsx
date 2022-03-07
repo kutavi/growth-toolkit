@@ -31,5 +31,11 @@ export const MultiSelect = ({
     className={styles.select}
     closeMenuOnSelect={closeMenuOnSelect}
     value={value}
+    styles={{
+      control: base => ({
+        ...base,
+        borderRadius: '6px',
+      }),
+    }}
   />
 );
