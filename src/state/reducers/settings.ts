@@ -1,22 +1,18 @@
-import { availableSpaceBreakpoint } from '../../utils/const';
-import { windowLoaded } from '../../utils/helpers';
 import { SETTINGS_STATE } from '../actions/types';
 
 export interface SettingsState {
-  isNavigationOpen: boolean;
-  isMotivatorsInfoOpen: boolean;
-  isWheelInfoOpen: boolean;
-  isResilienceInfoOpen: boolean;
+  isNavigationOpen?: boolean;
+  isMotivatorsInfoOpen?: boolean;
+  isWheelInfoOpen?: boolean;
+  isResilienceInfoOpen?: boolean;
   newsletterPromptTriggered: boolean;
 }
 
-const hasAvailableSpace =
-  windowLoaded() && window.innerWidth >= availableSpaceBreakpoint;
 export const initialState = {
-  isNavigationOpen: hasAvailableSpace,
-  isMotivatorsInfoOpen: hasAvailableSpace,
-  isWheelInfoOpen: hasAvailableSpace,
-  isResilienceInfoOpen: hasAvailableSpace,
+  isNavigationOpen: undefined,
+  isMotivatorsInfoOpen: undefined,
+  isWheelInfoOpen: undefined,
+  isResilienceInfoOpen: undefined,
   newsletterPromptTriggered: false,
 };
 

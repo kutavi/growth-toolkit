@@ -46,6 +46,13 @@ module.exports = {
         windowKey: '__PRELOADED_STATE__',
       },
     },
+    {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        id: 2862324,
+        sv: 6,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

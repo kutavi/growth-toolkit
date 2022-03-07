@@ -11,7 +11,6 @@ interface SubscribeModalProps {
 const iframeSrc =
   'https://07667286.sibforms.com/serve/MUIEACqJx8dqhR51Et__teZNMnpBpNpYu6ee0q7E2sBrg6VGKIN5rVX3_lqMnc9Y6nswUZdrCBHvwUE3OwqVRPGhCrxcRHS4i-eM_VYtNK_QC9ysp5NsoJ4ZCW11wJmjGxysJit1BPesrfIus3RqbfRlzYdmu0D9gg2Ex3a5Ub484JeE0m7F6Sn75XaASinmPvDYuExITuRJqoch';
 
-  
 const SubscribeModal = ({ isOpen, onClose, children }: SubscribeModalProps) => (
   <Modal
     isShown={isOpen}
