@@ -7,6 +7,7 @@ import { useSettings } from '../../state/hooks/useSettings';
 import { routes } from '../../utils/configs';
 import { track } from '../../utils/helpers';
 import Feedback from '../Feedback/Feedback';
+import { Share } from '../Share/Share';
 import * as styles from './Layout.module.scss';
 
 interface LayoutProps {
@@ -28,6 +29,7 @@ export const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className={styles.container}>
+      <Share />
       <Popover
         isShown={isNavigationOpen}
         toggle={value => {

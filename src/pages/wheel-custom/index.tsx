@@ -97,7 +97,7 @@ const WheelCustomPage = () => {
             </Button>
           </div>
         </div>
-        <div className={styles.chartContainer}>
+        <div className={styles.chartContainer} id='capture'>
           <WheelView
             chartToEdit={selection}
             maxPoints={highestScore}

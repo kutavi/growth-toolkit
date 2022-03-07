@@ -44,14 +44,22 @@ export const Popover = ({
 
   if (smallSpaceAvailable) {
     return (
-      <Modal
-        fullScreen
-        className={styles[`${position}Color`]}
-        isShown={isShown}
-        title={title}
-        onClose={() => toggle(false)}>
-        {children}
-      </Modal>
+      <>
+        <IconButton
+          className={`${positionStyle}`}
+          onClick={() => toggle(true)}
+          icon={buttonIcon}
+          label={isMobile ? '' : buttonLabel}
+        />
+        <Modal
+          fullScreen
+          className={styles[`${position}Color`]}
+          isShown={isShown}
+          title={title}
+          onClose={() => toggle(false)}>
+          {children}
+        </Modal>
+      </>
     );
   }
 

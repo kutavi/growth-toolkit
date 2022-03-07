@@ -1,0 +1,41 @@
+@import 'src/styles/_base.scss';
+
+.shareButton {
+  position: fixed;
+  right: 1%;
+  top: 1%;
+}
+
+.modal {
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.empty {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.loading {
+  justify-content: center;
+}
+
+.tools {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: end;
+}
+
+.lastButton {
+  margin: 0 12px 0 18px;
+}
+
+.imageBox {
+  padding: 8px;
+  border-radius: 6px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}

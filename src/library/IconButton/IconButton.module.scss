@@ -12,6 +12,11 @@
   align-items: center;
 }
 
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
 .label {
   margin-right: 8px;
 }
