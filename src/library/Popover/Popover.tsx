@@ -10,7 +10,8 @@ interface PopoverProps {
   children: string | JSX.Element;
   isShown: boolean;
   canClose?: boolean;
-  buttonIcon?: IconType;
+  buttonIcon: IconType;
+  buttonLabel?: string;
   toggle: (value: boolean) => void;
   position: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
 }
@@ -23,6 +24,7 @@ export const Popover = ({
   position,
   canClose = true,
   buttonIcon,
+  buttonLabel,
 }: PopoverProps) => {
   const isMobile = useIsMobile();
 
@@ -34,6 +36,7 @@ export const Popover = ({
         className={`${positionStyle}`}
         onClick={() => toggle(true)}
         icon={buttonIcon}
+        label={isMobile ? '' : buttonLabel}
       />
     );
   }

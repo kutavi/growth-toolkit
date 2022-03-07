@@ -14,18 +14,6 @@
   background-color: $info;
 }
 
-.iconButton {
-  border: 1px solid $grey-light;
-  z-index: $popover;
-  box-shadow: $shadow-small-hover;
-  color: $text-default;
-  background-color: $info;
-  border-radius: 8px;
-  padding: 8px;
-  display: flex;
-  cursor: pointer;
-}
-
 .topLeftColor {
   background-color: $info;
 }

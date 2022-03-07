@@ -36,6 +36,7 @@ const HealthCheck = () => {
           }}
           position={'topLeft'}
           buttonIcon={'help'}
+          buttonLabel={'About'}
           title={texts.motivators.title}>
           {texts.motivators.info}
         </Popover>

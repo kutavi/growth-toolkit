@@ -21,6 +21,7 @@ const Feedback = () => {
       }}
       position={'bottomRight'}
       title={'Feedback'}
+      buttonLabel={'Feedback'}
       buttonIcon={'exclamation'}>
       <div className={styles.content}>
         {!sentFeedback ? (

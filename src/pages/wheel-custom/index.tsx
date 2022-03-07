@@ -45,6 +45,7 @@ const WheelCustomPage = () => {
           }}
           position={'topLeft'}
           buttonIcon={'help'}
+          buttonLabel={'About'}
           title={texts.wheelCustom.title}>
           {texts.wheelCustom.info}
         </Popover>

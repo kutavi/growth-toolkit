@@ -67,6 +67,7 @@ const ResilienceScale = () => {
           }}
           position={'topLeft'}
           buttonIcon={'help'}
+          buttonLabel={'About'}
           title={texts.resilience.title}>
           {texts.resilience.info}
         </Popover>

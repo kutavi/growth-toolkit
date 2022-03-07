@@ -36,6 +36,7 @@ export const Layout = ({ children }: LayoutProps) => {
         }}
         position={'topRight'}
         title={'Toolkit'}
+        buttonLabel={'Toolkit'}
         buttonIcon={'menu'}>
         <div className={styles.menu}>
           <Link

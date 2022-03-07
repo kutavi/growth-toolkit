@@ -44,6 +44,7 @@ const WheelOfLife = () => {
           }}
           position={'topLeft'}
           buttonIcon={'help'}
+          buttonLabel={'About'}
           title={texts.wheelOfLife.title}>
           {texts.wheelOfLife.info}
         </Popover>
