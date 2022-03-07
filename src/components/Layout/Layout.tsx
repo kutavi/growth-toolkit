@@ -29,6 +29,7 @@ export const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.rightArea}>
       <Share />
       <Popover
         isShown={isNavigationOpen}
@@ -36,7 +37,6 @@ export const Layout = ({ children }: LayoutProps) => {
           track(`${value ? 'Opened' : 'Closed'} nav menu`);
           updateSettings({ isNavigationOpen: value });
         }}
-        position={'topRight'}
         title={'Toolkit'}
         buttonLabel={'Toolkit'}
         buttonIcon={'menu'}>
@@ -75,7 +75,7 @@ export const Layout = ({ children }: LayoutProps) => {
           ))}
         </div>
       </Popover>
-
+      </div>
       {!isMobile && <Feedback />}
       <div className={styles.content}>{children}</div>
     </div>

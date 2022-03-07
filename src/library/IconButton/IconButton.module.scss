@@ -5,11 +5,18 @@
   z-index: $popover;
   box-shadow: $shadow-small-hover;
   color: $text-default;
-  background-color: $info;
   padding: 8px;
   display: flex;
   cursor: pointer;
   align-items: center;
+}
+
+.primary {
+  background-color: $info;
+}
+
+.none {
+  background-color: $grey-dark;
 }
 
 .disabled {

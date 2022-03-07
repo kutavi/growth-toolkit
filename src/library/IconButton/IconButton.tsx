@@ -9,6 +9,7 @@ interface IconButtonProps {
   type?: 'circle' | 'square';
   className?: any;
   disabled?: boolean;
+  color?: 'primary' | 'none';
 }
 
 export const IconButton = ({
@@ -18,11 +19,13 @@ export const IconButton = ({
   disabled,
   label,
   type = 'square',
+  color = 'none'
 }: IconButtonProps) => (
   <button
     className={classnames(
       styles.iconButton,
       { [styles.disabled]: disabled },
+      styles[color],
       styles[type],
       className
     )}

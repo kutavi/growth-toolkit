@@ -66,6 +66,7 @@ export const Share = () => {
       <IconButton
         disabled={isDisabled}
         className={styles.shareButton}
+        color={'primary'}
         icon='share'
         onClick={() => captureElement()}
       />
@@ -84,11 +85,13 @@ export const Share = () => {
               <IconButton
                 icon='download'
                 label={'Download'}
+                color={'primary'}
                 onClick={downloadImage}
               />
               <IconButton
                 className={styles.lastButton}
                 icon='copy'
+                color={'primary'}
                 label={copiedImage ? 'Copied!' : 'Copy image'}
                 onClick={copyImage}
               />
