@@ -69,7 +69,7 @@ const WheelOfLife = () => {
             {'Ideal life'}
           </Button>
         </div>
-        <div className={styles.chartContainer}>
+        <div className={styles.chartContainer} id='capture'>
           <WheelView
             chartToEdit={selection}
             maxPoints={highestScore}
