@@ -37,6 +37,12 @@
   flex-direction: column;
 }
 
+.rightArea {
+  position: fixed;
+  right: 1%;
+  top: 1%;
+}
+
 @media (max-width: 945px) {
   .content {
     padding: 22px 54px;

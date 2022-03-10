@@ -3,9 +3,12 @@ import {
   FaBug,
   FaCheckCircle,
   FaChevronDown,
+  FaDownload,
   FaExclamation,
   FaLightbulb,
   FaQuestion,
+  FaRegCopy,
+  FaShareAlt,
   FaTimes,
 } from 'react-icons/fa';
 
@@ -18,6 +21,9 @@ const Icons = {
   question: FaQuestion,
   bug: FaBug,
   check: FaCheckCircle,
+  share: FaShareAlt,
+  download: FaDownload,
+  copy: FaRegCopy,
 };
 
 export type IconType = keyof typeof Icons;

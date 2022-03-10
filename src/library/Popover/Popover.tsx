@@ -13,7 +13,7 @@ interface PopoverProps {
   buttonIcon: IconType;
   buttonLabel?: string;
   toggle: (value: boolean) => void;
-  position: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
+  position?: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
 }
 
 export const Popover = ({
@@ -29,7 +29,7 @@ export const Popover = ({
   const smallSpaceAvailable = useIsMobile();
   const isMobile = useIsMobile(1200);
 
-  const positionStyle = `${styles[position]} ${styles[position + 'Color']}`;
+  const positionStyle = position ? `${styles[position]} ${styles[position + 'Color']}`: '';
 
   if (!isShown && buttonIcon) {
     return (
@@ -44,14 +44,22 @@ export const Popover = ({
 
   if (smallSpaceAvailable) {
     return (
-      <Modal
-        fullScreen
-        className={styles[`${position}Color`]}
-        isShown={isShown}
-        title={title}
-        onClose={() => toggle(false)}>
-        {children}
-      </Modal>
+      <>
+        <IconButton
+          className={`${positionStyle}`}
+          onClick={() => toggle(true)}
+          icon={buttonIcon}
+          label={isMobile ? '' : buttonLabel}
+        />
+        <Modal
+          fullScreen
+          className={styles[`${position}Color`]}
+          isShown={isShown}
+          title={title}
+          onClose={() => toggle(false)}>
+          {children}
+        </Modal>
+      </>
     );
   }
 

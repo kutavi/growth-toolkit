@@ -115,7 +115,7 @@ const ResilienceScale = () => {
             );
           })}
         </div>
-        {!showResults ? (
+        {!showResults && (
           <Button
             disabled={Boolean(questions.find(q => q.answer === 0))}
             fullWidth
@@ -125,9 +125,8 @@ const ResilienceScale = () => {
             }}>
             {'Check my resilience'}
           </Button>
-        ) : (
-          calculateResilience(questions)
         )}
+        <div id='capture'>{showResults && calculateResilience(questions)}</div>
       </Layout>
     </>
   );
