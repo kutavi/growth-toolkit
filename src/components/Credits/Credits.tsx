@@ -34,7 +34,7 @@ const Credits = () => {
                 href='https://www.flaticon.com/authors/roundicons'
                 title='leaf icon'>
                 created by Roundicons - Flaticon
-              </a>
+              </a>.
             </p>
             <p>
               Moving motivators images and concept created by{' '}
@@ -43,19 +43,30 @@ const Credits = () => {
                 href='https://management30.com/practice/moving-motivators/'
                 title='management 3.0 moving motivators'>
                 management 3.0, Jurgen Appelo
-              </a>
+              </a>.
             </p>
           </div>
           <h3>{'About this project'}</h3>
           <div>
             <p>
-              This project is open source! Check it out on{' '}
+              Created by{' '}
+              <a
+                onClick={() => track('Clicked website link')}
+                target='_blank'
+                href='https://kutavi.weebly.com/'>
+                {'Alexandra Tseniklidou'}
+              </a>.
+            </p>
+          </div>
+          <div>
+            <p>
+              This project's source code is on{' '}
               <a
                 onClick={() => track('Clicked Github link')}
                 target='_blank'
                 href='https://github.com/kutavi/growth-toolkit'>
                 {'Github'}
-              </a>
+              </a>.
             </p>
           </div>
           <div className={styles.support}>
