@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-pack",
+  "name": "growth-toolkit",
   "private": true,
-  "description": "A starter to get up and developing quickly with Gatsby",
+  "description": "A toolkit with exercises and activities to help you on your personal development and growth.",
   "version": "0.0.0",
   "author": "Alexandra Tseniklidou <atseniklidou@gmail.com>",
   "scripts": {
@@ -79,10 +79,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/kutavi/growth-toolkit"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/kutavi/growth-toolkit/issues"
   },
   "env": {
     "cypress/globals": true

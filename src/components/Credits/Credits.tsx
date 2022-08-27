@@ -64,11 +64,11 @@ const Credits = () => {
             </span>
             <a
               onClick={() => track('Buy Coffee')}
-              href='https://www.buymeacoffee.com/atseniklidou'
+              href='https://www.buymeacoffee.com/kutavi'
               target={'_blank'}>
               <img
-                alt='buy me a coffee'
-                src='https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=atseniklidou&button_colour=eab308&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff'
+                alt="Buy Me A Coffee"
+                src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
               />
             </a>
           </div>
