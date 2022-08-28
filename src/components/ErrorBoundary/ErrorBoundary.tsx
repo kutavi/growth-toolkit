@@ -25,7 +25,7 @@ export class ErrorBoundary extends React.Component<{}, ErrorState> {
 
   componentDidCatch(error: any): void {
     // You can also log the error to an error reporting service
-    track('ERROR!', { value: error });
+    track('ERROR', { value: error?.message });
   }
 
   render(): React.ReactNode {
@@ -41,7 +41,7 @@ export class ErrorBoundary extends React.Component<{}, ErrorState> {
             <div className={styles.feedback}>
               <Icon icon='bug' size={42} color={colors.noDarker} />
               <InputArea
-                placeholder='Or you can use this form to report the issue.'
+                placeholder='You can use this form to report the issue.'
                 name='report-error'
                 rows={10}
                 value={this.state.feedback}
@@ -53,7 +53,7 @@ export class ErrorBoundary extends React.Component<{}, ErrorState> {
                 type={'secondary'}
                 onClick={() => {
                   this.setState({ sentFeedback: true });
-                  track('Feedback', { value: this.state.feedback });
+                  track('ERROR', { value: `from user: ${this.state.feedback}` });
                 }}>
                 {'Send'}
               </Button>
