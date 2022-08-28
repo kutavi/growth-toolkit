@@ -46,7 +46,7 @@ const MovingMotivatorsPage = () => {
         </Popover>
         <DndProvider backend={isTouchDevice() ? TouchBackend : HTML5Backend}>
           <div id='capture'>
-            {cards.x.map((motivator, index) => (
+            {cards.map((motivator, index) => (
               <Motivator
                 key={motivator.id}
                 id={motivator.id}
