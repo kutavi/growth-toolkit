@@ -25,7 +25,7 @@ export class ErrorBoundary extends React.Component<{}, ErrorState> {
 
   componentDidCatch(error: any): void {
     // You can also log the error to an error reporting service
-    track('ERROR', { value: error?.message });
+    track('REPORT', { value: `error log: ${error?.message}` });
   }
 
   render(): React.ReactNode {
@@ -53,7 +53,7 @@ export class ErrorBoundary extends React.Component<{}, ErrorState> {
                 type={'secondary'}
                 onClick={() => {
                   this.setState({ sentFeedback: true });
-                  track('ERROR', { value: `from user: ${this.state.feedback}` });
+                  track('REPORT', { value: `report from user: ${this.state.feedback}` });
                 }}>
                 {'Send'}
               </Button>

@@ -49,7 +49,7 @@ const Feedback = () => {
                   setSentFeedback(false);
                   setFeedbackView(false);
                 }, 1000);
-                track('Feedback', { value: message });
+                track('REPORT', { value: `feedback from user: ${message}` });
               }}>
               {'Send'}
             </Button>
