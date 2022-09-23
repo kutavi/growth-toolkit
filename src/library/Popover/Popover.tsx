@@ -29,7 +29,9 @@ export const Popover = ({
   const smallSpaceAvailable = useIsMobile();
   const isMobile = useIsMobile(1200);
 
-  const positionStyle = position ? `${styles[position]} ${styles[position + 'Color']}`: '';
+  const positionStyle = position
+    ? `${styles[position]} ${styles[position + 'Color']}`
+    : '';
 
   if (!isShown && buttonIcon) {
     return (

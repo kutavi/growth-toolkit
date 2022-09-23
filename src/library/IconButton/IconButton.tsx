@@ -19,7 +19,7 @@ export const IconButton = ({
   disabled,
   label,
   type = 'square',
-  color = 'none'
+  color = 'none',
 }: IconButtonProps) => (
   <button
     className={classnames(

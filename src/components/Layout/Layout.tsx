@@ -18,7 +18,6 @@ export const Layout = ({ children }: LayoutProps) => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    track('Loaded a tool page');
     if (isMobile) {
       return globalHistory.listen(({ action }) => {
         if (action === 'PUSH') updateSettings({ isNavigationOpen: false });
@@ -30,51 +29,53 @@ export const Layout = ({ children }: LayoutProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.rightArea}>
-      <Share />
-      <Popover
-        isShown={isNavigationOpen}
-        toggle={value => {
-          track(`${value ? 'Opened' : 'Closed'} nav menu`);
-          updateSettings({ isNavigationOpen: value });
-        }}
-        title={'Toolkit'}
-        buttonLabel={'Toolkit'}
-        buttonIcon={'menu'}>
-        <div className={styles.menu}>
-          <Link
-            key={'home'}
-            className={styles.item}
-            to={'/'}
-            activeClassName={styles.activeItem}>
-            {'Home'}
-          </Link>
-          {routes.map(route => (
-            <>
-              <Link
-                key={route.route}
-                partiallyActive
-                className={styles.item}
-                to={route.route}
-                activeClassName={styles.activeItem}>
-                {route.label}
-              </Link>
-              {route.routes && (
-                <div className={styles.submenu}>
-                  {route.routes.map((subroute, index) => (
-                    <Link
-                      key={subroute.route}
-                      className={styles.item}
-                      to={subroute.route}
-                      activeClassName={styles.activeItem}>
-                      {`${index + 1}. ${subroute.label}`}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </>
-          ))}
-        </div>
-      </Popover>
+        <Share />
+        <Popover
+          isShown={isNavigationOpen}
+          toggle={value => {
+            track(`${value ? 'Opened' : 'Closed'} nav menu`);
+            updateSettings({ isNavigationOpen: value });
+          }}
+          title={'Toolkit'}
+          buttonLabel={'Toolkit'}
+          buttonIcon={'menu'}>
+          <div className={styles.menu}>
+            <Link
+              key={'home'}
+              className={styles.item}
+              to={'/'}
+              onClick={() => track('Navigate to Home')}
+              activeClassName={styles.activeItem}>
+              {'Home'}
+            </Link>
+            {routes.map(route => (
+              <>
+                <Link
+                  key={route.route}
+                  partiallyActive
+                  className={styles.item}
+                  onClick={() => track(`Navigate to ${route.label}`)}
+                  to={route.route}
+                  activeClassName={styles.activeItem}>
+                  {route.label}
+                </Link>
+                {route.routes && (
+                  <div className={styles.submenu}>
+                    {route.routes.map((subroute, index) => (
+                      <Link
+                        key={subroute.route}
+                        className={styles.item}
+                        to={subroute.route}
+                        activeClassName={styles.activeItem}>
+                        {`${index + 1}. ${subroute.label}`}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </>
+            ))}
+          </div>
+        </Popover>
       </div>
       {!isMobile && <Feedback />}
       <div className={styles.content}>{children}</div>

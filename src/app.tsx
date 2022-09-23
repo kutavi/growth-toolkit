@@ -34,7 +34,7 @@ export const App = ({ children }: AppProps) => {
       const existIntentAlreadyShown =
         CookieService.getCookie('exitIntentShown');
       if (!existIntentAlreadyShown) {
-      //  document.addEventListener('mouseleave', mouseEvent);
+        //  document.addEventListener('mouseleave', mouseEvent);
       }
     }, timeToWaitBeforeShowing);
   }, []);

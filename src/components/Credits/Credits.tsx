@@ -34,7 +34,8 @@ const Credits = () => {
                 href='https://www.flaticon.com/authors/roundicons'
                 title='leaf icon'>
                 created by Roundicons - Flaticon
-              </a>.
+              </a>
+              .
             </p>
             <p>
               Moving motivators images and concept created by{' '}
@@ -43,7 +44,8 @@ const Credits = () => {
                 href='https://management30.com/practice/moving-motivators/'
                 title='management 3.0 moving motivators'>
                 management 3.0, Jurgen Appelo
-              </a>.
+              </a>
+              .
             </p>
           </div>
           <h3>{'About this project'}</h3>
@@ -55,7 +57,8 @@ const Credits = () => {
                 target='_blank'
                 href='https://kutavi.weebly.com/'>
                 {'Alexandra Tseniklidou'}
-              </a>.
+              </a>
+              .
             </p>
           </div>
           <div>
@@ -66,7 +69,8 @@ const Credits = () => {
                 target='_blank'
                 href='https://github.com/kutavi/growth-toolkit'>
                 {'Github'}
-              </a>.
+              </a>
+              .
             </p>
           </div>
           <div className={styles.support}>
@@ -78,8 +82,8 @@ const Credits = () => {
               href='https://www.buymeacoffee.com/kutavi'
               target={'_blank'}>
               <img
-                alt="Buy Me A Coffee"
-                src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                alt='Buy Me A Coffee'
+                src='https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png'
               />
             </a>
           </div>

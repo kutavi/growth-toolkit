@@ -53,7 +53,9 @@ export class ErrorBoundary extends React.Component<{}, ErrorState> {
                 type={'secondary'}
                 onClick={() => {
                   this.setState({ sentFeedback: true });
-                  track('REPORT', { value: `report from user: ${this.state.feedback}` });
+                  track('REPORT', {
+                    value: `report from user: ${this.state.feedback}`,
+                  });
                 }}>
                 {'Send'}
               </Button>
