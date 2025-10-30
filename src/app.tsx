@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ErrorBoundary } from './components/ErrorBoundary/ErrorBoundary';
 import SubscribeModal from './components/Subscribe/SubscribeModal';
-import * as colors from './styles/_colors.module.scss';
+import * as colors from './styles/_base.module.scss';
 import { track } from './utils/helpers';
 
 import './styles/core.scss';

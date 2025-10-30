@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import { useRef, useState } from 'react';
 import { DropTargetMonitor, useDrag, useDrop, XYCoord } from 'react-dnd';
 import { Icon } from '../../library/Icon/Icon';
-import * as colors from '../../styles/_colors.module.scss';
+import * as colors from '../../styles/_base.module.scss';
 import { DragTypes } from '../../utils/const';
 import { isTouchDevice, track } from '../../utils/helpers';
 import * as styles from './Motivator.module.scss';

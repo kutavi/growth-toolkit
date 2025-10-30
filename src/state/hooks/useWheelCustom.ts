@@ -1,12 +1,9 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { updateCustomWheel as updateWheelAction } from '../actions/actions';
-import { Store } from '../reducers/root';
-export const useWheelCustom = () => {
-  const dispatch = useDispatch();
+import { useWheelCustomContext } from '../context/AppContext';
 
-  const categories = useSelector(
-    (state: Store) => state.wheelCustom.categories
-  );
+export const useWheelCustom = () => {
+  const { state, setState } = useWheelCustomContext();
+
+  const categories = state.categories;
 
   const updateCategories = (
     newWheel: {
@@ -26,7 +23,7 @@ export const useWheelCustom = () => {
         ...w,
       };
     });
-    dispatch(updateWheelAction({ categories: wheelForState }));
+    setState({ categories: wheelForState });
   };
 
   return {

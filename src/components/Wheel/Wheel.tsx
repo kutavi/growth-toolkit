@@ -9,7 +9,7 @@ import React from 'react';
 import { PolarArea } from 'react-chartjs-2';
 import useIsMobile from '../../state/hooks/useIsMobile';
 import { WheelValues } from '../../state/types/wheel';
-import * as colors from '../../styles/_colors.module.scss';
+import * as colors from '../../styles/_base.module.scss';
 import { windowLoaded } from '../../utils/helpers';
 
 type Dataset = {
@@ -141,8 +141,8 @@ export const WheelView = ({
                       ? 12
                       : 18
                     : isMobile
-                    ? 14
-                    : 22,
+                      ? 14
+                      : 22,
               },
             },
           },

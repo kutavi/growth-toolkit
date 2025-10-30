@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import { Link } from 'react-router-dom';
 import { routes } from '../../utils/configs';
 import * as styles from './ActivityCards.module.scss';
 

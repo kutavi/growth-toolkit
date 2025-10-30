@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
@@ -15,14 +15,25 @@ const MovingMotivatorsPage = () => {
   const { updateCards, cards: stateCards } = useMotivators();
   const { isMotivatorsInfoOpen, updateSettings } = useSettings();
   const [cards, setCards] = useState(stateCards);
+  const pendingUpdate = useRef<any>(null);
 
   const reorder = useCallback(
     (dragIndex: number, hoverIndex: number) => {
       track('Reorder motivator');
-      setCards(reorderArray(cards, dragIndex, hoverIndex));
-      updateCards(reorderArray(cards, dragIndex, hoverIndex));
+      setCards((prevCards) => {
+        const reordered = reorderArray(prevCards, dragIndex, hoverIndex);
+        // Defer context update to avoid setState during render
+        if (pendingUpdate.current) {
+          clearTimeout(pendingUpdate.current);
+        }
+        pendingUpdate.current = setTimeout(() => {
+          updateCards(reordered);
+          pendingUpdate.current = null;
+        }, 0);
+        return reordered;
+      });
     },
-    [cards]
+    [updateCards]
   );
 
   return (

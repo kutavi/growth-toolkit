@@ -3,7 +3,7 @@ import { Button } from '../../library/Button/Button';
 import { Icon } from '../../library/Icon/Icon';
 import { InputArea } from '../../library/InputArea/InputArea';
 import { Popover } from '../../library/Popover/Popover';
-import * as colors from '../../styles/_colors.module.scss';
+import * as colors from '../../styles/_base.module.scss';
 import { track } from '../../utils/helpers';
 import * as styles from './Feedback.module.scss';
 

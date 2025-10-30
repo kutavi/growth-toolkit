@@ -1,4 +1,4 @@
-@import 'src/styles/_base.scss';
+@use '../../styles/_base.module.scss' as *;
 
 .input {
   margin-bottom: 8px;

@@ -1,38 +1,24 @@
-import { useDispatch, useSelector } from 'react-redux';
 import { availableSpaceBreakpoint } from '../../utils/const';
 import { windowLoaded } from '../../utils/helpers';
-import { updateSettings as updateSettingsAction } from '../actions/actions';
-import { Store } from '../reducers/root';
-import { SettingsState } from '../reducers/settings';
+import { useSettingsContext, SettingsState } from '../context/AppContext';
 
 const calculateValue = (value: boolean | undefined) => {
   const hasAvailableSpace =
     windowLoaded() && window.innerWidth >= availableSpaceBreakpoint;
   return value === undefined ? hasAvailableSpace : value;
 };
+
 export const useSettings = () => {
-  const dispatch = useDispatch();
+  const { state, setState } = useSettingsContext();
 
-  const isNavigationOpen = useSelector((state: Store) =>
-    calculateValue(state.settings.isNavigationOpen)
-  );
-  const isMotivatorsInfoOpen = useSelector((state: Store) =>
-    calculateValue(state.settings.isMotivatorsInfoOpen)
-  );
-  const isWheelInfoOpen = useSelector((state: Store) =>
-    calculateValue(state.settings.isWheelInfoOpen)
-  );
-
-  const isResilienceInfoOpen = useSelector((state: Store) =>
-    calculateValue(state.settings.isResilienceInfoOpen)
-  );
-
-  const newsletterPromptTriggered = useSelector(
-    (state: Store) => state.settings.newsletterPromptTriggered
-  );
+  const isNavigationOpen = calculateValue(state.isNavigationOpen);
+  const isMotivatorsInfoOpen = calculateValue(state.isMotivatorsInfoOpen);
+  const isWheelInfoOpen = calculateValue(state.isWheelInfoOpen);
+  const isResilienceInfoOpen = calculateValue(state.isResilienceInfoOpen);
+  const newsletterPromptTriggered = state.newsletterPromptTriggered;
 
   const updateSettings = (newSettings: Partial<SettingsState>) => {
-    dispatch(updateSettingsAction(newSettings));
+    setState(newSettings);
   };
 
   return {

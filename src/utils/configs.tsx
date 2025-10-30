@@ -12,7 +12,7 @@ import Resilience from '../assets/resilience.png';
 import Status from '../assets/status.jpeg';
 import WheelCustom from '../assets/wheel-custom.png';
 import WheelOfLife from '../assets/wheel-of-life.png';
-import * as colors from '../styles/_colors.module.scss';
+import * as colors from '../styles/_base.module.scss';
 
 const movingMotivatorsLink = '/moving-motivators/';
 export const routes = [

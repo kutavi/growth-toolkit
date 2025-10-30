@@ -1,23 +1,18 @@
-import { useDispatch, useSelector } from 'react-redux';
 import { resilience } from '../../utils/configs';
-import { updateResilience as updateResilienceAction } from '../actions/actions';
-import { Question } from '../reducers/resilience';
-import { Store } from '../reducers/root';
+import { useResilienceContext, Question } from '../context/AppContext';
 
 export const useResilience = () => {
-  const dispatch = useDispatch();
+  const { state, setState } = useResilienceContext();
 
-  const questions = useSelector((state: Store) =>
-    resilience.map(question => {
-      const questionInState = state.resilience.questions.find(
-        q => q.id === question.id
-      );
-      return {
-        ...(questionInState ? questionInState : { answer: 0 }),
-        ...question,
-      };
-    })
-  );
+  const questions = resilience.map(question => {
+    const questionInState = state.questions.find(
+      q => q.id === question.id
+    );
+    return {
+      ...(questionInState ? questionInState : { answer: 0 }),
+      ...question,
+    };
+  });
 
   const updateResilience = (
     newResilience: ({ [key: string]: any } & Question)[]
@@ -26,7 +21,7 @@ export const useResilience = () => {
       id: w.id,
       answer: w.answer,
     }));
-    dispatch(updateResilienceAction({ questions: resilienceForState }));
+    setState({ questions: resilienceForState });
   };
 
   return {

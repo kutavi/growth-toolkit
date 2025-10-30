@@ -1,6 +1,5 @@
-import { globalHistory } from '@reach/router';
-import { Link } from 'gatsby';
-import { useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { Popover } from '../../library/Popover/Popover';
 import useIsMobile from '../../state/hooks/useIsMobile';
 import { useSettings } from '../../state/hooks/useSettings';
@@ -16,15 +15,13 @@ interface LayoutProps {
 export const Layout = ({ children }: LayoutProps) => {
   const { isNavigationOpen, updateSettings } = useSettings();
   const isMobile = useIsMobile();
+  const location = useLocation();
 
   useEffect(() => {
     if (isMobile) {
-      return globalHistory.listen(({ action }) => {
-        if (action === 'PUSH') updateSettings({ isNavigationOpen: false });
-      });
+      updateSettings({ isNavigationOpen: false });
     }
-    return;
-  }, []);
+  }, [location.pathname, isMobile]);
 
   return (
     <div className={styles.container}>
@@ -40,39 +37,45 @@ export const Layout = ({ children }: LayoutProps) => {
           buttonLabel={'Toolkit'}
           buttonIcon={'menu'}>
           <div className={styles.menu}>
-            <Link
+            <NavLink
               key={'home'}
-              className={styles.item}
               to={'/'}
               onClick={() => track('Navigate to Home')}
-              activeClassName={styles.activeItem}>
+              className={({ isActive }) =>
+                isActive ? `${styles.item} ${styles.activeItem}` : styles.item
+              }
+              end>
               {'Home'}
-            </Link>
+            </NavLink>
             {routes.map(route => (
-              <>
-                <Link
-                  key={route.route}
-                  partiallyActive
-                  className={styles.item}
+              <React.Fragment key={route.route}>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${styles.item} ${styles.activeItem}`
+                      : styles.item
+                  }
                   onClick={() => track(`Navigate to ${route.label}`)}
-                  to={route.route}
-                  activeClassName={styles.activeItem}>
+                  to={route.route}>
                   {route.label}
-                </Link>
+                </NavLink>
                 {route.routes && (
                   <div className={styles.submenu}>
                     {route.routes.map((subroute, index) => (
-                      <Link
+                      <NavLink
                         key={subroute.route}
-                        className={styles.item}
                         to={subroute.route}
-                        activeClassName={styles.activeItem}>
+                        className={({ isActive }) =>
+                          isActive
+                            ? `${styles.item} ${styles.activeItem}`
+                            : styles.item
+                        }>
                         {`${index + 1}. ${subroute.label}`}
-                      </Link>
+                      </NavLink>
                     ))}
                   </div>
                 )}
-              </>
+              </React.Fragment>
             ))}
           </div>
         </Popover>

@@ -1,8 +1,5 @@
-import { useLocation } from '@reach/router';
-import { graphql, useStaticQuery } from 'gatsby';
-import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { isDev } from '../../utils/helpers';
 
 interface SEOProps {
   title?: string;
@@ -10,9 +7,18 @@ interface SEOProps {
   image?: string;
 }
 
+const siteMetadata = {
+  defaultTitle: 'Growth toolkit',
+  titleTemplate: '%s · Online tools for personal development',
+  defaultDescription:
+    'A toolkit with exercises and activities to help you on your personal development and growth.',
+  siteUrl: 'https://growth-toolkit.netlify.app',
+  defaultImage: '/wheel-custom.png',
+  twitterUsername: '@aletseni',
+};
+
 export const SEO = ({ title, description, image }: SEOProps) => {
   const { pathname } = useLocation();
-  const { site } = useStaticQuery(query);
 
   const {
     defaultTitle,
@@ -21,7 +27,7 @@ export const SEO = ({ title, description, image }: SEOProps) => {
     siteUrl,
     defaultImage,
     twitterUsername,
-  } = site.siteMetadata;
+  } = siteMetadata;
 
   const seo = {
     title: title || defaultTitle,
@@ -63,22 +69,6 @@ export const SEO = ({ title, description, image }: SEOProps) => {
       )}
 
       {seo.image && <meta name='twitter:image' content={seo.image} />}
-      {!isDev() && <script async src='https://cdn.splitbee.io/sb.js'></script>}
     </Helmet>
   );
 };
-
-const query = graphql`
-  query SEO {
-    site {
-      siteMetadata {
-        defaultTitle: title
-        titleTemplate
-        defaultDescription: description
-        siteUrl: url
-        defaultImage: image
-        twitterUsername
-      }
-    }
-  }
-`;

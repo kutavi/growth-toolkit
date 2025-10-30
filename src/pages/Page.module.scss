@@ -1,4 +1,4 @@
-@import 'src/styles/_base.scss';
+@use '../styles/_base.module.scss' as *;
 
 $card-width: 200px;
 $card-radius: 16px;
@@ -19,7 +19,7 @@ $card-radius: 16px;
 }
 
 .question {
-  margin-bottom: 80px;
+  margin-bottom: 48px;
   > div {
     padding-left: 16px;
   }
