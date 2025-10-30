@@ -306,13 +306,17 @@ export const texts = {
         You can read more{' '}
         <a
           target='_blank'
-          href='https://management30.com/practice/moving-motivators/'>
+          href='https://management30.com/practice/moving-motivators/'
+          rel='noreferrer'>
           here
         </a>
         <br />
         <br />
         Or watch an example{' '}
-        <a target='_blank' href='https://www.youtube.com/watch?v=2oh7D_n4YK4'>
+        <a
+          target='_blank'
+          href='https://www.youtube.com/watch?v=2oh7D_n4YK4'
+          rel='noreferrer'>
           here
         </a>
       </div>
@@ -333,7 +337,7 @@ export const texts = {
         <ol>
           <li>
             First, on a scale of 0 to 10, think about the amount of attention
-            you're devoting to each area of your life.
+            you&apos;re devoting to each area of your life.
           </li>
           <li>
             Next, consider your ideal level of attention in each area of your
@@ -348,7 +352,8 @@ export const texts = {
         You can read more{' '}
         <a
           target='_blank'
-          href='https://www.mindtools.com/pages/article/newHTE_93.htm'>
+          href='https://www.mindtools.com/pages/article/newHTE_93.htm'
+          rel='noreferrer'>
           here
         </a>
       </div>
@@ -373,7 +378,7 @@ export const texts = {
           </li>
           <li>
             Then, on a scale of 0 to 10, think about the amount of attention
-            you're devoting to each area of your life.
+            you&apos;re devoting to each area of your life.
           </li>
           <li>
             Next, consider your ideal level of attention in each area of your
@@ -388,7 +393,8 @@ export const texts = {
         You can see the tranditional wheel of life and read more{' '}
         <a
           target='_blank'
-          href='https://www.mindtools.com/pages/article/newHTE_93.htm'>
+          href='https://www.mindtools.com/pages/article/newHTE_93.htm'
+          rel='noreferrer'>
           here
         </a>
       </div>
@@ -422,7 +428,8 @@ export const texts = {
         You can read more{' '}
         <a
           target='_blank'
-          href='https://www.researchgate.net/publication/23164897_The_Brief_Resilience_Scale_Assessing_the_Ability_to_Bounce_Back'>
+          href='https://www.researchgate.net/publication/23164897_The_Brief_Resilience_Scale_Assessing_the_Ability_to_Bounce_Back'
+          rel='noreferrer'>
           here
         </a>
       </div>

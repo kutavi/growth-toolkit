@@ -5,14 +5,12 @@ interface InputAreaProps {
   onChange: (value: string) => void;
   rows?: number;
   placeholder?: string;
-  name: string;
 }
 export const InputArea = ({
   rows = 8,
   onChange,
   value,
   placeholder = '',
-  name,
 }: InputAreaProps) => (
   <textarea
     className={styles.input}

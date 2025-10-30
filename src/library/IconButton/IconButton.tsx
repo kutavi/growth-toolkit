@@ -7,7 +7,7 @@ interface IconButtonProps {
   label?: string;
   onClick: () => void;
   type?: 'circle' | 'square';
-  className?: any;
+  className?: string;
   disabled?: boolean;
   color?: 'primary' | 'none';
 }

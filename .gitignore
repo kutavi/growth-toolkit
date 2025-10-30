@@ -36,3 +36,5 @@ public_dev
 
 .vscode/
 .claude/
+
+dist/

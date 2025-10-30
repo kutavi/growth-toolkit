@@ -25,22 +25,24 @@ async function optimizeImages() {
 
   for (const file of imageFiles) {
     const inputPath = path.join(assetsDir, file);
-    const webpPath = path.join(outputDir, file.replace(/\.(png|jpe?g)$/i, '.webp'));
+    const webpPath = path.join(
+      outputDir,
+      file.replace(/\.(png|jpe?g)$/i, '.webp')
+    );
 
     const inputStats = fs.statSync(inputPath);
     const inputSizeKB = (inputStats.size / 1024).toFixed(2);
     totalOriginalSize += inputStats.size;
 
     try {
-      await sharp(inputPath)
-        .webp({ quality: 80, effort: 6 })
-        .toFile(webpPath);
+      await sharp(inputPath).webp({ quality: 80, effort: 6 }).toFile(webpPath);
 
       const outputStats = fs.statSync(webpPath);
       const outputSizeKB = (outputStats.size / 1024).toFixed(2);
       const savedKB = ((inputStats.size - outputStats.size) / 1024).toFixed(2);
       const savedPercent = (
-        ((inputStats.size - outputStats.size) / inputStats.size) * 100
+        ((inputStats.size - outputStats.size) / inputStats.size) *
+        100
       ).toFixed(1);
 
       totalWebpSize += outputStats.size;
@@ -55,12 +57,15 @@ async function optimizeImages() {
 
   const totalSavedKB = ((totalOriginalSize - totalWebpSize) / 1024).toFixed(2);
   const totalSavedPercent = (
-    ((totalOriginalSize - totalWebpSize) / totalOriginalSize) * 100
+    ((totalOriginalSize - totalWebpSize) / totalOriginalSize) *
+    100
   ).toFixed(1);
 
   console.log('─'.repeat(70));
   console.log('📊 Summary:');
-  console.log(`   Total original size: ${(totalOriginalSize / 1024).toFixed(2)} KB`);
+  console.log(
+    `   Total original size: ${(totalOriginalSize / 1024).toFixed(2)} KB`
+  );
   console.log(`   Total WebP size: ${(totalWebpSize / 1024).toFixed(2)} KB`);
   console.log(`   Total saved: ${totalSavedKB} KB (${totalSavedPercent}%)\n`);
 

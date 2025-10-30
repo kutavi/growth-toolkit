@@ -20,9 +20,8 @@ const MovingMotivatorsPage = () => {
   const reorder = useCallback(
     (dragIndex: number, hoverIndex: number) => {
       track('Reorder motivator');
-      setCards((prevCards) => {
+      setCards(prevCards => {
         const reordered = reorderArray(prevCards, dragIndex, hoverIndex);
-        // Defer context update to avoid setState during render
         if (pendingUpdate.current) {
           clearTimeout(pendingUpdate.current);
         }

@@ -73,7 +73,7 @@ const ResilienceScale = () => {
         </Popover>
         <Button
           size={'sm'}
-          disabled={!Boolean(questions.find(q => q.answer !== 0))}
+          disabled={!questions.find(q => q.answer !== 0)}
           type='alert'
           style={{ float: 'right' }}
           onClick={() => {
@@ -93,7 +93,6 @@ const ResilienceScale = () => {
                   {index + 1}. {question.question}
                 </p>
                 <RadioButtonGroup
-                  groupName={question.id}
                   selectedValue={question.answer}
                   onSelect={value => {
                     track('Update resilience question');

@@ -48,7 +48,6 @@ export const Motivator = ({
   if (reorder) {
     const [{ handlerId }, drop] = useDrop({
       accept: DragTypes.card,
-      // tslint:disable-next-line: typedef
       collect(monitor) {
         return {
           handlerId: monitor.getHandlerId(),
@@ -76,10 +75,6 @@ export const Motivator = ({
         const hoverClientY =
           (clientOffset as XYCoord).y - hoverBoundingRect.top;
 
-        // Only perform the move when the mouse has crossed half of the items height
-        // When dragging downwards, only move when the cursor is below 50%
-        // When dragging upwards, only move when the cursor is above 50%
-
         if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
           return;
         }
@@ -90,9 +85,6 @@ export const Motivator = ({
 
         reorder(dragIndex, hoverIndex);
 
-        // Note: we're mutating the monitor item here
-        // Generally it's better to avoid mutations
-        // but it's good here for the sake of performance to avoid expensive index searches.
         item.index = hoverIndex;
       },
     });

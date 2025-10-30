@@ -1,4 +1,10 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from 'react';
 import { motivators, wheelOfLife, resilience } from '../../utils/configs';
 import { Category } from '../types/wheel';
 
@@ -97,11 +103,21 @@ type ResilienceContextType = {
 };
 
 // Create contexts
-const MotivatorsContext = createContext<MotivatorsContextType | undefined>(undefined);
-const SettingsContext = createContext<SettingsContextType | undefined>(undefined);
-const WheelOfLifeContext = createContext<WheelOfLifeContextType | undefined>(undefined);
-const WheelCustomContext = createContext<WheelCustomContextType | undefined>(undefined);
-const ResilienceContext = createContext<ResilienceContextType | undefined>(undefined);
+const MotivatorsContext = createContext<MotivatorsContextType | undefined>(
+  undefined
+);
+const SettingsContext = createContext<SettingsContextType | undefined>(
+  undefined
+);
+const WheelOfLifeContext = createContext<WheelOfLifeContextType | undefined>(
+  undefined
+);
+const WheelCustomContext = createContext<WheelCustomContextType | undefined>(
+  undefined
+);
+const ResilienceContext = createContext<ResilienceContextType | undefined>(
+  undefined
+);
 
 // Hook exports
 export const useMotivatorsContext = () => {
@@ -179,11 +195,11 @@ export const AppProvider = ({ children }: AppProviderProps) => {
   const [settingsState, setSettingsState] = useState<SettingsState>(() =>
     loadFromLocalStorage('settings', initialSettingsState)
   );
-  const [wheelOfLifeState, setWheelOfLifeState] = useState<WheelOfLifeState>(() =>
-    loadFromLocalStorage('wheelOfLife', initialWheelOfLifeState)
+  const [wheelOfLifeState, setWheelOfLifeState] = useState<WheelOfLifeState>(
+    () => loadFromLocalStorage('wheelOfLife', initialWheelOfLifeState)
   );
-  const [wheelCustomState, setWheelCustomState] = useState<WheelCustomState>(() =>
-    loadFromLocalStorage('wheelCustom', initialWheelCustomState)
+  const [wheelCustomState, setWheelCustomState] = useState<WheelCustomState>(
+    () => loadFromLocalStorage('wheelCustom', initialWheelCustomState)
   );
   const [resilienceState, setResilienceState] = useState<ResilienceState>(() =>
     loadFromLocalStorage('resilience', initialResilienceState)
@@ -233,20 +249,21 @@ export const AppProvider = ({ children }: AppProviderProps) => {
 
   return (
     <MotivatorsContext.Provider
-      value={{ state: motivatorsState, setState: updateMotivatorsState }}
-    >
+      value={{ state: motivatorsState, setState: updateMotivatorsState }}>
       <SettingsContext.Provider
-        value={{ state: settingsState, setState: updateSettingsState }}
-      >
+        value={{ state: settingsState, setState: updateSettingsState }}>
         <WheelOfLifeContext.Provider
-          value={{ state: wheelOfLifeState, setState: updateWheelOfLifeState }}
-        >
+          value={{ state: wheelOfLifeState, setState: updateWheelOfLifeState }}>
           <WheelCustomContext.Provider
-            value={{ state: wheelCustomState, setState: updateWheelCustomState }}
-          >
+            value={{
+              state: wheelCustomState,
+              setState: updateWheelCustomState,
+            }}>
             <ResilienceContext.Provider
-              value={{ state: resilienceState, setState: updateResilienceState }}
-            >
+              value={{
+                state: resilienceState,
+                setState: updateResilienceState,
+              }}>
               {children}
             </ResilienceContext.Provider>
           </WheelCustomContext.Provider>

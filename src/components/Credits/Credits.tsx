@@ -32,7 +32,8 @@ const Credits = () => {
               <a
                 target='_blank'
                 href='https://www.flaticon.com/authors/roundicons'
-                title='leaf icon'>
+                title='leaf icon'
+                rel='noreferrer'>
                 created by Roundicons - Flaticon
               </a>
               .
@@ -42,7 +43,8 @@ const Credits = () => {
               <a
                 target='_blank'
                 href='https://management30.com/practice/moving-motivators/'
-                title='management 3.0 moving motivators'>
+                title='management 3.0 moving motivators'
+                rel='noreferrer'>
                 management 3.0, Jurgen Appelo
               </a>
               .
@@ -55,7 +57,8 @@ const Credits = () => {
               <a
                 onClick={() => track('Clicked website link')}
                 target='_blank'
-                href='https://kutavi.weebly.com/'>
+                href='https://kutavi.weebly.com/'
+                rel='noreferrer'>
                 {'Alexandra Tseniklidou'}
               </a>
               .
@@ -67,7 +70,8 @@ const Credits = () => {
               <a
                 onClick={() => track('Clicked Github link')}
                 target='_blank'
-                href='https://github.com/kutavi/growth-toolkit'>
+                href='https://github.com/kutavi/growth-toolkit'
+                rel='noreferrer'>
                 {'Github'}
               </a>
               .
@@ -80,7 +84,8 @@ const Credits = () => {
             <a
               onClick={() => track('Buy Coffee')}
               href='https://www.buymeacoffee.com/kutavi'
-              target={'_blank'}>
+              target={'_blank'}
+              rel='noreferrer'>
               <img
                 alt='Buy Me A Coffee'
                 src='https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png'

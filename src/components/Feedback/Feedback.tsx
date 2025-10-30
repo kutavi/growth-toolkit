@@ -34,7 +34,6 @@ const Feedback = () => {
             </ul>
             <InputArea
               placeholder='You can use this form to send me your feedback.'
-              name='feedback'
               value={message}
               onChange={value => setMessage(value)}
             />

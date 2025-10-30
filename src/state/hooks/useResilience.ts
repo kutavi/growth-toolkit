@@ -5,9 +5,7 @@ export const useResilience = () => {
   const { state, setState } = useResilienceContext();
 
   const questions = resilience.map(question => {
-    const questionInState = state.questions.find(
-      q => q.id === question.id
-    );
+    const questionInState = state.questions.find(q => q.id === question.id);
     return {
       ...(questionInState ? questionInState : { answer: 0 }),
       ...question,
