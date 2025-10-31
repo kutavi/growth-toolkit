@@ -18,7 +18,7 @@ export const initialState = {
 
 interface Action {
   type?: string;
-  payload?: any;
+  payload?: Partial<SettingsState>;
 }
 
 const reducer = (

@@ -13,7 +13,7 @@ export const useResilience = () => {
   });
 
   const updateResilience = (
-    newResilience: ({ [key: string]: any } & Question)[]
+    newResilience: (Record<string, unknown> & Question)[]
   ) => {
     const resilienceForState = newResilience.map(w => ({
       id: w.id,

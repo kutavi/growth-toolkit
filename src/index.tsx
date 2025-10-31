@@ -25,11 +25,11 @@ root.render(
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/moving-motivators' element={<MovingMotivators />} />
             <Route
               path='/moving-motivators/health-check'
               element={<MovingMotivatorsHealthCheck />}
             />
+            <Route path='/moving-motivators' element={<MovingMotivators />} />
             <Route path='/resilience-scale' element={<ResilienceScale />} />
             <Route path='/wheel-of-life' element={<WheelOfLife />} />
             <Route path='/wheel-custom' element={<WheelCustom />} />

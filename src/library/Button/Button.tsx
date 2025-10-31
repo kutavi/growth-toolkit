@@ -1,21 +1,20 @@
 import classnames from 'classnames';
+import { CSSProperties } from 'react';
 
 import * as styles from './Button.module.scss';
 
 interface ButtonProps {
   children: string;
-  id?: string;
   onClick: () => void;
   disabled?: boolean;
   className?: string;
   type?: 'primary' | 'secondary' | 'alert';
   size?: 'default' | 'sm' | 'lg';
-  style?: any;
+  style?: CSSProperties;
   fullWidth?: boolean;
 }
 export const Button = ({
   children,
-  id,
   onClick,
   disabled,
   style,

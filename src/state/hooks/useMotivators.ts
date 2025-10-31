@@ -17,7 +17,7 @@ export const useMotivators = () => {
     };
   });
 
-  const updateCards = (newCards: ({ [key: string]: any } & Card)[]) => {
+  const updateCards = (newCards: (Record<string, unknown> & Card)[]) => {
     const cardsForState = newCards.map(c => ({
       id: c.id,
       selection: c.selection,

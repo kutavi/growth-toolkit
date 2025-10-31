@@ -52,7 +52,7 @@ const WheelCustomPage = () => {
         <div className={styles.toolArea}>
           <div className={styles.select}>
             <MultiSelect
-              placeholder={'Pick the areas of focus or create your own...'}
+              placeholder={'Select or type in your own focus areas...'}
               options={wheelAreas}
               closeMenuOnSelect={false}
               value={wheelData.map(d => ({ label: d.name, value: d.id }))}

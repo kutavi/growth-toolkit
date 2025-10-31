@@ -1,4 +1,4 @@
-export const reorderArray = (arr: any[], from: number, to: number): any[] =>
+export const reorderArray = <T>(arr: T[], from: number, to: number): T[] =>
   arr.reduce((prev, current, idx, self) => {
     if (from === to) {
       prev.push(current);
@@ -16,7 +16,7 @@ export const reorderArray = (arr: any[], from: number, to: number): any[] =>
       prev.push(current);
     }
     return prev;
-  }, []);
+  }, [] as T[]);
 
 export const windowLoaded = () => typeof window !== 'undefined';
 export const isTouchDevice = () =>
@@ -29,17 +29,27 @@ export const isDev = (): boolean =>
 type TrackProperties = {
   value: string | number;
 };
+
+interface WindowWithSplitbee extends Window {
+  splitbee?: {
+    track: (name: string, properties?: TrackProperties) => void;
+  };
+}
+
 export const track = (name: string, properties?: TrackProperties) =>
   windowLoaded() &&
   !isDev() &&
-  (window as any).splitbee?.track(name, properties);
+  (window as WindowWithSplitbee).splitbee?.track(name, properties);
 
-export const debounce = (func: () => void, timeout = 300) => {
+export const debounce = <T extends unknown[]>(
+  func: (...args: T) => void,
+  timeout = 300
+) => {
   let timer: NodeJS.Timeout;
-  return (...args: any) => {
+  return (...args: T) => {
     clearTimeout(timer);
     timer = setTimeout(() => {
-      func.apply(this, args);
+      func(...args);
     }, timeout);
   };
 };

@@ -10,6 +10,6 @@ Digital coaching tools to help you in your personal development and decision mak
 
 2. Run with `npm start`
 
-3. View at `localhost:8000`
+3. View at `localhost:8020`
 
 4. Build production version `npm build`

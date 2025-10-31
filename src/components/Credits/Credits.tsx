@@ -28,7 +28,7 @@ const Credits = () => {
           <h3>{'Credits'}</h3>
           <div onClick={() => track('Clicked credit links')}>
             <p>
-              Site's favicon - Leaf icon -{' '}
+              Site&apos;s favicon - Leaf icon -{' '}
               <a
                 target='_blank'
                 href='https://www.flaticon.com/authors/roundicons'
@@ -66,7 +66,7 @@ const Credits = () => {
           </div>
           <div>
             <p>
-              This project's source code is on{' '}
+              This project&apos;s source code is on{' '}
               <a
                 onClick={() => track('Clicked Github link')}
                 target='_blank'

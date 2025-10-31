@@ -123,7 +123,7 @@ module.exports = (env, argv) => {
         directory: path.join(__dirname, 'public'),
       },
       historyApiFallback: true,
-      port: 8000,
+      port: 8020,
       hot: true,
       open: true,
     },

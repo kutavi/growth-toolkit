@@ -13,9 +13,10 @@ const useIsMobile = (
     const updateSize = (): void => {
       setIsMobile(window.innerWidth < breakpoint);
     };
-    window.addEventListener('resize', debounce(updateSize, 250));
-    return (): void => window.removeEventListener('resize', updateSize);
-  }, []);
+    const debouncedUpdate = debounce(updateSize, 250);
+    window.addEventListener('resize', debouncedUpdate);
+    return (): void => window.removeEventListener('resize', debouncedUpdate);
+  }, [breakpoint]);
 
   return isMobile;
 };

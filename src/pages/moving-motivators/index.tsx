@@ -15,7 +15,7 @@ const MovingMotivatorsPage = () => {
   const { updateCards, cards: stateCards } = useMotivators();
   const { isMotivatorsInfoOpen, updateSettings } = useSettings();
   const [cards, setCards] = useState(stateCards);
-  const pendingUpdate = useRef<any>(null);
+  const pendingUpdate = useRef<NodeJS.Timeout | null>(null);
 
   const reorder = useCallback(
     (dragIndex: number, hoverIndex: number) => {

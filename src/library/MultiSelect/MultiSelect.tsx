@@ -6,19 +6,16 @@ type Option = {
   value: number | string;
   label: string;
 };
-interface MultiSelectProps extends CreatableProps<any, any, any> {
+interface MultiSelectProps extends CreatableProps<Option, true, never> {
   onSelect: (
     selections: MultiValue<Option>,
     params?: ActionMeta<Option>
   ) => void;
-  style?: any;
   options: Option[];
 }
 export const MultiSelect = ({
   onSelect,
-  style,
   options,
-  // eslint-disable-next-line
   placeholder,
   closeMenuOnSelect,
   value,
@@ -30,6 +27,7 @@ export const MultiSelect = ({
     options={options}
     className={styles.select}
     closeMenuOnSelect={closeMenuOnSelect}
+    placeholder={placeholder}
     value={value}
     styles={{
       control: base => ({

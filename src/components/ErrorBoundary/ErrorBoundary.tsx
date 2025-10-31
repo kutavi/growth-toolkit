@@ -12,18 +12,25 @@ interface ErrorState {
   sentFeedback: boolean;
 }
 
-export class ErrorBoundary extends React.Component<{}, ErrorState> {
-  constructor(props: any) {
+interface ErrorBoundaryProps {
+  children: React.ReactNode;
+}
+
+export class ErrorBoundary extends React.Component<
+  ErrorBoundaryProps,
+  ErrorState
+> {
+  constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false, feedback: '', sentFeedback: false };
   }
 
-  static getDerivedStateFromError(_: any): { hasError: boolean } {
+  static getDerivedStateFromError(_error: Error): { hasError: boolean } {
     // Update state so the next render will show the fallback UI.
     return { hasError: true };
   }
 
-  componentDidCatch(error: any): void {
+  componentDidCatch(error: Error): void {
     track('REPORT', { value: `error log: ${error?.message}` });
   }
 

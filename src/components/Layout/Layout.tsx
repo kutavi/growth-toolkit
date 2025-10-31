@@ -65,6 +65,7 @@ export const Layout = ({ children }: LayoutProps) => {
                       <NavLink
                         key={subroute.route}
                         to={subroute.route}
+                        end
                         className={({ isActive }) =>
                           isActive
                             ? `${styles.item} ${styles.activeItem}`

@@ -1,47 +1,17 @@
-import { useEffect, useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { ErrorBoundary } from './components/ErrorBoundary/ErrorBoundary';
 import SubscribeModal from './components/Subscribe/SubscribeModal';
 import * as colors from './styles/_base.module.scss';
-import { track } from './utils/helpers';
 
 import './styles/core.scss';
-import { CookieService } from './utils/cookie';
 
 interface AppProps {
-  children: any;
+  children: ReactNode;
 }
 
-const timeToWaitBeforeShowing = 300000; // ~5min
 export const App = ({ children }: AppProps) => {
-  const [hasLoaded, setLoaded] = useState(false);
   const [isSubscribeOpen, setSubscribeOpen] = useState(false);
 
-  useEffect(() => {
-    setLoaded(true);
-
-    const mouseEvent = (e: any) => {
-      const existIntentAlreadyShown =
-        CookieService.getCookie('exitIntentShown');
-      if (!existIntentAlreadyShown) {
-        track('Newsletter prompt');
-        CookieService.setCookie('exitIntentShown', 'true');
-        setSubscribeOpen(true);
-        document.removeEventListener('mouseleave', mouseEvent);
-      }
-    };
-
-    setTimeout(() => {
-      const existIntentAlreadyShown =
-        CookieService.getCookie('exitIntentShown');
-      if (!existIntentAlreadyShown) {
-        //  document.addEventListener('mouseleave', mouseEvent);
-      }
-    }, timeToWaitBeforeShowing);
-  }, []);
-
-  if (!hasLoaded) {
-    return null;
-  }
   return (
     <ErrorBoundary>
       {children}

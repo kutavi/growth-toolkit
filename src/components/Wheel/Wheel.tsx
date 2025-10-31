@@ -14,7 +14,7 @@ import { windowLoaded } from '../../utils/helpers';
 
 type Dataset = {
   label: string;
-  id: any;
+  id: string | number;
   data: number[];
   backgroundColor: string;
   borderColor?: string;
@@ -45,7 +45,7 @@ const squareRatio = 2;
 
 const selectionSetting = {
   intersect: true,
-  mode: 'point' as any,
+  mode: 'point' as const,
 };
 export const WheelView = ({
   chartToEdit,
