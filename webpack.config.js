@@ -105,6 +105,11 @@ module.exports = (env, argv) => {
             to: 'assets',
             noErrorOnMissing: true,
           },
+          {
+            from: 'public/_redirects',
+            to: '_redirects',
+            noErrorOnMissing: true,
+          },
         ],
       }),
     ],
