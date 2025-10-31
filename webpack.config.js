@@ -107,7 +107,7 @@ module.exports = (env, argv) => {
           },
           {
             from: 'public/_redirects',
-            to: '_redirects',
+            to: '.',
             noErrorOnMissing: true,
           },
         ],
