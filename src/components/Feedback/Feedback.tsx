@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Button } from '../../library/Button/Button';
 import { Icon } from '../../library/Icon/Icon';
 import { InputArea } from '../../library/InputArea/InputArea';
@@ -11,6 +11,13 @@ const Feedback = () => {
   const [isFeedbackOpen, setFeedbackView] = useState(false);
   const [message, setMessage] = useState('');
   const [sentFeedback, setSentFeedback] = useState(false);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    if (isFeedbackOpen && !sentFeedback) {
+      setTimeout(() => inputRef.current?.focus(), 0);
+    }
+  }, [isFeedbackOpen, sentFeedback]);
 
   return (
     <Popover
@@ -33,6 +40,7 @@ const Feedback = () => {
               <li>{'want to share your thoughts about this site?'}</li>
             </ul>
             <InputArea
+              ref={inputRef}
               placeholder='You can use this form to send me your feedback.'
               value={message}
               onChange={value => setMessage(value)}

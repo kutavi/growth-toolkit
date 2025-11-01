@@ -85,6 +85,81 @@ $card-radius: 16px;
   font-size: $font-med;
 }
 
+.savedWheelsContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  width: 100%;
+  justify-content: end;
+  min-height: 43px;
+}
+
+.savedWheels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+}
+
+.saveWheelButton {
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.nameInputContainer {
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background-color: #e8f0fe;
+  border: 1px solid #d2e3fc;
+  border-radius: 16px;
+  font-size: $font-small;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #d2e3fc;
+  }
+
+  span {
+    user-select: none;
+  }
+
+  .deletePill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 3px;
+    color: $text-default;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $cancel;
+    }
+  }
+}
+
+.wheelNameInput {
+  width: 94px;
+  resize: none;
+  overflow: hidden;
+  min-height: auto;
+  height: auto;
+  padding: 8px 12px;
+  border: 2px solid $primary;
+  border-radius: 4px;
+  font-size: $font-small;
+  margin-bottom: 0;
+}
+
 @media (max-width: 600px) {
   .question {
     > div {

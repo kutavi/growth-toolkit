@@ -22,7 +22,7 @@ export const MultiSelect = ({
 }: MultiSelectProps) => (
   <Select
     isMulti
-    isClearable={false}
+    isClearable
     onChange={onSelect}
     options={options}
     className={styles.select}

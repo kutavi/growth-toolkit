@@ -89,7 +89,6 @@ export const Share = () => {
                 onClick={downloadImage}
               />
               <IconButton
-                className={styles.lastButton}
                 icon='copy'
                 color={'primary'}
                 label={copiedImage ? 'Copied!' : 'Copy image'}

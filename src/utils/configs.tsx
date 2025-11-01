@@ -329,19 +329,20 @@ export const texts = {
     info: (
       <div>
         This is an exercise to help you quickly identify the areas in your life
-        to which you want to devote more energy and attention, and helps you
-        understand where you might want to cut back and put less effort.
+        that need more energy and attention, and those where you might want to
+        cut back and put in less effort.
         <br />
         <br />
         Try the following:
         <ol>
           <li>
             First, on a scale of 0 to 10, think about the amount of attention
-            you&apos;re devoting to each area of your life.
+            you&apos;re devoting to each area of your life, then select it on
+            the wheel.
           </li>
           <li>
-            Next, consider your ideal level of attention in each area of your
-            life. What would that look like?
+            Next, select "Ideal life" and fill the wheel with your ideal level
+            of attention in each area of your life.
           </li>
           <li>
             Finally, use the visual representation of your current life and your
@@ -374,15 +375,16 @@ export const texts = {
         <ol>
           <li>
             First, add the areas in your life you want to focus on. Choose from
-            the examples or add your own.
+            the examples in the dropdown or add your own.
           </li>
           <li>
             Then, on a scale of 0 to 10, think about the amount of attention
-            you&apos;re devoting to each area of your life.
+            you&apos;re devoting to each area of your life, then select it on
+            the wheel.
           </li>
           <li>
-            Next, consider your ideal level of attention in each area of your
-            life. What would that look like?
+            Next, select "Ideal life" and fill the wheel with your ideal level
+            of attention in each area of your life.
           </li>
           <li>
             Finally, use the visual representation of your current life and your

@@ -199,7 +199,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     () => loadFromLocalStorage('wheelOfLife', initialWheelOfLifeState)
   );
   const [wheelCustomState, setWheelCustomState] = useState<WheelCustomState>(
-    () => loadFromLocalStorage('wheelCustom', initialWheelCustomState)
+    initialWheelCustomState
   );
   const [resilienceState, setResilienceState] = useState<ResilienceState>(() =>
     loadFromLocalStorage('resilience', initialResilienceState)
@@ -217,10 +217,6 @@ export const AppProvider = ({ children }: AppProviderProps) => {
   useEffect(() => {
     saveToLocalStorage('wheelOfLife', wheelOfLifeState);
   }, [wheelOfLifeState]);
-
-  useEffect(() => {
-    saveToLocalStorage('wheelCustom', wheelCustomState);
-  }, [wheelCustomState]);
 
   useEffect(() => {
     saveToLocalStorage('resilience', resilienceState);

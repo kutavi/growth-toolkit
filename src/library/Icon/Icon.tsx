@@ -10,6 +10,7 @@ import {
   FaRegCopy,
   FaShareAlt,
   FaTimes,
+  FaLink,
 } from 'react-icons/fa';
 
 const Icons = {
@@ -24,6 +25,7 @@ const Icons = {
   share: FaShareAlt,
   download: FaDownload,
   copy: FaRegCopy,
+  link: FaLink,
 };
 
 export type IconType = keyof typeof Icons;
