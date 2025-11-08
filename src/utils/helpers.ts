@@ -29,17 +29,15 @@ export const isDev = (): boolean =>
 type TrackProperties = {
   value: string | number;
 };
-
-interface WindowWithSplitbee extends Window {
-  splitbee?: {
-    track: (name: string, properties?: TrackProperties) => void;
-  };
+declare global {
+  interface Window {
+    umami?: {
+      track: (name: string, properties?: { value: string | number }) => void;
+    };
+  }
 }
-
 export const track = (name: string, properties?: TrackProperties) =>
-  windowLoaded() &&
-  !isDev() &&
-  (window as WindowWithSplitbee).splitbee?.track(name, properties);
+  windowLoaded() && !isDev() && window.umami?.track(name, properties);
 
 export const debounce = <T extends unknown[]>(
   func: (...args: T) => void,

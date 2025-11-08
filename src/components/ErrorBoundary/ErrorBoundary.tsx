@@ -1,15 +1,11 @@
 import React from 'react';
-import { Button } from '../../library/Button/Button';
 import { Icon } from '../../library/Icon/Icon';
-import { InputArea } from '../../library/InputArea/InputArea';
 import * as colors from '../../styles/_base.module.scss';
 import { track } from '../../utils/helpers';
 import * as styles from './ErrorBoundary.module.scss';
 
 interface ErrorState {
   hasError: boolean;
-  feedback: string;
-  sentFeedback: boolean;
 }
 
 interface ErrorBoundaryProps {
@@ -22,7 +18,7 @@ export class ErrorBoundary extends React.Component<
 > {
   constructor(props: ErrorBoundaryProps) {
     super(props);
-    this.state = { hasError: false, feedback: '', sentFeedback: false };
+    this.state = { hasError: false };
   }
 
   static getDerivedStateFromError(_error: Error): { hasError: boolean } {
@@ -31,45 +27,20 @@ export class ErrorBoundary extends React.Component<
   }
 
   componentDidCatch(error: Error): void {
-    track('REPORT', { value: `error log: ${error?.message}` });
+    track('ERROR', { value: `error log: ${error?.message}` });
   }
 
   render(): React.ReactNode {
     if (this.state.hasError) {
       return (
         <>
+          <h1 className={styles.title}>
+            <Icon icon='bug' size={42} color={colors.noDarker} />
+          </h1>
           <h1 className={styles.title}>Oh no! Something went wrong.</h1>
           <h2 className={styles.title}>
             Try refreshing the page or going back
           </h2>
-          {!this.state.sentFeedback ? (
-            <div className={styles.feedback}>
-              <Icon icon='bug' size={42} color={colors.noDarker} />
-              <InputArea
-                placeholder='You can use this form to report the issue.'
-                rows={10}
-                value={this.state.feedback}
-                onChange={value => this.setState({ feedback: value })}
-              />
-              <Button
-                disabled={!this.state.feedback.trim()}
-                className={styles.send}
-                type={'secondary'}
-                onClick={() => {
-                  this.setState({ sentFeedback: true });
-                  track('REPORT', {
-                    value: `report from user: ${this.state.feedback}`,
-                  });
-                }}>
-                {'Send'}
-              </Button>
-            </div>
-          ) : (
-            <div className={styles.feedback}>
-              <Icon icon='check' size={42} color={colors.yes} />
-              {'Thank you for helping out!'}
-            </div>
-          )}
         </>
       );
     }

@@ -147,7 +147,7 @@ const WheelCustomPage = () => {
 
     try {
       window.localStorage.setItem('savedWheels', JSON.stringify(updatedWheels));
-      track('Saved wheel', { name: wheelName });
+      track('Saved wheel');
     } catch (error) {
       console.warn('Error saving wheel:', error);
     }
@@ -317,7 +317,7 @@ const WheelCustomPage = () => {
               },
             ]}
             updateDataset={(chartToEdit, category, score) => {
-              track('Update wheel');
+              track('Update custom wheel');
               const categories = wheelData.map(c =>
                 c.name === category ? { ...c, [chartToEdit]: score } : c
               );

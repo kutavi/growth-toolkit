@@ -25,32 +25,6 @@ const Credits = () => {
           track('Closed credits');
         }}>
         <div className={styles.wrapper}>
-          <h3>{'Credits'}</h3>
-          <div onClick={() => track('Clicked credit links')}>
-            <p>
-              Site&apos;s favicon - Leaf icon -{' '}
-              <a
-                target='_blank'
-                href='https://www.flaticon.com/authors/roundicons'
-                title='leaf icon'
-                rel='noreferrer'>
-                created by Roundicons - Flaticon
-              </a>
-              .
-            </p>
-            <p>
-              Moving motivators images and concept created by{' '}
-              <a
-                target='_blank'
-                href='https://management30.com/practice/moving-motivators/'
-                title='management 3.0 moving motivators'
-                rel='noreferrer'>
-                management 3.0, Jurgen Appelo
-              </a>
-              .
-            </p>
-          </div>
-          <h3>{'About this project'}</h3>
           <div>
             <p>
               Created by{' '}
@@ -73,6 +47,58 @@ const Credits = () => {
                 href='https://github.com/kutavi/growth-toolkit'
                 rel='noreferrer'>
                 {'Github'}
+              </a>
+              .
+            </p>
+          </div>
+          <div>
+            <p>
+              Have a tool you wish to see a digital version of or encountered
+              any issues?
+            </p>
+            <p>
+              You can contact me via the form{' '}
+              <a
+                target='_blank'
+                href='https://kutavi.weebly.com/#contact'
+                rel='noreferrer'>
+                here
+              </a>
+              .
+            </p>
+          </div>
+          <div>
+            <p>
+              <a
+                onClick={() => track('Clicked Privacy Policy')}
+                target='_blank'
+                href='https://kutavi.weebly.com/privacy-policy'
+                rel='noreferrer'>
+                {'Privacy Policy'}
+              </a>
+            </p>
+          </div>
+          <h3>{'Credits'}</h3>
+          <div onClick={() => track('Clicked credit links')}>
+            <p>
+              Site&apos;s favicon - Leaf icon -{' '}
+              <a
+                target='_blank'
+                href='https://www.flaticon.com/authors/roundicons'
+                title='leaf icon'
+                rel='noreferrer'>
+                created by Roundicons - Flaticon
+              </a>
+              .
+            </p>
+            <p>
+              Moving motivators images and concept created by{' '}
+              <a
+                target='_blank'
+                href='https://management30.com/practice/moving-motivators/'
+                title='management 3.0 moving motivators'
+                rel='noreferrer'>
+                management 3.0, Jurgen Appelo
               </a>
               .
             </p>

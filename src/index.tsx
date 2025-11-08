@@ -2,8 +2,9 @@ import { lazy, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AppProvider } from './state/context/AppContext';
-import { App } from './app';
 import { Loader } from './library/Loader/Loader';
+import { ErrorBoundary } from './components/ErrorBoundary/ErrorBoundary';
+import './styles/core.scss';
 
 // Lazy load all page components for code splitting
 const Home = lazy(() => import('./pages/index'));
@@ -21,7 +22,7 @@ const root = createRoot(document.getElementById('root')!);
 root.render(
   <AppProvider>
     <BrowserRouter>
-      <App>
+      <ErrorBoundary>
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path='/' element={<Home />} />
@@ -36,7 +37,7 @@ root.render(
             <Route path='*' element={<NotFound />} />
           </Routes>
         </Suspense>
-      </App>
+      </ErrorBoundary>
     </BrowserRouter>
   </AppProvider>
 );
