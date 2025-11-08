@@ -68,6 +68,7 @@ export const Share = () => {
         className={styles.shareButton}
         color={'primary'}
         icon='share'
+        ariaLabel='share'
         onClick={() => captureElement()}
       />
       <Modal
@@ -86,11 +87,13 @@ export const Share = () => {
                 icon='download'
                 label={'Download'}
                 color={'primary'}
+                ariaLabel='Download'
                 onClick={downloadImage}
               />
               <IconButton
                 icon='copy'
                 color={'primary'}
+                ariaLabel='copy'
                 label={copiedImage ? 'Copied!' : 'Copy image'}
                 onClick={copyImage}
               />

@@ -11,7 +11,15 @@ const ActivityCards = () => (
         to={route.route}
         aria-label={`Navigate to ${route.label}: ${route.description}`}>
         <div className={styles.header}>
-          <img src={route.image} alt={`Image for ${route.label}`} />
+          <picture>
+            <source srcSet={route.imageWebP} type='image/webp' />
+            <img
+              src={route.image}
+              alt={`Image for ${route.label}`}
+              loading='eager'
+              fetchpriority='high'
+            />
+          </picture>
           <div className={styles.title}>{route.label}</div>
         </div>
         <div className={styles.description}>{route.description}</div>

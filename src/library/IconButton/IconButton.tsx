@@ -5,6 +5,7 @@ import * as styles from './IconButton.module.scss';
 interface IconButtonProps {
   icon: IconType;
   label?: string;
+  ariaLabel: string;
   onClick: () => void;
   type?: 'circle' | 'square';
   className?: string;
@@ -18,6 +19,7 @@ export const IconButton = ({
   className,
   disabled,
   label,
+  ariaLabel,
   type = 'square',
   color = 'none',
 }: IconButtonProps) => (
@@ -29,6 +31,7 @@ export const IconButton = ({
       styles[type],
       className
     )}
+    aria-label={ariaLabel}
     disabled={disabled}
     onClick={onClick}>
     {label && <span className={styles.label}>{label}</span>}

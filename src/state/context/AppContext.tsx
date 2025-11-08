@@ -7,6 +7,7 @@ import {
 } from 'react';
 import { motivators, wheelOfLife, resilience } from '../../utils/configs';
 import { Category } from '../types/wheel';
+import { getStorageItem, setStorageItem } from '../../utils/localStorage';
 
 // Types
 export type Card = {
@@ -160,28 +161,6 @@ export const useResilienceContext = () => {
   return context;
 };
 
-// Helper function to load from localStorage
-const loadFromLocalStorage = <T,>(key: string, defaultValue: T): T => {
-  if (typeof window === 'undefined') return defaultValue;
-  try {
-    const item = window.localStorage.getItem(key);
-    return item ? JSON.parse(item) : defaultValue;
-  } catch (error) {
-    console.warn(`Error loading ${key} from localStorage:`, error);
-    return defaultValue;
-  }
-};
-
-// Helper function to save to localStorage
-const saveToLocalStorage = <T,>(key: string, value: T): void => {
-  if (typeof window === 'undefined') return;
-  try {
-    window.localStorage.setItem(key, JSON.stringify(value));
-  } catch (error) {
-    console.warn(`Error saving ${key} to localStorage:`, error);
-  }
-};
-
 // Main App Provider
 interface AppProviderProps {
   children: ReactNode;
@@ -190,36 +169,36 @@ interface AppProviderProps {
 export const AppProvider = ({ children }: AppProviderProps) => {
   // Load initial state from localStorage
   const [motivatorsState, setMotivatorsState] = useState<MotivatorsState>(() =>
-    loadFromLocalStorage('motivators', initialMotivatorsState)
+    getStorageItem('motivators', initialMotivatorsState)
   );
   const [settingsState, setSettingsState] = useState<SettingsState>(() =>
-    loadFromLocalStorage('settings', initialSettingsState)
+    getStorageItem('settings', initialSettingsState)
   );
   const [wheelOfLifeState, setWheelOfLifeState] = useState<WheelOfLifeState>(
-    () => loadFromLocalStorage('wheelOfLife', initialWheelOfLifeState)
+    () => getStorageItem('wheelOfLife', initialWheelOfLifeState)
   );
   const [wheelCustomState, setWheelCustomState] = useState<WheelCustomState>(
     initialWheelCustomState
   );
   const [resilienceState, setResilienceState] = useState<ResilienceState>(() =>
-    loadFromLocalStorage('resilience', initialResilienceState)
+    getStorageItem('resilience', initialResilienceState)
   );
 
-  // Save to localStorage whenever state changes
+  // Save to centralized localStorage whenever state changes
   useEffect(() => {
-    saveToLocalStorage('motivators', motivatorsState);
+    setStorageItem('motivators', motivatorsState);
   }, [motivatorsState]);
 
   useEffect(() => {
-    saveToLocalStorage('settings', settingsState);
+    setStorageItem('settings', settingsState);
   }, [settingsState]);
 
   useEffect(() => {
-    saveToLocalStorage('wheelOfLife', wheelOfLifeState);
+    setStorageItem('wheelOfLife', wheelOfLifeState);
   }, [wheelOfLifeState]);
 
   useEffect(() => {
-    saveToLocalStorage('resilience', resilienceState);
+    setStorageItem('resilience', resilienceState);
   }, [resilienceState]);
 
   // Update functions

@@ -1,17 +1,19 @@
-import Acceptance from '../assets/acceptance.jpeg';
-import Curiosity from '../assets/curiosity.jpeg';
-import Freedom from '../assets/freedom.jpeg';
-import Goal from '../assets/goal.jpeg';
-import Honor from '../assets/honor.jpeg';
-import Mastery from '../assets/mastery.jpeg';
-import Motivators from '../assets/moving-motivators.png';
-import Order from '../assets/order.jpeg';
-import Power from '../assets/power.jpeg';
-import Relatedness from '../assets/relatedness.jpeg';
-import Resilience from '../assets/resilience.png';
-import Status from '../assets/status.jpeg';
-import WheelCustom from '../assets/wheel-custom.png';
-import WheelOfLife from '../assets/wheel-of-life.png';
+// WebP imports (modern format)
+import Acceptance from '../assets/acceptance.webp';
+import Curiosity from '../assets/curiosity.webp';
+import Freedom from '../assets/freedom.webp';
+import Goal from '../assets/goal.webp';
+import Honor from '../assets/honor.webp';
+import Mastery from '../assets/mastery.webp';
+import Motivators from '../assets/moving-motivators.webp';
+import Order from '../assets/order.webp';
+import Power from '../assets/power.webp';
+import Relatedness from '../assets/relatedness.webp';
+import Resilience from '../assets/resilience.webp';
+import Status from '../assets/status.webp';
+import WheelCustom from '../assets/wheel-custom.webp';
+import WheelOfLife from '../assets/wheel-of-life.webp';
+
 import * as colors from '../styles/_base.module.scss';
 
 const movingMotivatorsLink = '/moving-motivators/';

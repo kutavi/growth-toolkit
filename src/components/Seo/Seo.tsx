@@ -13,8 +13,8 @@ const siteMetadata = {
   defaultDescription:
     'A toolkit with exercises and activities to help you on your personal development and growth.',
   siteUrl: 'https://growth-toolkit.netlify.app',
-  defaultImage: '/wheel-custom.png',
-  twitterUsername: '@aletseni',
+  defaultImage: '/wheel-custom.webp',
+  twitterUsername: '@alextseni',
 };
 
 export const SEO = ({ title, description, image }: SEOProps) => {

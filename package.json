@@ -9,7 +9,9 @@
     "start": "webpack serve --mode development --open",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,scss}\"",
     "lint": "npm run format && eslint \"src/**/*.{ts,tsx}\" --fix",
-    "compress-images": "node scripts/compress-images.js"
+    "compress-images": "node scripts/compress-images.js",
+    "analyze": "webpack --mode production --profile --json > stats.json",
+    "analyze:visualize": "webpack-bundle-analyzer stats.json dist"
   },
   "dependencies": {
     "chart.js": "^4.5.1",

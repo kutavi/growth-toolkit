@@ -78,7 +78,7 @@ module.exports = (env, argv) => {
           use: ['style-loader', 'css-loader'],
         },
         {
-          test: /\.(png|jpg|jpeg|gif|svg|ico)$/i,
+          test: /\.(png|jpg|jpeg|gif|svg|ico|webp)$/i,
           type: 'asset/resource',
           generator: {
             filename: 'assets/[name][ext]',
@@ -116,6 +116,43 @@ module.exports = (env, argv) => {
         ],
       }),
     ],
+    optimization: {
+      moduleIds: 'deterministic',
+      runtimeChunk: 'single',
+      splitChunks: {
+        chunks: 'all',
+        cacheGroups: {
+          // Vendor chunk for large libraries
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            priority: 10,
+            reuseExistingChunk: true,
+          },
+          // React-specific chunk
+          react: {
+            test: /[\\/]node_modules[\\/](react|react-dom|react-router|react-router-dom)[\\/]/,
+            name: 'react-vendor',
+            priority: 20,
+            reuseExistingChunk: true,
+          },
+          // Chart.js chunk (large library)
+          chartjs: {
+            test: /[\\/]node_modules[\\/](chart\.js|react-chartjs-2)[\\/]/,
+            name: 'chartjs',
+            priority: 15,
+            reuseExistingChunk: true,
+          },
+          // Common chunk for shared code
+          common: {
+            minChunks: 2,
+            priority: 5,
+            reuseExistingChunk: true,
+            name: 'common',
+          },
+        },
+      },
+    },
     performance: {
       maxAssetSize: 512000, // 500 KiB
       maxEntrypointSize: 512000, // 500 KiB

@@ -13,6 +13,7 @@ import { useWheelCustom } from '../../state/hooks/useWheelCustom';
 import { WheelValues } from '../../state/types/wheel';
 import { texts, wheelAreas } from '../../utils/configs';
 import { track } from '../../utils/helpers';
+import { getStorageItem, setStorageItem } from '../../utils/localStorage';
 import * as styles from '../Page.module.scss';
 
 const selections = WheelValues;
@@ -34,12 +35,10 @@ const WheelCustomPage = () => {
   const [showCopied, setShowCopied] = useState(false);
   const nameInputRef = useRef<HTMLTextAreaElement>(null);
 
-  // Load saved wheels from localStorage on mount
+  // Load saved wheels from centralized localStorage on mount
   useEffect(() => {
-    const saved = window.localStorage.getItem('savedWheels');
-    if (saved) {
-      setSavedWheels(JSON.parse(saved));
-    }
+    const saved = getStorageItem<SavedWheel[]>('savedWheels', []);
+    setSavedWheels(saved);
   }, []);
 
   // Load wheel from URL or last viewing state on initial mount
@@ -70,12 +69,12 @@ const WheelCustomPage = () => {
       }
     } else {
       // Load last viewing state if no URL
-      const lastViewing = window.localStorage.getItem('lastViewingWheel');
-      if (lastViewing) {
-        const parsedData = JSON.parse(lastViewing);
-        if (parsedData.categories && parsedData.categories.length > 0) {
-          updateCategories(parsedData.categories);
-        }
+      const lastViewing = getStorageItem<{ categories?: CustomCategory[] }>(
+        'lastViewingWheel',
+        {}
+      );
+      if (lastViewing.categories && lastViewing.categories.length > 0) {
+        updateCategories(lastViewing.categories);
       }
     }
     isInitialMount.current = false;
@@ -99,10 +98,7 @@ const WheelCustomPage = () => {
     const newUrl = `${window.location.pathname}${params.toString() ? '?' + params.toString() : ''}`;
     window.history.replaceState({}, '', newUrl);
 
-    window.localStorage.setItem(
-      'lastViewingWheel',
-      JSON.stringify({ categories: wheelData })
-    );
+    setStorageItem('lastViewingWheel', { categories: wheelData });
   }, [wheelData]);
 
   const getCurrentColor = (opacity: string = '50%') =>
@@ -144,13 +140,8 @@ const WheelCustomPage = () => {
 
     const updatedWheels = [...savedWheels, newWheel];
     setSavedWheels(updatedWheels);
-
-    try {
-      window.localStorage.setItem('savedWheels', JSON.stringify(updatedWheels));
-      track('Saved wheel');
-    } catch (error) {
-      console.warn('Error saving wheel:', error);
-    }
+    setStorageItem('savedWheels', updatedWheels);
+    track('Saved wheel');
 
     setIsNamingWheel(false);
     setWheelName('');
@@ -163,8 +154,7 @@ const WheelCustomPage = () => {
   const handleDeleteWheel = (wheelId: string) => {
     const updatedWheels = savedWheels.filter(w => w.id !== wheelId);
     setSavedWheels(updatedWheels);
-
-    window.localStorage.setItem('savedWheels', JSON.stringify(updatedWheels));
+    setStorageItem('savedWheels', updatedWheels);
     track('Deleted saved wheel');
   };
 

@@ -11,7 +11,7 @@ interface PopoverProps {
   isShown: boolean;
   canClose?: boolean;
   buttonIcon: IconType;
-  buttonLabel?: string;
+  buttonLabel: string;
   toggle: (value: boolean) => void;
   position?: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
 }
@@ -39,6 +39,7 @@ export const Popover = ({
         className={`${positionStyle}`}
         onClick={() => toggle(true)}
         icon={buttonIcon}
+        ariaLabel={buttonLabel}
         label={isMobile ? '' : buttonLabel}
       />
     );
@@ -49,6 +50,7 @@ export const Popover = ({
       <>
         <IconButton
           className={`${positionStyle}`}
+          ariaLabel={buttonLabel}
           onClick={() => toggle(true)}
           icon={buttonIcon}
           label={isMobile ? '' : buttonLabel}

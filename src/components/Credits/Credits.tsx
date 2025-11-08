@@ -15,6 +15,7 @@ const Credits = () => {
           setModalOpen(true);
           track('Opened credits');
         }}
+        ariaLabel='about'
         className={styles.button}
       />
       <Modal
