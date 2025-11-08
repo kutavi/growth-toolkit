@@ -187,15 +187,17 @@ const WheelCustomPage = () => {
               onSelect={(options, params) => {
                 if (params?.action === 'select-option') {
                   const newOption = params.option || { label: '', value: '' };
-                  track('Added area to wheel', {
-                    value: `${newOption.value} - ${newOption.label}`,
-                  });
+                  track(
+                    'Added area to wheel',
+                    `${newOption.value} - ${newOption.label}`
+                  );
                 }
                 if (params?.action === 'remove-value') {
                   const removed = params.removedValue;
-                  track('Removed area from wheel', {
-                    value: `${removed.value} - ${removed.label}`,
-                  });
+                  track(
+                    'Removed area from wheel',
+                    `${removed.value} - ${removed.label}`
+                  );
                 }
                 updateCategories(
                   options.map(s => ({ id: s.value, name: s.label }))

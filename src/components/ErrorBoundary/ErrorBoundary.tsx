@@ -27,7 +27,7 @@ export class ErrorBoundary extends React.Component<
   }
 
   componentDidCatch(error: Error): void {
-    track('ERROR', { value: `error log: ${error?.message}` });
+    track('ERROR', `error log: ${error?.message}`);
   }
 
   render(): React.ReactNode {

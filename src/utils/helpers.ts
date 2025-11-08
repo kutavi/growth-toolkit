@@ -24,20 +24,18 @@ export const isTouchDevice = () =>
   (typeof navigator !== 'undefined' && navigator.maxTouchPoints > 0);
 
 export const isDev = (): boolean =>
-  windowLoaded() && window.location.hostname === 'localhost';
+  windowLoaded() && window.location.hostname.includes('localhost');
 
-type TrackProperties = {
-  value: string | number;
-};
 declare global {
   interface Window {
     umami?: {
-      track: (name: string, properties?: { value: string | number }) => void;
+      track: (name: string, properties?: object) => void;
     };
   }
 }
-export const track = (name: string, properties?: TrackProperties) =>
-  windowLoaded() && !isDev() && window.umami?.track(name, properties);
+
+export const track = (name: string, value: string | number = '') =>
+  windowLoaded() && !isDev() && window.umami?.track(name, { value });
 
 export const debounce = <T extends unknown[]>(
   func: (...args: T) => void,
