@@ -12,6 +12,7 @@ interface ButtonProps {
   size?: 'default' | 'sm' | 'lg';
   style?: CSSProperties;
   fullWidth?: boolean;
+  ariaLabel?: string;
 }
 export const Button = ({
   children,
@@ -22,6 +23,7 @@ export const Button = ({
   size = 'default',
   className,
   fullWidth,
+  ariaLabel,
 }: ButtonProps) => (
   <button
     style={style}
@@ -33,7 +35,10 @@ export const Button = ({
       { [styles.fullWidth]: fullWidth },
       className
     )}
-    onClick={!disabled ? onClick : () => null}>
+    onClick={!disabled ? onClick : () => null}
+    disabled={disabled}
+    aria-disabled={disabled}
+    aria-label={ariaLabel}>
     {children}
   </button>
 );

@@ -3,7 +3,7 @@
   "private": true,
   "description": "A toolkit with exercises and activities to help you on your personal development and growth.",
   "version": "0.0.0",
-  "author": "Alexandra Tseniklidou <atseniklidou@gmail.com>",
+  "author": "Alexandra Tseniklidou",
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack serve --mode development --open",

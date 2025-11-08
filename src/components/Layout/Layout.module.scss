@@ -1,6 +1,7 @@
 @use '../../styles/_base.module.scss' as *;
 
 .container {
+  position: relative;
   max-width: 800px;
   margin: auto;
   box-shadow: $shadow-small;

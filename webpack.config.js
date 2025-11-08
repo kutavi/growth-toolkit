@@ -106,8 +106,11 @@ module.exports = (env, argv) => {
             noErrorOnMissing: true,
           },
           {
-            from: 'public/_redirects',
+            from: 'public',
             to: '.',
+            globOptions: {
+              ignore: ['**/index.html'],
+            },
             noErrorOnMissing: true,
           },
         ],

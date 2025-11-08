@@ -46,6 +46,10 @@ export const SEO = ({ title, description, image }: SEOProps) => {
       <meta name='description' content={seo.description} />
       <meta name='image' content={seo.image} />
 
+      <meta property='og:type' content='website' />
+      <meta property='og:site_name' content='Growth Toolkit' />
+      <meta property='og:locale' content='en_US' />
+
       {seo.url && <meta property='og:url' content={seo.url} />}
 
       {seo.title && <meta property='og:title' content={seo.title} />}
@@ -69,6 +73,26 @@ export const SEO = ({ title, description, image }: SEOProps) => {
       )}
 
       {seo.image && <meta name='twitter:image' content={seo.image} />}
+
+      <script type='application/ld+json'>
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebApplication',
+          name: seo.title,
+          description: seo.description,
+          url: seo.url,
+          applicationCategory: 'LifestyleApplication',
+          offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+          },
+          author: {
+            '@type': 'Person',
+            name: 'Alexandra Tseniklidou',
+          },
+        })}
+      </script>
     </Helmet>
   );
 };

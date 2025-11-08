@@ -5,7 +5,6 @@ import useIsMobile from '../../state/hooks/useIsMobile';
 import { useSettings } from '../../state/hooks/useSettings';
 import { routes } from '../../utils/configs';
 import { track } from '../../utils/helpers';
-import Feedback from '../Feedback/Feedback';
 import { Share } from '../Share/Share';
 import * as styles from './Layout.module.scss';
 
@@ -25,7 +24,7 @@ export const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.rightArea}>
+      <nav className={styles.rightArea} aria-label='Main navigation'>
         <Share />
         <Popover
           isShown={isNavigationOpen}
@@ -80,9 +79,10 @@ export const Layout = ({ children }: LayoutProps) => {
             ))}
           </div>
         </Popover>
-      </div>
-      {!isMobile && <Feedback />}
-      <div className={styles.content}>{children}</div>
+      </nav>
+      <main id='main-content' className={styles.content}>
+        {children}
+      </main>
     </div>
   );
 };
