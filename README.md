@@ -1,4 +1,4 @@
-# Growth and personal development toolkit
+# Growth toolkit
 
 Digital coaching tools to help you in your personal development and decision making
 

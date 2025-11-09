@@ -25,7 +25,7 @@ const Credits = () => {
           setModalOpen(false);
           track('Closed credits');
         }}>
-        <div className={styles.wrapper}>
+        <div>
           <div>
             <p>
               Created by{' '}
@@ -35,19 +35,6 @@ const Credits = () => {
                 href='https://kutavi.weebly.com/'
                 rel='noreferrer'>
                 {'Alexandra Tseniklidou'}
-              </a>
-              .
-            </p>
-          </div>
-          <div>
-            <p>
-              This project&apos;s source code is on{' '}
-              <a
-                onClick={() => track('Clicked Github link')}
-                target='_blank'
-                href='https://github.com/kutavi/growth-toolkit'
-                rel='noreferrer'>
-                {'Github'}
               </a>
               .
             </p>
@@ -103,21 +90,6 @@ const Credits = () => {
               </a>
               .
             </p>
-          </div>
-          <div className={styles.support}>
-            <span>
-              If you find this site useful, consider buying me a coffee ❤️
-            </span>
-            <a
-              onClick={() => track('Buy Coffee')}
-              href='https://www.buymeacoffee.com/kutavi'
-              target={'_blank'}
-              rel='noreferrer'>
-              <img
-                alt='Buy Me A Coffee'
-                src='https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png'
-              />
-            </a>
           </div>
         </div>
       </Modal>
